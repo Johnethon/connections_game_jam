@@ -1,10 +1,10 @@
-extends CharacterBody3D
+extends CharacterBody2D
 class_name Player
 
 @export var positive : bool = true
 
-@onready var magnet_range : Area3D = $Area3D
-var move_speed = 5.0
+@onready var magnet_range : Area2D = $Area3D
+var move_speed = 100.0
 
 var pulling : bool = false
 
@@ -34,19 +34,19 @@ func _process(_delta: float) -> void:
 	#var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if input_dir:
 		velocity.x = input_dir.x * move_speed
-		velocity.z = input_dir.y * move_speed
+		velocity.y = input_dir.y * move_speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, move_speed)
-		velocity.z = move_toward(velocity.z, 0, move_speed)
+		velocity.y = move_toward(velocity.y, 0, move_speed)
 	
-	$MeshInstance3D.mesh.material.rim = int(pulling)
 	if pulling:
 		for body in magnet_range.get_overlapping_bodies():
 			if body is MagneticObject:
+				#print("do")
 				var dir_to = global_position.direction_to(body.global_position).normalized()
 				var dist_to = global_position.distance_to(body.global_position)
 				var toward_or_away = ( 1 - 2 * int(body.positive == not positive) )
-				var power = 30/dist_to
+				var power = 10000/dist_to
 				
 				body.apply_central_force( dir_to * toward_or_away * power)
 

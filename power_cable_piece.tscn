@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://b47vq3pxs1c8s"]
+
+[ext_resource type="Script" uid="uid://bdn83kh2v2y2" path="res://power_cable_piece.gd" id="1_os067"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rftnd"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_rftnd"]
+material = SubResource("StandardMaterial3D_rftnd")
+radius = 0.1
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_os067"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_rftnd"]
+material = SubResource("StandardMaterial3D_os067")
+top_radius = 0.1
+bottom_radius = 0.1
+
+[node name="PowerCablePiece" type="MeshInstance2D"]
+mesh = SubResource("SphereMesh_rftnd")
+script = ExtResource("1_os067")
+
+[node name="Node3D" type="Node2D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance2D" parent="Node3D"]
+scale = Vector2(1, -4.371139e-08)
+mesh = SubResource("CylinderMesh_rftnd")

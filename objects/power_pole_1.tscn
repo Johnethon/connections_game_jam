@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqu38v4jtyg7s"]
+
+[ext_resource type="Script" uid="uid://bbsg8omv06al7" path="res://objects/power_pole_1.gd" id="1_52y2m"]
+[ext_resource type="PackedScene" uid="uid://ct434ubci1anv" path="res://objects/PowerCableAttachPoint.tscn" id="2_ovfef"]
+[ext_resource type="Texture2D" uid="uid://b8wj7d4n63cc6" path="res://sprites/grey_circle.png" id="3_sfufi"]
+[ext_resource type="PackedScene" uid="uid://dhvabo5lp4egj" path="res://objects/power_cable.tscn" id="4_ovfef"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5vuel"]
+radius = 13.038404
+
+[node name="PowerPole1" type="RigidBody2D"]
+script = ExtResource("1_52y2m")
+
+[node name="PowerCableAttachPoint" parent="." instance=ExtResource("2_ovfef")]
+scale = Vector2(-1.4284438, -1.423775)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+scale = Vector2(3, 3)
+texture = ExtResource("3_sfufi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5vuel")
+
+[node name="PowerCable" parent="." instance=ExtResource("4_ovfef")]
+max_spool_scale = 1.5

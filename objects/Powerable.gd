@@ -23,8 +23,11 @@ func _process(delta: float):
 	
 	if prev_power != has_power:
 		pass
-
 	
+	personal_process(delta)
+
+func personal_process(delta : float):
+	pass
 
 func connect_input(input_to_add : Powerable):
 	if not can_take_inputs:

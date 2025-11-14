@@ -1,10 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://x55yvehn6kp0"]
+[gd_scene load_steps=12 format=3 uid="uid://x55yvehn6kp0"]
 
 [ext_resource type="PackedScene" uid="uid://depor5otor04j" path="res://player/player_positive.tscn" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://bq7xhvh0tro57" path="res://player/player_negative.tscn" id="2_h2yge"]
-[ext_resource type="PackedScene" uid="uid://bc4cqt6bn6o17" path="res://objects/magnetic_object.tscn" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dhvabo5lp4egj" path="res://objects/power_cable.tscn" id="4_1bvp3"]
-[ext_resource type="PackedScene" uid="uid://ct434ubci1anv" path="res://objects/PowerCableAttachPoint.tscn" id="5_lquwl"]
+[ext_resource type="PackedScene" uid="uid://dqu38v4jtyg7s" path="res://objects/power_pole_1.tscn" id="5_lquwl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
 size = Vector2(45, 810)
@@ -35,14 +34,9 @@ scale = Vector2(1, 1e-05)
 
 [node name="PlayerPositive" parent="." instance=ExtResource("1_0xm2m")]
 position = Vector2(80, 1)
-positive = true
 
 [node name="PlayerNegative" parent="." instance=ExtResource("2_h2yge")]
 position = Vector2(-78, 1)
-
-[node name="MagneticObject" parent="." instance=ExtResource("3_h2yge")]
-position = Vector2(-79, -52)
-lock_x = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -86,11 +80,14 @@ position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_7mycd")
 debug_color = Color(0.9529412, 0, 0.54901963, 1)
 
-[node name="PowerCableAttachPoint" parent="." instance=ExtResource("5_lquwl")]
-position = Vector2(-289, 11)
-
 [node name="PowerCable" parent="." instance=ExtResource("4_1bvp3")]
 position = Vector2(-321, 102)
 
 [node name="PowerCable2" parent="." instance=ExtResource("4_1bvp3")]
 position = Vector2(-267, 102)
+
+[node name="PowerPole1" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(-219, -53)
+
+[node name="PowerPole2" parent="." instance=ExtResource("5_lquwl")]
+position = Vector2(-116, -51)

@@ -6,7 +6,7 @@ class_name Player
 @onready var magnet_range : Area2D = $magnet_range
 @onready var interact_range : Area2D = $interact_range
 
-var move_speed = 100.0
+var move_speed = 200.0
 
 var pulling : bool = false
 
@@ -42,16 +42,22 @@ func interaction_code():
 			if held_object:
 				if thing is Powerable and held_object is PowerCable:
 					
+					#Check if the target is able to take inputs
 					if not thing.can_take_inputs:
 						continue
 					
+					#Check if target already has a cable plugged in
 					var already_has_cable_input = false
 					for input in thing.power_inputs:
 						if input is PowerCable:
 							already_has_cable_input = true
 							break
-					
 					if already_has_cable_input:
+						continue
+					
+					#Check if target's parent is the held_object's parent
+					#this is to avoid plugging a power pole into itself
+					if held_object.get_parent() == thing.get_parent():
 						continue
 					
 					thing.connect_input(held_object)
@@ -69,7 +75,7 @@ func interaction_code():
 				held_object = null
 	
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -79,16 +85,14 @@ func _process(_delta: float) -> void:
 		
 	else:
 		input_dir = Input.get_vector("negative_move_left", "negative_move_right", "negative_move_up", "negative_move_down")
-	
+	input_dir = input_dir.normalized()
 	#var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if input_dir:
-		velocity.x = input_dir.x * move_speed
-		velocity.y = input_dir.y * move_speed
 		
 		last_move_dir = input_dir
-	else:
-		velocity.x = move_toward(velocity.x, 0, move_speed)
-		velocity.y = move_toward(velocity.y, 0, move_speed)
+		
+	velocity.x = move_toward(velocity.x, input_dir.x * move_speed, move_speed * delta * 5)
+	velocity.y = move_toward(velocity.y, input_dir.y * move_speed, move_speed * delta * 5)
 	
 	if pulling:
 		for body in magnet_range.get_overlapping_bodies():
@@ -97,8 +101,9 @@ func _process(_delta: float) -> void:
 				var dir_to = global_position.direction_to(body.global_position).normalized()
 				var dist_to = global_position.distance_to(body.global_position)
 				var toward_or_away = ( 1 - 2 * int(body.positive == not positive) )
-				var power = 10000/dist_to
+				var power = clamp(100/dist_to * 500, 100, 500)
+				#print(power)
+				if not body.player_close:
+					body.apply_central_force( dir_to * toward_or_away * power)
 				
-				body.apply_central_force( dir_to * toward_or_away * power)
-
 	move_and_slide()

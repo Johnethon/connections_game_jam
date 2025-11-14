@@ -3,23 +3,71 @@ class_name Player
 
 @export var positive : bool = true
 
-@onready var magnet_range : Area2D = $Area3D
+@onready var magnet_range : Area2D = $magnet_range
+@onready var interact_range : Area2D = $interact_range
+
 var move_speed = 100.0
 
 var pulling : bool = false
+
+var held_object : Interactable = null
+
+var last_move_dir : Vector2 = Vector2.UP
 
 func _input(_event: InputEvent) -> void:
 	#print(_event)
 	if positive:
 		if Input.is_action_just_pressed("positive_interact"):
-			pass
+			interaction_code()
 		if Input.is_action_just_pressed("positive_toggle_magnet"):
 			pulling = not pulling
 	else:
 		if Input.is_action_just_pressed("negative_interact"):
-			pass
+			interaction_code()
 		if Input.is_action_just_pressed("negative_toggle_magnet"):
 			pulling = not pulling
+
+func interaction_code():
+	var potential_things_to_interact_with : Array[Interactable] = []
+			
+	for area in interact_range.get_overlapping_areas():
+		#print(area)
+		if area.get_parent() is Interactable:
+			if not area.get_parent() == held_object:
+				potential_things_to_interact_with.append(area.get_parent())
+	
+	if len(potential_things_to_interact_with) > 0:
+		for thing in potential_things_to_interact_with:
+			var dir_to = global_position.direction_to(thing.global_position)
+			if held_object:
+				if thing is Powerable and held_object is PowerCable:
+					
+					if not thing.can_take_inputs:
+						continue
+					
+					var already_has_cable_input = false
+					for input in thing.power_inputs:
+						if input is PowerCable:
+							already_has_cable_input = true
+							break
+					
+					if already_has_cable_input:
+						continue
+					
+					thing.connect_input(held_object)
+					
+					held_object.attached = true
+					held_object.node_i_am_attached_to = thing
+					held_object = null
+			else:
+				thing.interact(self)
+	else:
+		if held_object:
+			if held_object is PowerCable:
+				held_object.attached = false
+				held_object.node_i_am_attached_to = null
+				held_object = null
+	
 
 func _process(_delta: float) -> void:
 	
@@ -28,6 +76,7 @@ func _process(_delta: float) -> void:
 	var input_dir := Vector2.ZERO
 	if positive:
 		input_dir = Input.get_vector("positive_move_left", "positive_move_right", "positive_move_up", "positive_move_down")
+		
 	else:
 		input_dir = Input.get_vector("negative_move_left", "negative_move_right", "negative_move_up", "negative_move_down")
 	
@@ -35,6 +84,8 @@ func _process(_delta: float) -> void:
 	if input_dir:
 		velocity.x = input_dir.x * move_speed
 		velocity.y = input_dir.y * move_speed
+		
+		last_move_dir = input_dir
 	else:
 		velocity.x = move_toward(velocity.x, 0, move_speed)
 		velocity.y = move_toward(velocity.y, 0, move_speed)

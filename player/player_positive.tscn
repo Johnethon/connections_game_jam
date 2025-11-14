@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://depor5otor04j"]
+[gd_scene load_steps=6 format=3 uid="uid://depor5otor04j"]
 
-[ext_resource type="Script" uid="uid://dya18ux1qpldn" path="res://player_positive.gd" id="1_hn50j"]
+[ext_resource type="Script" uid="uid://dya18ux1qpldn" path="res://player/player_positive.gd" id="1_hn50j"]
 [ext_resource type="Texture2D" uid="uid://upy4i26a3ioi" path="res://sprites/red_circle.png" id="2_f3ldv"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hn50j"]
@@ -8,10 +8,13 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_f3ldv"]
 radius = 2000.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_gvuf1"]
+
 [node name="PlayerPositive" type="CharacterBody2D"]
 collision_layer = 5
 collision_mask = 5
 script = ExtResource("1_hn50j")
+positive = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 3
@@ -22,8 +25,13 @@ texture = ExtResource("2_f3ldv")
 position = Vector2(0, 0.00030517578)
 shape = SubResource("CircleShape2D_hn50j")
 
-[node name="Area3D" type="Area2D" parent="."]
+[node name="magnet_range" type="Area2D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape2D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape2D" parent="magnet_range"]
 shape = SubResource("CircleShape2D_f3ldv")
 debug_color = Color(0, 0.6, 0.69803923, 0)
+
+[node name="interact_range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interact_range"]
+shape = SubResource("CircleShape2D_gvuf1")

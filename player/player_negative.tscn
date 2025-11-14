@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bq7xhvh0tro57"]
+[gd_scene load_steps=6 format=3 uid="uid://bq7xhvh0tro57"]
 
-[ext_resource type="Script" uid="uid://caws2b3rfrn1x" path="res://player_negative.gd" id="1_shhc4"]
+[ext_resource type="Script" uid="uid://caws2b3rfrn1x" path="res://player/player_negative.gd" id="1_shhc4"]
 [ext_resource type="Texture2D" uid="uid://b5q0o1gnsss2h" path="res://sprites/blue_circle.png" id="2_e53bd"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_shhc4"]
@@ -8,19 +8,22 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_swo01"]
 radius = 2000.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_e53bd"]
+radius = 12.0
+
 [node name="PlayerNegative" type="CharacterBody2D"]
 collision_layer = 5
 collision_mask = 5
 script = ExtResource("1_shhc4")
 positive = false
 
-[node name="CollisionShape3D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 0.0009765625)
 shape = SubResource("CircleShape2D_shhc4")
 
-[node name="Area3D" type="Area2D" parent="."]
+[node name="magnet_range" type="Area2D" parent="."]
 
-[node name="CollisionShape3D" type="CollisionShape2D" parent="Area3D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="magnet_range"]
 shape = SubResource("CircleShape2D_swo01")
 debug_color = Color(0, 0.6, 0.69803923, 0)
 
@@ -28,3 +31,10 @@ debug_color = Color(0, 0.6, 0.69803923, 0)
 texture_filter = 3
 scale = Vector2(2.5, 2.5)
 texture = ExtResource("2_e53bd")
+
+[node name="interact_range" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interact_range"]
+shape = SubResource("CircleShape2D_e53bd")

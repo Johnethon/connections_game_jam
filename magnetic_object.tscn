@@ -7,7 +7,7 @@
 
 [node name="MagneticObject" type="RigidBody2D"]
 gravity_scale = 0.0
-linear_damp = 2.0
+linear_damp = 1.0
 script = ExtResource("1_xu8qx")
 
 [node name="CollisionShape3D" type="CollisionShape2D" parent="."]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhvabo5lp4egj"]
+
+[ext_resource type="Script" uid="uid://bs850mfu7wllk" path="res://power_cable.gd" id="1_m78di"]
+
+[node name="PowerCable" type="Node3D"]
+script = ExtResource("1_m78di")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="."]

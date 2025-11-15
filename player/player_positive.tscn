@@ -9,6 +9,7 @@
 radius = 2000.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_gvuf1"]
+radius = 12.0
 
 [node name="PlayerPositive" type="CharacterBody2D"]
 collision_layer = 5
@@ -31,6 +32,8 @@ shape = SubResource("CircleShape2D_f3ldv")
 debug_color = Color(0, 0.6, 0.69803923, 0)
 
 [node name="interact_range" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interact_range"]
 shape = SubResource("CircleShape2D_gvuf1")

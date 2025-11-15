@@ -1,3 +1,31 @@
-[gd_scene format=3 uid="uid://66upyitbgrt7"]
+[gd_scene load_steps=4 format=3 uid="uid://66upyitbgrt7"]
+
+[ext_resource type="Script" uid="uid://bveleim50gt8m" path="res://objects/door.gd" id="1_566yj"]
+[ext_resource type="Texture2D" uid="uid://bu6kctftacoaf" path="res://sprites/black_square.png" id="2_j7xx1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_566yj"]
+size = Vector2(8, 8)
 
 [node name="Door" type="Node2D"]
+script = ExtResource("1_566yj")
+power_source = false
+
+[node name="left_door" type="Sprite2D" parent="."]
+position = Vector2(-16, 0)
+scale = Vector2(4, 2)
+texture = ExtResource("2_j7xx1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="left_door"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="left_door/StaticBody2D"]
+shape = SubResource("RectangleShape2D_566yj")
+
+[node name="right_door" type="Sprite2D" parent="."]
+position = Vector2(16, 0)
+scale = Vector2(4, 2)
+texture = ExtResource("2_j7xx1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="right_door"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="right_door/StaticBody2D"]
+shape = SubResource("RectangleShape2D_566yj")

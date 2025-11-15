@@ -29,6 +29,8 @@ func _ready():
 	
 	if node_i_am_attached_to != null:
 		attached = true
+		if node_i_am_attached_to is Powerable:
+			node_i_am_attached_to.connect_input(self)
 	
 	if get_parent() is RigidBody2D:
 		cable_spool.get_child(0).get_child(0).disabled = true

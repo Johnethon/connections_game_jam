@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bduusyvb7wj2s"
-path="res://.godot/imported/cell_v1_walk.png-142c332a6136c07351b80a56e71d582f.ctex"
+uid="uid://bydfh0ocqh5mr"
+path="res://.godot/imported/couchAsset.png-9bbffd028605dff8a0d3642fc3a866e3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/player/cell_v1_walk.png"
-dest_files=["res://.godot/imported/cell_v1_walk.png-142c332a6136c07351b80a56e71d582f.ctex"]
+source_file="res://sprites/assetsGameJamFall2025/couchAsset.png"
+dest_files=["res://.godot/imported/couchAsset.png-9bbffd028605dff8a0d3642fc3a866e3.ctex"]
 
 [params]
 

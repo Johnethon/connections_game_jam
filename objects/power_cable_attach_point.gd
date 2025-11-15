@@ -6,4 +6,4 @@ func interact(node_interacting_with_me : Node2D):
 		for input in power_inputs:
 			if input is PowerCable:
 				input.interact(node_interacting_with_me)
-				
+	

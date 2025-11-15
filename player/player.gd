@@ -15,7 +15,7 @@ var held_object : Interactable = null
 var last_move_dir : Vector2 = Vector2.UP
 
 func _input(_event: InputEvent) -> void:
-	#print(_event)
+	#print(Input.is_action_just_pressed("positive_interact"))
 	if positive:
 		if Input.is_action_just_pressed("positive_interact"):
 			interaction_code()
@@ -43,7 +43,7 @@ func interaction_code():
 				if thing is Powerable and held_object is PowerCable:
 					
 					#Check if the target is able to take inputs
-					if not thing.can_take_inputs:
+					if not thing.can_take_new_inputs or not thing.can_have_power_cable_attached:
 						continue
 					
 					#Check if target already has a cable plugged in
@@ -101,7 +101,7 @@ func _process(delta: float) -> void:
 				var dir_to = global_position.direction_to(body.global_position).normalized()
 				var dist_to = global_position.distance_to(body.global_position)
 				var toward_or_away = ( 1 - 2 * int(body.positive == not positive) )
-				var power = clamp(100/dist_to * 500, 100, 500)
+				var power = clamp(100/dist_to * 300, 100, 300)
 				#print(power)
 				if not body.player_close:
 					body.apply_central_force( dir_to * toward_or_away * power)

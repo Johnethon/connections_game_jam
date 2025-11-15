@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rrctmuy8qns5"
-path="res://.godot/imported/navy_square.png-1e6e6b2c9ad029e4ee250a29806b75ef.ctex"
+uid="uid://dm6284lrbmd1n"
+path="res://.godot/imported/Frame 8.png-1c69047ac32ad04e68087212819b00eb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/navy_square.png"
-dest_files=["res://.godot/imported/navy_square.png-1e6e6b2c9ad029e4ee250a29806b75ef.ctex"]
+source_file="res://sprites/Frame 8.png"
+dest_files=["res://.godot/imported/Frame 8.png-1c69047ac32ad04e68087212819b00eb.ctex"]
 
 [params]
 

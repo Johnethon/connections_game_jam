@@ -39,7 +39,12 @@ func _ready():
 	new_col_box.scale *= 1.3
 	avoid_collision_box.body_entered.connect(stop_moving)
 	avoid_collision_box.body_exited.connect(start_moving)
-
+	
+	personal_ready()
+	
+func personal_ready():
+	pass
+	
 var player_close = false
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	

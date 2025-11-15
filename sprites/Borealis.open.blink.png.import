@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rrctmuy8qns5"
-path="res://.godot/imported/navy_square.png-1e6e6b2c9ad029e4ee250a29806b75ef.ctex"
+uid="uid://dytnc4mtlvlp"
+path="res://.godot/imported/Borealis.open.blink.png-598e453b9fe7365a250ce41ca8f00d5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/navy_square.png"
-dest_files=["res://.godot/imported/navy_square.png-1e6e6b2c9ad029e4ee250a29806b75ef.ctex"]
+source_file="res://sprites/Borealis.open.blink.png"
+dest_files=["res://.godot/imported/Borealis.open.blink.png-598e453b9fe7365a250ce41ca8f00d5b.ctex"]
 
 [params]
 

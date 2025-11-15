@@ -10,6 +10,10 @@ radius = 13.038404
 
 [node name="PowerPole1" type="RigidBody2D"]
 script = ExtResource("1_52y2m")
+positive = null
+both = null
+lock_x = null
+lock_y = null
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 3

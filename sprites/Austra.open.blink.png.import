@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rrctmuy8qns5"
-path="res://.godot/imported/navy_square.png-1e6e6b2c9ad029e4ee250a29806b75ef.ctex"
+uid="uid://cuhf0etcxdfpw"
+path="res://.godot/imported/Austra.open.blink.png-608d323da57e8079e02f31baf647cf5b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/navy_square.png"
-dest_files=["res://.godot/imported/navy_square.png-1e6e6b2c9ad029e4ee250a29806b75ef.ctex"]
+source_file="res://sprites/Austra.open.blink.png"
+dest_files=["res://.godot/imported/Austra.open.blink.png-608d323da57e8079e02f31baf647cf5b.ctex"]
 
 [params]
 

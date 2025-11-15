@@ -1,12 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://x55yvehn6kp0"]
 
 [ext_resource type="Script" uid="uid://lvmbv3ubq5gt" path="res://main.gd" id="1_0xm2m"]
-[ext_resource type="PackedScene" uid="uid://c5vw0i55t4eua" path="res://levels/level_base.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://71v3b5vfemao" path="res://levels/introlevel.tscn" id="2_0xm2m"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" groups=["main"]]
 script = ExtResource("1_0xm2m")
 
 [node name="Camera3D" type="Camera2D" parent="."]
 scale = Vector2(1, 1e-05)
 
-[node name="LevelBase" parent="." instance=ExtResource("1_ig7tw")]
+[node name="transition_thing" type="Node2D" parent="."]
+
+[node name="Introlevel" parent="." groups=["main"] instance=ExtResource("2_0xm2m")]

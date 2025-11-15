@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rrctmuy8qns5"
-path="res://.godot/imported/navy_square.png-1e6e6b2c9ad029e4ee250a29806b75ef.ctex"
+uid="uid://dvb3j7bcd3f2s"
+path="res://.godot/imported/tv_router_table.png-e549161e66b958b27e43bec4848de262.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/navy_square.png"
-dest_files=["res://.godot/imported/navy_square.png-1e6e6b2c9ad029e4ee250a29806b75ef.ctex"]
+source_file="res://sprites/tv_router_table.png"
+dest_files=["res://.godot/imported/tv_router_table.png-e549161e66b958b27e43bec4848de262.ctex"]
 
 [params]
 

@@ -8,12 +8,9 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_5vuel"]
 radius = 13.038404
 
-[node name="PowerPole1" type="RigidBody2D"]
+[node name="PowerPole1" type="RigidBody2D" node_paths=PackedStringArray("power_cable")]
 script = ExtResource("1_52y2m")
-positive = null
-both = null
-lock_x = null
-lock_y = null
+power_cable = NodePath("PowerCable")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 3
@@ -24,7 +21,7 @@ texture = ExtResource("3_sfufi")
 shape = SubResource("CircleShape2D_5vuel")
 
 [node name="PowerCable" parent="." node_paths=PackedStringArray("power_inputs") instance=ExtResource("4_ovfef")]
-max_spool_scale = 1.5
+max_spool_scale = 1000.0
 power_source = false
 power_inputs = [NodePath("../PowerCableAttachPoint")]
 

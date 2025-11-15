@@ -14,7 +14,13 @@ var held_object : Interactable = null
 
 var last_move_dir : Vector2 = Vector2.UP
 
+@onready var main : Main = get_tree().get_first_node_in_group("main")
+
+var in_cutscene : bool = false
+
 func _input(_event: InputEvent) -> void:
+	if in_cutscene:
+		return
 	#print(Input.is_action_just_pressed("positive_interact"))
 	if positive:
 		if Input.is_action_just_pressed("positive_interact"):
@@ -26,6 +32,15 @@ func _input(_event: InputEvent) -> void:
 			interaction_code()
 		if Input.is_action_just_pressed("negative_toggle_magnet"):
 			pulling = not pulling
+	
+	
+		if Input.is_action_just_pressed("pause"):
+			main.pause_game()
+		
+		if Input.is_action_just_pressed("reset"):
+			main.reset_cur_level()
+		elif not Input.is_action_just_released("reset"):
+			main.resets_in_a_row = 0
 
 func interaction_code():
 	var potential_things_to_interact_with : Array[Interactable] = []
@@ -38,7 +53,6 @@ func interaction_code():
 	
 	if len(potential_things_to_interact_with) > 0:
 		for thing in potential_things_to_interact_with:
-			var dir_to = global_position.direction_to(thing.global_position)
 			if held_object:
 				if thing is Powerable and held_object is PowerCable:
 					
@@ -76,6 +90,9 @@ func interaction_code():
 	
 
 func _process(delta: float) -> void:
+	
+	if in_cutscene:
+		return
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.

@@ -14,16 +14,24 @@ func _ready():
 
 func _process(delta : float):
 	if not level_over and (negative_in_win_spot and positive_in_win_spot):
-		pass
+		level_over = true
+		level_end()
 
 func negative_spot_entered(body : Node2D):
 	if body is Player:
-		pass
-	
+		negative_in_win_spot = true
+
+func negative_spot_exited(body : Node2D):
+	if body is Player:
+		negative_in_win_spot= false
 
 func positive_spot_entered(body : Node2D):
 	if body is Player:
-		pass
+		positive_in_win_spot = true
+
+func positive_spot_exited(body : Node2D):
+	if body is Player:
+		positive_in_win_spot = false
 
 func level_end():
 	var main = get_tree().get_first_node_in_group("main")

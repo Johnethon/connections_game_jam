@@ -16,11 +16,11 @@ var last_move_dir : Vector2 = Vector2.UP
 
 @onready var main : Main = get_tree().get_first_node_in_group("main")
 
-var in_cutscene : bool = false
-
 func _input(_event: InputEvent) -> void:
-	if in_cutscene:
+	
+	if main.in_cutscene:
 		return
+	
 	#print(Input.is_action_just_pressed("positive_interact"))
 	if positive:
 		if Input.is_action_just_pressed("positive_interact"):
@@ -32,8 +32,7 @@ func _input(_event: InputEvent) -> void:
 			interaction_code()
 		if Input.is_action_just_pressed("negative_toggle_magnet"):
 			pulling = not pulling
-	
-	
+		
 		if Input.is_action_just_pressed("pause"):
 			main.pause_game()
 		
@@ -91,7 +90,7 @@ func interaction_code():
 
 func _process(delta: float) -> void:
 	
-	if in_cutscene:
+	if main.in_cutscene:
 		return
 	
 	# Get the input direction and handle the movement/deceleration.

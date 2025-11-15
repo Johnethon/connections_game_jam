@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c5vw0i55t4eua"]
+[gd_scene load_steps=18 format=3 uid="uid://c5vw0i55t4eua"]
 
 [ext_resource type="Script" uid="uid://b0rs52ks47ep8" path="res://levels/level.gd" id="1_hk6b7"]
 [ext_resource type="PackedScene" uid="uid://bq7xhvh0tro57" path="res://player/player_negative.tscn" id="2_vmt1o"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dfymbd23rgqro" path="res://sprites/dark_gray_square.png" id="8_p3adb"]
 [ext_resource type="PackedScene" uid="uid://5mnvu432foqy" path="res://traps/spike.tscn" id="10_5f4n4"]
 [ext_resource type="PackedScene" uid="uid://cdu45bpu0olui" path="res://traps/turret.tscn" id="11_twsyw"]
+[ext_resource type="PackedScene" uid="uid://cs3sfmuseibn" path="res://traps/bee_hive.tscn" id="12_6hf62"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gxxp6"]
 size = Vector2(45, 810)
@@ -192,5 +193,9 @@ scale = Vector2(20, 20)
 
 [node name="Turret" parent="." node_paths=PackedStringArray("power_inputs") instance=ExtResource("11_twsyw")]
 position = Vector2(111, -195)
-power_source = false
 power_inputs = [NodePath("../wall3/PowerCableAttachPoint2"), NodePath("../wall/PowerCableAttachPoint")]
+
+[node name="BeeHive" parent="." instance=ExtResource("12_6hf62")]
+position = Vector2(179, 39)
+scale = Vector2(2, 2)
+number_of_bees = 20

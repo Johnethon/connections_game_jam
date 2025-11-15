@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfvvec5a1nvxs"]
+
+[ext_resource type="Script" uid="uid://dvsjc6eji2bx8" path="res://bee.gd" id="1_svs68"]
+[ext_resource type="Texture2D" uid="uid://dsvwihhtcxqpw" path="res://sprites/black_circle.png" id="2_563kq"]
+[ext_resource type="Script" uid="uid://cws2hhpj2vvre" path="res://obstacle.gd" id="3_ey0hq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2dkwo"]
+radius = 4.1231055
+
+[node name="Bee" type="CharacterBody2D"]
+script = ExtResource("1_svs68")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_563kq")
+
+[node name="Obstacle2D" type="Node" parent="." node_paths=PackedStringArray("damage_area")]
+script = ExtResource("3_ey0hq")
+damage_area = NodePath("../Area2D")
+metadata/_custom_type_script = "uid://cws2hhpj2vvre"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_2dkwo")

@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://cs3sfmuseibn"]
+
+[ext_resource type="Script" uid="uid://hpw6p8jt0ssr" path="res://traps/bee_hive.gd" id="1_vj4vt"]
+[ext_resource type="Texture2D" uid="uid://dsvwihhtcxqpw" path="res://sprites/black_circle.png" id="2_4it53"]
+[ext_resource type="PackedScene" uid="uid://cfvvec5a1nvxs" path="res://traps/bee.tscn" id="2_twtdy"]
+[ext_resource type="Script" uid="uid://dqdp1mdiw048x" path="res://traps/bee_handler.gd" id="3_4it53"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_twtdy"]
+radius = 4.1231055
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4it53"]
+radius = 58.53144
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_73345"]
+radius = 176.61963
+
+[node name="BeeHive" type="CharacterBody2D"]
+scale = Vector2(10, 10)
+script = ExtResource("1_vj4vt")
+bee = ExtResource("2_twtdy")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_4it53")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_twtdy")
+
+[node name="BeeHandler" type="Node2D" parent="."]
+script = ExtResource("3_4it53")
+
+[node name="AggroActivator" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroActivator"]
+shape = SubResource("CircleShape2D_4it53")
+
+[node name="AggroDeactivator" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AggroDeactivator"]
+shape = SubResource("CircleShape2D_73345")
+
+[connection signal="body_entered" from="AggroActivator" to="BeeHandler" method="_on_aggro_activator_body_entered"]
+[connection signal="body_exited" from="AggroDeactivator" to="BeeHandler" method="_on_aggro_deactivator_body_exited"]

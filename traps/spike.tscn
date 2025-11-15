@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://5mnvu432foqy"]
 
-[ext_resource type="Script" uid="uid://cws2hhpj2vvre" path="res://obstacle.gd" id="1_nylv1"]
+[ext_resource type="Script" uid="uid://cws2hhpj2vvre" path="res://traps/obstacle.gd" id="1_nylv1"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_ux57o"]
 

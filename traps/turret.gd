@@ -45,6 +45,7 @@ func _ready() -> void:
 # PROCESS LOOP
 # ---------------------------------
 func _process(delta: float) -> void:
+	super(delta)
 	match current_state:
 		States.IDLE:
 			_state_idle(delta)

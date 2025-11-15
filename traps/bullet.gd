@@ -9,6 +9,8 @@ func _process(delta):
 	lifetime -= delta
 	if lifetime <= 0:
 		queue_free()
+	if is_on_floor() or is_on_ceiling() or is_on_wall():
+		queue_free()
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:

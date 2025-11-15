@@ -23,6 +23,7 @@ window/size/borderless=true
 [global_group]
 
 main=""
+players=""
 
 [input]
 

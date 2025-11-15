@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://5mnvu432foqy"]
+
+[ext_resource type="Script" uid="uid://cws2hhpj2vvre" path="res://obstacle.gd" id="1_nylv1"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_ux57o"]
+
+[node name="Spike" type="StaticBody2D" node_paths=PackedStringArray("damage_area")]
+scale = Vector2(10, 10)
+collision_layer = 5
+collision_mask = 5
+script = ExtResource("1_nylv1")
+damage_area = NodePath("Area2D")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+mesh = SubResource("PrismMesh_ux57o")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-0.4, -0.4, 0.4, -0.4, 0, 0.4)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(-0.5, -0.5, 0.5, -0.5, 0, 0.5)

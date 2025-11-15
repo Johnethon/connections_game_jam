@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnb4t20jxr5sn"]
+
+[ext_resource type="Script" uid="uid://dt3c84dr2ov8x" path="res://bullet.gd" id="1_aqeil"]
+[ext_resource type="Script" uid="uid://cws2hhpj2vvre" path="res://obstacle.gd" id="2_4issv"]
+[ext_resource type="Texture2D" uid="uid://dsvwihhtcxqpw" path="res://sprites/black_circle.png" id="3_7601d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aqeil"]
+radius = 5.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jb1xh"]
+radius = 4.0
+
+[node name="Bullet" type="CharacterBody2D"]
+script = ExtResource("1_aqeil")
+
+[node name="Obstacle2D" type="Node" parent="." node_paths=PackedStringArray("damage_area")]
+script = ExtResource("2_4issv")
+damage_area = NodePath("../Area2D")
+metadata/_custom_type_script = "uid://cws2hhpj2vvre"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_aqeil")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_jb1xh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_7601d")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

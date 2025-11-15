@@ -123,3 +123,6 @@ func _process(delta: float) -> void:
 					body.apply_central_force( dir_to * toward_or_away * power)
 				
 	move_and_slide()
+
+func die() -> void:
+	print("dead")

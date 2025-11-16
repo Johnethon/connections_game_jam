@@ -16,6 +16,8 @@ var ground_cables_and_their_inputs = {}
 @export var power_indicator_on : Sprite2D = null
 @export var power_indicator_off : Sprite2D = null
 
+@export var reverse : bool = false
+
 func _ready():
 	var main : Main = get_tree().get_first_node_in_group("main")
 	for input in power_inputs:
@@ -58,11 +60,18 @@ func _process(delta: float):
 	for cable in ground_cables_and_their_inputs:
 		cable.get_child(0).get_child(0).visible = ground_cables_and_their_inputs[cable].has_power or ground_cables_and_their_inputs[cable].power_source
 	
-	if prev_power != has_power:
-		if has_power:
-			given_power()
-		else:
-			removed_power()
+	if not reverse:
+		if prev_power != has_power:
+			if has_power:
+				given_power()
+			else:
+				removed_power()
+	else:
+		if prev_power != has_power:
+			if has_power:
+				removed_power()
+			else:
+				given_power()
 	
 	if power_indicator_on != null:
 		power_indicator_on.visible = (has_power or power_source)

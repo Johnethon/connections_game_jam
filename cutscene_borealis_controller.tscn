@@ -1,0 +1,19 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbvx7cm62veq7"]
+
+[ext_resource type="Script" uid="uid://cgpjc7u5suicg" path="res://cutscene_character_controller.gd" id="1_3nvow"]
+[ext_resource type="Texture2D" uid="uid://bkj5j5oym47eu" path="res://sprites/characters/Borealis.silent.png" id="2_t5hx0"]
+[ext_resource type="Texture2D" uid="uid://baum2jkc5xsr" path="res://sprites/characters/Borealis.open.png" id="3_bg6fc"]
+[ext_resource type="Texture2D" uid="uid://dgrsmfo602l7v" path="res://sprites/characters/Borealis.closed.blink.png" id="4_etnnq"]
+[ext_resource type="Texture2D" uid="uid://dytnc4mtlvlp" path="res://sprites/characters/Borealis.open.blink.png" id="5_cqtbb"]
+
+[node name="CutsceneBorealisController" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_3nvow")
+mouth_shut_eyes_open = ExtResource("2_t5hx0")
+mouth_open_eyes_open = ExtResource("3_bg6fc")
+mouth_shut_eyes_shut = ExtResource("4_etnnq")
+mouth_open_eyes_shut = ExtResource("5_cqtbb")
+metadata/_custom_type_script = "uid://cgpjc7u5suicg"

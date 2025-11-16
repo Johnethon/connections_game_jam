@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://c5vw0i55t4eua"]
+[gd_scene load_steps=25 format=4 uid="uid://c5vw0i55t4eua"]
 
 [ext_resource type="Script" uid="uid://cdg40v7kh8p5u" path="res://levels/level_base.gd" id="1_gei2l"]
 [ext_resource type="Texture2D" uid="uid://bu6kctftacoaf" path="res://sprites/temps/black_square.png" id="2_kuw7y"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://3ri045m4k1mk" path="res://sprites/tile sets/router_walls_big.png" id="13_kuw7y"]
 [ext_resource type="Texture2D" uid="uid://upy4i26a3ioi" path="res://sprites/temps/red_circle.png" id="14_gei2l"]
 [ext_resource type="Texture2D" uid="uid://c2n5v1wmdmpty" path="res://sprites/tile sets/Chiptile.png" id="14_ls7uu"]
+[ext_resource type="AudioStream" uid="uid://cigcdki3bk4pd" path="res://Sounds/Music/promises.mp3" id="15_vy5pf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cnvg6"]
 size = Vector2(22, 10)
@@ -261,3 +262,10 @@ texture = ExtResource("12_kuw7y")
 [node name="positive_in_exit" type="Sprite2D" parent="positive_exit_indicator"]
 visible = false
 texture = ExtResource("14_gei2l")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_vy5pf")
+volume_db = -12.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true

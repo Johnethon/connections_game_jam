@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://x55yvehn6kp0"]
+[gd_scene load_steps=36 format=3 uid="uid://x55yvehn6kp0"]
 
 [ext_resource type="Script" uid="uid://lvmbv3ubq5gt" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://c5vw0i55t4eua" path="res://levels/level_base.tscn" id="1_ig7tw"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b4wll3ltc5vvk" path="res://UI/credits.tscn" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://71v3b5vfemao" path="res://levels/introlevel.tscn" id="6_kek77"]
 [ext_resource type="PackedScene" uid="uid://cvg4x5xajvf31" path="res://levels/level_2_power_poles.tscn" id="7_5vw27"]
+[ext_resource type="AudioStream" uid="uid://b1nn3f71bg867" path="res://Sounds/Music/slowerCutScene.mp3" id="10_4c57u"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lquwl"]
 atlas = ExtResource("3_h2yge")
@@ -222,5 +223,12 @@ animation = &"fade_to_black"
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+process_mode = 3
+stream = ExtResource("10_4c57u")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
 
 [connection signal="animation_finished" from="CanvasLayer/transition_anim" to="." method="_on_transition_anim_animation_finished"]

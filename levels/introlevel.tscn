@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://71v3b5vfemao"]
+[gd_scene load_steps=23 format=3 uid="uid://71v3b5vfemao"]
 
 [ext_resource type="Texture2D" uid="uid://4jyrimrn8rad" path="res://sprites/assetsGameJamFall2025/bottomLeftCorner.png" id="1_j1a1x"]
 [ext_resource type="Script" uid="uid://dhjo70jnet1nl" path="res://levels/introlevel.gd" id="1_ob0d1"]
@@ -13,8 +13,6 @@
 [ext_resource type="Texture2D" uid="uid://duf335wf5330b" path="res://sprites/assetsGameJamFall2025/bottomRightCorner.png" id="11_sxf0a"]
 [ext_resource type="Texture2D" uid="uid://bydfh0ocqh5mr" path="res://sprites/assetsGameJamFall2025/couchAsset.png" id="12_o6sql"]
 [ext_resource type="Texture2D" uid="uid://d2uu62m4sgyqf" path="res://sprites/assetsGameJamFall2025/real_right_door_wall.png" id="13_fkn6u"]
-[ext_resource type="Texture2D" uid="uid://b2nfhvafhfd2o" path="res://sprites/cutscene_textboxes/lvl1_Frame 1.png" id="13_yjk4n"]
-[ext_resource type="Texture2D" uid="uid://yahgnwxfgoog" path="res://sprites/cutscene_textboxes/Frame 2.png" id="14_oipij"]
 [ext_resource type="Texture2D" uid="uid://rrctmuy8qns5" path="res://sprites/temps/navy_square.png" id="15_oq854"]
 [ext_resource type="Texture2D" uid="uid://o85fro5jiidu" path="res://sprites/assetsGameJamFall2025/woodTile.png" id="15_yjk4n"]
 [ext_resource type="Texture2D" uid="uid://7ob7i0d5v7xt" path="res://sprites/assetsGameJamFall2025/squareRug.png" id="16_ob0d1"]
@@ -22,22 +20,8 @@
 [ext_resource type="Texture2D" uid="uid://chjvts1j6ynfy" path="res://sprites/assetsGameJamFall2025/potted_plant.png" id="18_ow10w"]
 [ext_resource type="Texture2D" uid="uid://dvb3j7bcd3f2s" path="res://sprites/tv_router_table.png" id="19_b5bl4"]
 [ext_resource type="Texture2D" uid="uid://bilfybiwpcmip" path="res://sprites/tv_router_table_happi.png" id="20_nwoxp"]
-[ext_resource type="Texture2D" uid="uid://chj31dmlajviv" path="res://sprites/cutscene_textboxes/Frame 3.png" id="21_1n1s2"]
 [ext_resource type="Texture2D" uid="uid://qarulfpgdxix" path="res://sprites/tv_router_table_sadd.png" id="21_xkn8y"]
-[ext_resource type="Texture2D" uid="uid://c4tp5g8271lfp" path="res://sprites/cutscene_textboxes/Frame 4.png" id="22_xfe0i"]
-[ext_resource type="Texture2D" uid="uid://bpl2e7kmiwx77" path="res://sprites/cutscene_textboxes/Frame 5.png" id="23_0gs2e"]
-[ext_resource type="Texture2D" uid="uid://c4jffqvoa6hll" path="res://sprites/cutscene_textboxes/Frame 6.png" id="24_sld57"]
-[ext_resource type="Texture2D" uid="uid://clty8twdlv0v8" path="res://sprites/cutscene_textboxes/Frame 7.png" id="25_a2c0c"]
-[ext_resource type="Texture2D" uid="uid://dm6284lrbmd1n" path="res://sprites/cutscene_textboxes/Frame 8.png" id="26_0i7pk"]
-[ext_resource type="Texture2D" uid="uid://u46wh5hnvpvu" path="res://sprites/cutscene_textboxes/Frame 9.png" id="27_gq2nv"]
-[ext_resource type="Texture2D" uid="uid://bkj5j5oym47eu" path="res://sprites/characters/Borealis.silent.png" id="28_0i7pk"]
-[ext_resource type="Texture2D" uid="uid://baum2jkc5xsr" path="res://sprites/characters/Borealis.open.png" id="29_gq2nv"]
-[ext_resource type="Texture2D" uid="uid://dgrsmfo602l7v" path="res://sprites/characters/Borealis.closed.blink.png" id="30_tymxx"]
-[ext_resource type="Texture2D" uid="uid://dytnc4mtlvlp" path="res://sprites/characters/Borealis.open.blink.png" id="31_ltrbc"]
-[ext_resource type="Texture2D" uid="uid://dv8t4737p5u26" path="res://sprites/characters/Austra.blink.png" id="32_b5bl4"]
-[ext_resource type="Texture2D" uid="uid://cuhf0etcxdfpw" path="res://sprites/characters/Austra.open.blink.png" id="34_b63kj"]
-[ext_resource type="Texture2D" uid="uid://cvtcoytv54j7q" path="res://sprites/characters/Austra.open.png" id="35_nwoxp"]
-[ext_resource type="Texture2D" uid="uid://cao3c8fcm8e8g" path="res://sprites/characters/Austra.silent.png" id="36_xkn8y"]
+[ext_resource type="PackedScene" uid="uid://pqbcocw8lhnv" path="res://Cutscenes/LivingRoomCutscene.tscn" id="22_har3p"]
 
 [node name="Introlevel" type="Node2D"]
 script = ExtResource("1_ob0d1")
@@ -390,86 +374,4 @@ texture = ExtResource("21_xkn8y")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="Frame1" type="Sprite2D" parent="."]
-texture_filter = 3
-position = Vector2(258, -200)
-scale = Vector2(0.30582923, 0.30582923)
-texture = ExtResource("13_yjk4n")
-
-[node name="Frame2" type="Sprite2D" parent="."]
-texture_filter = 3
-position = Vector2(258, -200)
-scale = Vector2(0.30582923, 0.30582923)
-texture = ExtResource("14_oipij")
-
-[node name="Frame3" type="Sprite2D" parent="."]
-texture_filter = 3
-position = Vector2(258, -200)
-scale = Vector2(0.30582923, 0.30582923)
-texture = ExtResource("21_1n1s2")
-
-[node name="Frame4" type="Sprite2D" parent="."]
-texture_filter = 3
-position = Vector2(258, -200)
-scale = Vector2(0.30582923, 0.30582923)
-texture = ExtResource("22_xfe0i")
-
-[node name="Frame5" type="Sprite2D" parent="."]
-texture_filter = 3
-position = Vector2(258, -200)
-scale = Vector2(0.30582923, 0.30582923)
-texture = ExtResource("23_0gs2e")
-
-[node name="Frame6" type="Sprite2D" parent="."]
-texture_filter = 3
-position = Vector2(258, -200)
-scale = Vector2(0.30582923, 0.30582923)
-texture = ExtResource("24_sld57")
-
-[node name="Frame7" type="Sprite2D" parent="."]
-texture_filter = 3
-position = Vector2(258, -200)
-scale = Vector2(0.30582923, 0.30582923)
-texture = ExtResource("25_a2c0c")
-
-[node name="Frame8" type="Sprite2D" parent="."]
-texture_filter = 3
-position = Vector2(258, -200)
-scale = Vector2(0.30582923, 0.30582923)
-texture = ExtResource("26_0i7pk")
-
-[node name="Frame9" type="Sprite2D" parent="."]
-texture_filter = 3
-position = Vector2(258, -200)
-scale = Vector2(0.30582923, 0.30582923)
-texture = ExtResource("27_gq2nv")
-
-[node name="borealis" type="Node2D" parent="."]
-visible = false
-
-[node name="Borealis_silent" type="Sprite2D" parent="borealis"]
-texture = ExtResource("28_0i7pk")
-
-[node name="Borealis_open" type="Sprite2D" parent="borealis"]
-texture = ExtResource("29_gq2nv")
-
-[node name="Borealis_closed_blink" type="Sprite2D" parent="borealis"]
-texture = ExtResource("30_tymxx")
-
-[node name="Borealis_open_blink" type="Sprite2D" parent="borealis"]
-texture = ExtResource("31_ltrbc")
-
-[node name="austra" type="Node2D" parent="."]
-visible = false
-
-[node name="Austra_blink" type="Sprite2D" parent="austra"]
-texture = ExtResource("32_b5bl4")
-
-[node name="Austra_open_blink" type="Sprite2D" parent="austra"]
-texture = ExtResource("34_b63kj")
-
-[node name="Austra_open" type="Sprite2D" parent="austra"]
-texture = ExtResource("35_nwoxp")
-
-[node name="Austra_silent" type="Sprite2D" parent="austra"]
-texture = ExtResource("36_xkn8y")
+[node name="LivingroomCutscene" parent="." instance=ExtResource("22_har3p")]

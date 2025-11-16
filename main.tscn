@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://x55yvehn6kp0"]
+[gd_scene load_steps=35 format=3 uid="uid://x55yvehn6kp0"]
 
 [ext_resource type="Script" uid="uid://lvmbv3ubq5gt" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://c5vw0i55t4eua" path="res://levels/level_base.tscn" id="1_ig7tw"]
@@ -7,6 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://bp62kvs7im5oy" path="res://sprites/transition_anim.png" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://drefe5ii1ns22" path="res://UI/level_select.tscn" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://b4wll3ltc5vvk" path="res://UI/credits.tscn" id="5_272bh"]
+[ext_resource type="PackedScene" uid="uid://71v3b5vfemao" path="res://levels/introlevel.tscn" id="6_kek77"]
+[ext_resource type="PackedScene" uid="uid://cvg4x5xajvf31" path="res://levels/level_2_power_poles.tscn" id="7_5vw27"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lquwl"]
 atlas = ExtResource("3_h2yge")
@@ -198,7 +200,7 @@ pause_menu = ExtResource("2_lquwl")
 level_select_menu = ExtResource("4_7mycd")
 credits_menu = ExtResource("5_272bh")
 cur_menu = NodePath("CanvasLayer/MainMenu")
-levels = Array[PackedScene]([ExtResource("1_ig7tw"), ExtResource("1_ig7tw"), ExtResource("1_ig7tw")])
+levels = Array[PackedScene]([ExtResource("6_kek77"), ExtResource("1_ig7tw"), ExtResource("7_5vw27")])
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -216,5 +218,9 @@ sprite_frames = SubResource("SpriteFrames_0xm2m")
 animation = &"fade_to_black"
 
 [node name="MainMenu" parent="CanvasLayer" instance=ExtResource("3_1bvp3")]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [connection signal="animation_finished" from="CanvasLayer/transition_anim" to="." method="_on_transition_anim_animation_finished"]

@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://depor5otor04j"]
+[gd_scene load_steps=11 format=3 uid="uid://depor5otor04j"]
 
 [ext_resource type="Script" uid="uid://dya18ux1qpldn" path="res://player/player_positive.gd" id="1_hn50j"]
+[ext_resource type="Texture2D" uid="uid://upy4i26a3ioi" path="res://sprites/temps/red_circle.png" id="2_f3ldv"]
 [ext_resource type="Texture2D" uid="uid://bcnauren5j15x" path="res://sprites/characters/SpriteRed1.png" id="2_scfcr"]
 [ext_resource type="Texture2D" uid="uid://ct7oirslgjd0h" path="res://sprites/characters/SpriteRed2.png" id="3_yllwl"]
 [ext_resource type="Texture2D" uid="uid://b4frfw7v17is1" path="res://sprites/characters/SpriteRed3.png" id="4_oeana"]
@@ -49,6 +50,13 @@ y_sort_enabled = true
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("1_hn50j")
+
+[node name="magnet_aura" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.21176471)
+texture_filter = 3
+scale = Vector2(20, 20)
+texture = ExtResource("2_f3ldv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 34)

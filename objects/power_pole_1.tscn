@@ -15,7 +15,7 @@ script = ExtResource("1_52y2m")
 power_cable = NodePath("PowerCable")
 
 [node name="PowerCable" parent="." node_paths=PackedStringArray("power_inputs") instance=ExtResource("4_ovfef")]
-rotation = -1.5707964
+rotation = -3.1415927
 power_source = false
 power_inputs = [NodePath("../PowerCableAttachPoint")]
 

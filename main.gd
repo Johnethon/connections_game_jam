@@ -19,13 +19,13 @@ var cur_level_index = 0
 var in_cutscene : bool = false
 
 var resets_in_a_row = 0
-func reset_cur_level():
+func reset_cur_level( instant:bool = false):
 	
 	if cur_level_scene != null and cur_level_node != null:
 		pass
 	resets_in_a_row += 1
 	
-	if resets_in_a_row >= 3:
+	if resets_in_a_row >= 3 or instant:
 		resets_in_a_row = 0
 		start_at_level(cur_level_index)
 
@@ -39,6 +39,7 @@ func next_level():
 
 func start_at_level(index_to_start_at):
 	cur_level_scene = levels[index_to_start_at]
+	cur_level_index = index_to_start_at
 	play_level_transition()
 
 @onready var transition_sprite : AnimatedSprite2D = $CanvasLayer/transition_anim

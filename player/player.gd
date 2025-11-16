@@ -47,7 +47,6 @@ func _input(_event: InputEvent) -> void:
 			main.resets_in_a_row = 0
 
 func interaction_code():
-	print("do1")
 	var potential_things_to_interact_with : Array[Interactable] = []
 			
 	for area in interact_range.get_overlapping_areas():
@@ -60,7 +59,6 @@ func interaction_code():
 		for thing in potential_things_to_interact_with:
 			if held_object:
 				if thing is Powerable and held_object is PowerCable:
-					print("do2")
 					#Check if the target is able to take inputs
 					if not thing.can_take_new_inputs or not thing.can_have_power_cable_attached:
 						continue
@@ -76,7 +74,7 @@ func interaction_code():
 					
 					#Check if target's parent is the held_object's parent
 					#this is to avoid plugging a power pole into itself
-					if held_object.get_parent() == thing.get_parent():
+					if (held_object.get_parent() == thing.get_parent()) and not thing.get_parent() is level:
 						continue
 					
 					thing.connect_input(held_object)
@@ -92,8 +90,10 @@ func interaction_code():
 				held_object.attached = false
 				held_object.node_i_am_attached_to = null
 				held_object = null
+var t = 0
+func _physics_process(delta: float) -> void:
 	
-func _physics_process(_delta: float) -> void:
+	$magnet_aura.visible = pulling
 	if pulling:
 		for body in magnet_range.get_overlapping_bodies():
 			if body is MagneticObject:
@@ -104,6 +104,14 @@ func _physics_process(_delta: float) -> void:
 				#print(power)
 				if not body.player_close:
 					body.apply_central_force( dir_to * toward_or_away * power)
+		
+		var scale_mod = 15 + 5 * (cos(t) + 1) / 2
+		$magnet_aura.scale = Vector2(scale_mod, scale_mod)
+		t += delta * 4
+		if t >= 2 * PI:
+			t = 0
+	else:
+		t = 0
 
 func _process(delta: float) -> void:
 	
@@ -135,5 +143,12 @@ func _process(delta: float) -> void:
 	move_and_slide()
 
 func die() -> void:
-	pass
+	if main.in_cutscene:
+		return
+	main.in_cutscene = true
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_QUAD)
+	tween.tween_property(sprite, "self_modulate", Color(1,1,1,0), 1.0)
+	await tween.finished
+	main.reset_cur_level(true)
 	#print("dead")

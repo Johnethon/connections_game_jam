@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://261sonfhxht5"]
+
+[ext_resource type="Script" uid="uid://fjpros51t1qp" path="res://objects/electrified_floor.gd" id="1_v7gcb"]
+[ext_resource type="Script" uid="uid://cws2hhpj2vvre" path="res://traps/obstacle.gd" id="2_3p7dy"]
+[ext_resource type="Texture2D" uid="uid://e8kam6f38jdo" path="res://sprites/tile sets/Electric floor. Off.png" id="2_x653l"]
+[ext_resource type="Texture2D" uid="uid://dsoect61ovacr" path="res://sprites/tile sets/Electric floor.on.png" id="3_x653l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7gcb"]
+size = Vector2(64, 64)
+
+[node name="ElectrifiedFloor" type="Node2D" node_paths=PackedStringArray("power_indicator_on")]
+texture_filter = 1
+script = ExtResource("1_v7gcb")
+power_source = false
+can_have_power_cable_attached = true
+can_take_new_inputs = true
+power_indicator_on = NodePath("powered")
+
+[node name="unpowered" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("2_x653l")
+
+[node name="powered" type="Sprite2D" parent="."]
+visible = false
+z_index = -1
+texture = ExtResource("3_x653l")
+
+[node name="Node" type="Node" parent="." node_paths=PackedStringArray("damage_area")]
+script = ExtResource("2_3p7dy")
+damage_area = NodePath("../Area2D")
+do_damage = false
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_v7gcb")

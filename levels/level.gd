@@ -149,3 +149,4 @@ func play_cutscene():
 	
 func cutscene_over():
 	main.in_cutscene = false
+	

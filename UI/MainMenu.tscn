@@ -1,11 +1,79 @@
-[gd_scene load_steps=4 format=3 uid="uid://b7n8lhbw52ima"]
+[gd_scene load_steps=32 format=3 uid="uid://b7n8lhbw52ima"]
 
 [ext_resource type="Script" uid="uid://dc3iqw3vkbke6" path="res://UI/main_menu.gd" id="1_b37jj"]
 [ext_resource type="FontFile" uid="uid://bk20f3p5gtfq5" path="res://UI/Connect3-Regular.ttf" id="1_uahxu"]
+[ext_resource type="Texture2D" uid="uid://6q2abtbl1pro" path="res://sprites/UI/pngstart2.png" id="3_8aown"]
+[ext_resource type="Texture2D" uid="uid://d001fq385rytx" path="res://sprites/UI/pngstart1.png" id="4_t6syg"]
+[ext_resource type="Texture2D" uid="uid://cat1l7y2lhd3n" path="res://sprites/UI/pnglvlselect2.png" id="5_y6s48"]
+[ext_resource type="Texture2D" uid="uid://cy87o46clwloe" path="res://sprites/UI/pnglvlselect1.png" id="6_otjfi"]
+[ext_resource type="Texture2D" uid="uid://dpkoxbs347fn0" path="res://sprites/UI/pngcredits2.png" id="7_t4ff4"]
+[ext_resource type="Texture2D" uid="uid://cvsqj05obyptb" path="res://sprites/UI/pngcredits1.png" id="8_w5vcv"]
+[ext_resource type="Texture2D" uid="uid://cj3pnwe2rtk68" path="res://sprites/UI/pngquit2.png" id="9_d2d4f"]
+[ext_resource type="Texture2D" uid="uid://cy6xq1tso7na5" path="res://sprites/UI/pngquit1.png" id="10_6vw7e"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uahxu"]
 font = ExtResource("1_uahxu")
-font_size = 64
+font_size = 72
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8aown"]
+content_margin_top = 32.0
+texture = ExtResource("3_8aown")
+modulate_color = Color(1, 1, 1, 0.78431374)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y6s48"]
+texture = ExtResource("4_t6syg")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t6syg"]
+texture = ExtResource("3_8aown")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t6syg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_y6s48"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_otjfi"]
+content_margin_top = 32.0
+texture = ExtResource("5_y6s48")
+modulate_color = Color(1, 1, 1, 0.78431374)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_obtq6"]
+texture = ExtResource("6_otjfi")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_t4ff4"]
+texture = ExtResource("5_y6s48")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w5vcv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d2d4f"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d2d4f"]
+content_margin_top = 32.0
+texture = ExtResource("7_t4ff4")
+modulate_color = Color(1, 1, 1, 0.78431374)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6vw7e"]
+texture = ExtResource("8_w5vcv")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qrfef"]
+texture = ExtResource("7_t4ff4")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_csrb3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wxllh"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_csrb3"]
+content_margin_top = 32.0
+texture = ExtResource("9_d2d4f")
+modulate_color = Color(1, 1, 1, 0.78431374)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wxllh"]
+texture = ExtResource("10_6vw7e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_avhca"]
+texture = ExtResource("9_d2d4f")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_x8sin"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fxi16"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -15,6 +83,22 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b37jj")
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -206.5
+offset_top = 229.0
+offset_right = 206.5
+offset_bottom = 316.0
+grow_horizontal = 2
+text = "Connecting With You"
+label_settings = SubResource("LabelSettings_uahxu")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -32,31 +116,43 @@ grow_vertical = 2
 theme_override_constants/separation = 12
 alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Start" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Start"
+theme_override_styles/normal = SubResource("StyleBoxTexture_8aown")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_y6s48")
+theme_override_styles/hover = SubResource("StyleBoxTexture_t6syg")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_t6syg")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_y6s48")
+text = " "
 
 [node name="Level Select" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Level Select"
+theme_override_styles/normal = SubResource("StyleBoxTexture_otjfi")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_obtq6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_t4ff4")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_w5vcv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_d2d4f")
+text = " "
+
+[node name="Credits" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxTexture_d2d4f")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_6vw7e")
+theme_override_styles/hover = SubResource("StyleBoxTexture_qrfef")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_csrb3")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_wxllh")
+text = " "
 
 [node name="Quit" type="Button" parent="VBoxContainer"]
 layout_mode = 2
-text = "Quit"
+theme_override_styles/normal = SubResource("StyleBoxTexture_csrb3")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wxllh")
+theme_override_styles/hover = SubResource("StyleBoxTexture_avhca")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_x8sin")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fxi16")
+text = " "
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -137.0
-offset_top = 117.0
-offset_right = 137.0
-offset_bottom = 204.0
-grow_horizontal = 2
-text = "Main Menu :)"
-label_settings = SubResource("LabelSettings_uahxu")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Start" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Level Select" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="VBoxContainer/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

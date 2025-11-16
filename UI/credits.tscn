@@ -1,0 +1,307 @@
+[gd_scene load_steps=12 format=3 uid="uid://b4wll3ltc5vvk"]
+
+[ext_resource type="Script" uid="uid://c02u3qp4br31w" path="res://UI/credits.gd" id="1_ftffn"]
+[ext_resource type="FontFile" uid="uid://bk20f3p5gtfq5" path="res://UI/Connect3-Regular.ttf" id="1_ng644"]
+[ext_resource type="Texture2D" uid="uid://cjilhgcksysh4" path="res://sprites/tile sets/metalTile.png" id="2_uuuvy"]
+[ext_resource type="Texture2D" uid="uid://dpkoxbs347fn0" path="res://sprites/UI/pngcredits2.png" id="3_kk2ga"]
+[ext_resource type="PackedScene" uid="uid://h5eus6itfd0f" path="res://UI/menu_button.tscn" id="4_2g780"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ng644"]
+font = ExtResource("1_ng644")
+font_size = 64
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uuuvy"]
+font = ExtResource("1_ng644")
+font_size = 64
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kk2ga"]
+font = ExtResource("1_ng644")
+font_size = 64
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2g780"]
+font = ExtResource("1_ng644")
+font_size = 64
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Gradient" id="Gradient_ng644"]
+colors = PackedColorArray(0.16078432, 1, 0.7137255, 1, 0.23137255, 1, 0.023529412, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ng644"]
+gradient = SubResource("Gradient_ng644")
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ftffn")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_uuuvy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -407.0
+offset_top = 413.0
+offset_right = 407.0
+offset_bottom = 773.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+texture_filter = 3
+layout_mode = 2
+text = "Alexandria K. - Art"
+label_settings = SubResource("LabelSettings_ng644")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="ColorRect" parent="VBoxContainer/Label2"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.3372549, 0, 0.5019608, 0.30588236)
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+texture_filter = 3
+layout_mode = 2
+text = "Christopher S. - Programming"
+label_settings = SubResource("LabelSettings_uuuvy")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="ColorRect" parent="VBoxContainer/Label3"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18194696, 0.059947006, 0.6344302, 0.30588236)
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+texture_filter = 3
+layout_mode = 2
+text = "Deuce - Programming"
+label_settings = SubResource("LabelSettings_kk2ga")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="ColorRect" parent="VBoxContainer/Label4"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label5" type="Label" parent="VBoxContainer"]
+texture_filter = 3
+layout_mode = 2
+text = "Kylie K. (No Relation) - Art"
+label_settings = SubResource("LabelSettings_2g780")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect2" type="ColorRect" parent="VBoxContainer/Label5"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.9849729, 0.6235013, 0, 0.30588236)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -33.0
+offset_right = 40.0
+offset_bottom = 7.0
+grow_vertical = 0
+
+[node name="TextureRect2" type="TextureRect" parent="Control"]
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+rotation = -0.7853982
+scale = Vector2(10, 1)
+pivot_offset = Vector2(0, 32)
+texture = SubResource("GradientTexture2D_ng644")
+
+[node name="TextureRect6" type="TextureRect" parent="Control"]
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+rotation = -1.3089969
+scale = Vector2(10, 1)
+pivot_offset = Vector2(0, 32)
+texture = SubResource("GradientTexture2D_ng644")
+
+[node name="TextureRect5" type="TextureRect" parent="Control"]
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+rotation = -1.0471976
+scale = Vector2(10, 1)
+pivot_offset = Vector2(0, 32)
+texture = SubResource("GradientTexture2D_ng644")
+
+[node name="TextureRect3" type="TextureRect" parent="Control"]
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+rotation = -0.5235988
+scale = Vector2(10, 1)
+pivot_offset = Vector2(0, 32)
+texture = SubResource("GradientTexture2D_ng644")
+
+[node name="TextureRect4" type="TextureRect" parent="Control"]
+layout_mode = 1
+offset_right = 64.0
+offset_bottom = 64.0
+rotation = -0.2617994
+scale = Vector2(10, 1)
+pivot_offset = Vector2(0, 32)
+texture = SubResource("GradientTexture2D_ng644")
+
+[node name="Control2" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+offset_right = 40.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(-1, 1)
+
+[node name="TextureRect2" type="TextureRect" parent="Control2"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 64.0
+offset_bottom = 24.0
+grow_vertical = 0
+rotation = -0.7853982
+scale = Vector2(10, 1)
+pivot_offset = Vector2(0, 32)
+texture = SubResource("GradientTexture2D_ng644")
+
+[node name="TextureRect6" type="TextureRect" parent="Control2"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 64.0
+offset_bottom = 24.0
+grow_vertical = 0
+rotation = -1.3089969
+scale = Vector2(10, 1)
+pivot_offset = Vector2(0, 32)
+texture = SubResource("GradientTexture2D_ng644")
+
+[node name="TextureRect5" type="TextureRect" parent="Control2"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 64.0
+offset_bottom = 24.0
+grow_vertical = 0
+rotation = -1.0471976
+scale = Vector2(10, 1)
+pivot_offset = Vector2(0, 32)
+texture = SubResource("GradientTexture2D_ng644")
+
+[node name="TextureRect3" type="TextureRect" parent="Control2"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 64.0
+offset_bottom = 24.0
+grow_vertical = 0
+rotation = -0.5235988
+scale = Vector2(10, 1)
+pivot_offset = Vector2(0, 32)
+texture = SubResource("GradientTexture2D_ng644")
+
+[node name="TextureRect4" type="TextureRect" parent="Control2"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -40.0
+offset_right = 64.0
+offset_bottom = 24.0
+grow_vertical = 0
+rotation = -0.2617994
+scale = Vector2(10, 1)
+pivot_offset = Vector2(0, 32)
+texture = SubResource("GradientTexture2D_ng644")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -640.0
+offset_top = 93.0
+offset_right = 640.0
+offset_bottom = 413.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(640, 160)
+texture = ExtResource("3_kk2ga")
+
+[node name="Button" parent="." instance=ExtResource("4_2g780")]
+layout_mode = 1
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -67.5
+offset_top = -196.0
+offset_right = 67.5
+offset_bottom = -123.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 64
+text = "Back"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

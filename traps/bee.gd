@@ -20,13 +20,14 @@ class_name Bee
 var jitter: Vector2 = Vector2.ZERO
 
 func _physics_process(delta: float) -> void:
+	
 	if not get_parent():
 		return
-
+	
 	# Update jitter
 	jitter += Vector2(randf_range(-1, 1), randf_range(-1, 1)) * jitter_change_rate * delta
 	jitter = jitter.normalized() * jitter_strength
-
+	
 	# Boids vectors
 	var separation: Vector2 = Vector2.ZERO
 	var alignment: Vector2 = Vector2.ZERO

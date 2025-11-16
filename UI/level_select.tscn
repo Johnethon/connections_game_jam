@@ -1,6 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://drefe5ii1ns22"]
+[gd_scene load_steps=7 format=3 uid="uid://drefe5ii1ns22"]
 
+[ext_resource type="Script" uid="uid://w0jjac5fk6lc" path="res://UI/level_select.gd" id="1_qgm14"]
 [ext_resource type="FontFile" uid="uid://bk20f3p5gtfq5" path="res://UI/Connect3-Regular.ttf" id="1_r4dbv"]
+[ext_resource type="Texture2D" uid="uid://se1uebadfwo3" path="res://sprites/assetsGameJamFall2025/middleWall.png" id="2_uafa6"]
+[ext_resource type="PackedScene" uid="uid://h5eus6itfd0f" path="res://UI/menu_button.tscn" id="3_q0b5w"]
+[ext_resource type="Texture2D" uid="uid://dvb3j7bcd3f2s" path="res://sprites/tv_router_table.png" id="4_miaug"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_gjday"]
 font = ExtResource("1_r4dbv")
@@ -13,6 +17,43 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_qgm14")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.00012
+offset_top = -432.00012
+offset_right = 63.999878
+offset_bottom = -304.00012
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(15.018547, 15.018547)
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("2_uafa6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = 46.00006
+offset_right = 64.0
+offset_bottom = 174.00006
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(11, 11)
+pivot_offset = Vector2(64, 64)
+texture = ExtResource("4_miaug")
 
 [node name="Label" type="Label" parent="."]
 texture_filter = 3
@@ -20,10 +61,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -169.0
-offset_top = 85.0
-offset_right = 170.0
-offset_bottom = 172.0
+offset_left = -468.0
+offset_top = 234.0
+offset_right = -129.0
+offset_bottom = 321.0
 grow_horizontal = 2
 text = "Level Select :)"
 label_settings = SubResource("LabelSettings_gjday")
@@ -35,115 +76,24 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = 217.0
+offset_top = -170.0
+offset_right = 257.0
+offset_bottom = -130.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "1"
-
-[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "1"
-
-[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "1"
-
-[node name="Button4" type="Button" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "1"
-
-[node name="Button5" type="Button" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "1"
-
-[node name="Button6" type="Button" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "1"
-
-[node name="Button7" type="Button" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "1"
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "2
+[node name="Button" parent="." instance=ExtResource("3_q0b5w")]
+layout_mode = 1
+anchors_preset = 5
+anchor_top = 0.0
+anchor_bottom = 0.0
+offset_left = -342.0
+offset_top = 496.0
+offset_right = -262.0
+offset_bottom = 539.0
+grow_vertical = 1
+text = "Back
 "
 
-[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "2
-"
-
-[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "2
-"
-
-[node name="Button4" type="Button" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "2
-"
-
-[node name="Button5" type="Button" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "2
-"
-
-[node name="Button6" type="Button" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "2
-"
-
-[node name="Button7" type="Button" parent="VBoxContainer/HBoxContainer2"]
-layout_mode = 2
-text = "2
-"
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-text = "3
-"
-
-[node name="Button2" type="Button" parent="VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-text = "3
-"
-
-[node name="Button3" type="Button" parent="VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-text = "3
-"
-
-[node name="Button4" type="Button" parent="VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-text = "3"
-
-[node name="Button5" type="Button" parent="VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-text = "3
-"
-
-[node name="Button6" type="Button" parent="VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-text = "3
-"
-
-[node name="Button7" type="Button" parent="VBoxContainer/HBoxContainer3"]
-layout_mode = 2
-text = "3
-"
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,9 +1,83 @@
-[gd_scene format=3 uid="uid://2464uhy6o5c5"]
+[gd_scene load_steps=3 format=3 uid="uid://2464uhy6o5c5"]
 
-[node name="PauseMenu" type="Control"]
+[ext_resource type="Script" uid="uid://cde84w7ejmlkp" path="res://UI/pause_menu.gd" id="1_05bun"]
+[ext_resource type="Texture2D" uid="uid://bu6kctftacoaf" path="res://sprites/temps/black_square.png" id="2_tsvmi"]
+
+[node name="PauseMenu" type="Control" node_paths=PackedStringArray("things_to_fade")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("1_05bun")
+things_to_fade = [NodePath("Label"), NodePath("VBoxContainer/Button"), NodePath("VBoxContainer/Button2"), NodePath("VBoxContainer/Button3")]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 1, 0.25490198)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tsvmi")
+
+[node name="Label" type="Label" parent="."]
+z_index = 4
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -25.0
+offset_top = -118.0
+offset_right = 26.0
+offset_bottom = -95.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "pawsd"
+
+[node name="TextureRect2" type="TextureRect" parent="Label"]
+self_modulate = Color(1, 1, 1, 0.25490198)
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_tsvmi")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -57.0
+offset_top = 9.0
+offset_right = 57.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+z_index = 4
+layout_mode = 2
+text = "continue"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+z_index = 4
+layout_mode = 2
+text = "back to menu"
+
+[node name="Button3" type="Button" parent="VBoxContainer"]
+z_index = 4
+layout_mode = 2
+text = "quit"

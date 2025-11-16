@@ -6,9 +6,12 @@ var attached : bool = false
 
 @export var max_length = 300
 @export var max_spool_scale = 3.0
+@export var min_spool_scale = 1.0
 
 @onready var head_hitbox : Area2D = $head_hitbox
 @onready var cable_head : Sprite2D = $cable_head
+@onready var cable_head_no_power : Sprite2D = $cable_head_no_power
+
 @onready var cable_body : Sprite2D = $cable_body
 @onready var cable_spool : Sprite2D = $cable_spool
 
@@ -23,9 +26,9 @@ func interact(node_interacting_with_me : Node2D):
 			
 			node_interacting_with_me.held_object = self
 			attached = true
-			node_i_am_attached_to = node_interacting_with_me
-
-func _ready():
+			node_i_am_attached_to = node_interacting_with_me.wire_holding_spot
+	
+func personal_ready():
 	
 	if node_i_am_attached_to != null:
 		attached = true
@@ -34,7 +37,7 @@ func _ready():
 	
 	if get_parent() is RigidBody2D:
 		cable_spool.get_child(0).get_child(0).disabled = true
-		
+
 	cable_head_home_position = cable_head.position
 
 func personal_process(delta : float):
@@ -46,9 +49,10 @@ func personal_process(delta : float):
 			attached = false
 			
 			if node_i_am_attached_to is Powerable:
-				node_i_am_attached_to.power_inputs.erase(self)
-			elif node_i_am_attached_to is Player:
-				node_i_am_attached_to.held_object = null
+				node_i_am_attached_to.remove_input(self)
+			elif node_i_am_attached_to.get_parent() is Player:
+				node_i_am_attached_to.get_parent().held_object = null
+			
 			node_i_am_attached_to = null
 		
 		#if node_i_am_attached_to is Powerable
@@ -57,6 +61,7 @@ func personal_process(delta : float):
 		head_hitbox.position = head_hitbox.position.lerp(cable_head_home_position, delta * 3)
 	
 	cable_head.global_position = head_hitbox.global_position
+	cable_head_no_power.global_position = head_hitbox.global_position
 	
 	var dist_to = cable_head.global_position.distance_to(global_position)
 	var dir_to = cable_head.global_position.direction_to(global_position)
@@ -66,5 +71,7 @@ func personal_process(delta : float):
 	
 	cable_body.scale.x = dist_to / 8 #px size of player sprite
 	
-	var spool_scale = max_spool_scale - (max_spool_scale - 1) * dist_to / max_length
+	var spool_scale = max_spool_scale - (max_spool_scale - min_spool_scale) * dist_to / max_length
 	cable_spool.scale = Vector2(spool_scale, spool_scale)
+	
+	cable_head_home_position.y = -max_spool_scale * 6

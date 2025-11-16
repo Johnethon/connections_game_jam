@@ -6,7 +6,9 @@ class_name Player
 @onready var magnet_range : Area2D = $magnet_range
 @onready var interact_range : Area2D = $interact_range
 
-var move_speed = 200.0
+@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
+
+var move_speed = 300.0
 
 var pulling : bool = false
 
@@ -16,11 +18,14 @@ var last_move_dir : Vector2 = Vector2.UP
 
 @onready var main : Main = get_tree().get_first_node_in_group("main")
 
+@onready var wire_holding_spot : Node2D = $wire_holding_spot
+
 func _input(_event: InputEvent) -> void:
 	
-	if main.in_cutscene:
+	if main.in_cutscene or get_tree().paused:
 		return
 	
+	#print(get_tree().paused)
 	#print(Input.is_action_just_pressed("positive_interact"))
 	if positive:
 		if Input.is_action_just_pressed("positive_interact"):
@@ -42,6 +47,7 @@ func _input(_event: InputEvent) -> void:
 			main.resets_in_a_row = 0
 
 func interaction_code():
+	print("do1")
 	var potential_things_to_interact_with : Array[Interactable] = []
 			
 	for area in interact_range.get_overlapping_areas():
@@ -54,7 +60,7 @@ func interaction_code():
 		for thing in potential_things_to_interact_with:
 			if held_object:
 				if thing is Powerable and held_object is PowerCable:
-					
+					print("do2")
 					#Check if the target is able to take inputs
 					if not thing.can_take_new_inputs or not thing.can_have_power_cable_attached:
 						continue
@@ -87,6 +93,17 @@ func interaction_code():
 				held_object.node_i_am_attached_to = null
 				held_object = null
 	
+func _physics_process(_delta: float) -> void:
+	if pulling:
+		for body in magnet_range.get_overlapping_bodies():
+			if body is MagneticObject:
+				var dir_to = global_position.direction_to(body.global_position).normalized()
+				var dist_to = global_position.distance_to(body.global_position)
+				var toward_or_away = ( 1 - 2 * int(body.positive == not positive) )
+				var power = clamp(100/dist_to * 750, 300, 750)
+				#print(power)
+				if not body.player_close:
+					body.apply_central_force( dir_to * toward_or_away * power)
 
 func _process(delta: float) -> void:
 	
@@ -101,28 +118,22 @@ func _process(delta: float) -> void:
 		
 	else:
 		input_dir = Input.get_vector("negative_move_left", "negative_move_right", "negative_move_up", "negative_move_down")
-	input_dir = input_dir.normalized()
+	
+	if input_dir.x != 0:
+		sprite.scale.x = -sign(input_dir.x)
+		wire_holding_spot.position.x = -17.0 * -sign(input_dir.x)
 	#var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if input_dir:
-		
 		last_move_dir = input_dir
-		
+		sprite.play("walk")
+	else:
+		sprite.play("idle")
+	#print(sprite.scale.x )
 	velocity.x = move_toward(velocity.x, input_dir.x * move_speed, move_speed * delta * 5)
 	velocity.y = move_toward(velocity.y, input_dir.y * move_speed, move_speed * delta * 5)
-	
-	if pulling:
-		for body in magnet_range.get_overlapping_bodies():
-			if body is MagneticObject:
-				#print("do")
-				var dir_to = global_position.direction_to(body.global_position).normalized()
-				var dist_to = global_position.distance_to(body.global_position)
-				var toward_or_away = ( 1 - 2 * int(body.positive == not positive) )
-				var power = clamp(100/dist_to * 300, 100, 300)
-				#print(power)
-				if not body.player_close:
-					body.apply_central_force( dir_to * toward_or_away * power)
-				
+
 	move_and_slide()
 
 func die() -> void:
-	print("dead")
+	pass
+	#print("dead")

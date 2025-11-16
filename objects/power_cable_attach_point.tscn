@@ -1,18 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://ct434ubci1anv"]
+[gd_scene load_steps=8 format=3 uid="uid://ct434ubci1anv"]
 
 [ext_resource type="Script" uid="uid://c1lnrkibhcwvf" path="res://objects/power_cable_attach_point.gd" id="1_gt0af"]
-[ext_resource type="Texture2D" uid="uid://dsvwihhtcxqpw" path="res://sprites/black_circle.png" id="2_8sj17"]
-[ext_resource type="Texture2D" uid="uid://bi2kq352pe774" path="res://sprites/yellow_square.png" id="3_8sj17"]
-[ext_resource type="Texture2D" uid="uid://ciq3l5imeyeq3" path="res://sprites/navy_circle.png" id="4_olhno"]
+[ext_resource type="Texture2D" uid="uid://dsvwihhtcxqpw" path="res://sprites/temps/black_circle.png" id="2_8sj17"]
+[ext_resource type="Texture2D" uid="uid://d0d4osh5dgtyw" path="res://sprites/teslaCoilOn.png" id="3_olhno"]
+[ext_resource type="Texture2D" uid="uid://6txmvvb36274" path="res://sprites/teslaCoil.png" id="4_m6b58"]
+[ext_resource type="Texture2D" uid="uid://ciq3l5imeyeq3" path="res://sprites/temps/navy_circle.png" id="4_olhno"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_s61vp"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_m6b58"]
+radius = 8.0
+
 [node name="PowerCableAttachPoint" type="Node2D" node_paths=PackedStringArray("power_indicator_on")]
+z_as_relative = false
+y_sort_enabled = true
 script = ExtResource("1_gt0af")
 power_source = false
 can_have_power_cable_attached = true
 can_take_new_inputs = true
-power_indicator_on = NodePath("powered")
+power_indicator_on = NodePath("Node2D/powered")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 2
@@ -22,17 +28,30 @@ collision_mask = 2
 shape = SubResource("CircleShape2D_s61vp")
 
 [node name="base" type="Sprite2D" parent="."]
-z_index = 1
 texture_filter = 3
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_8sj17")
 
-[node name="powered" type="Sprite2D" parent="."]
-z_index = 2
-texture_filter = 3
-texture = ExtResource("3_8sj17")
-
-[node name="unpowered" type="Sprite2D" parent="."]
-z_index = 1
+[node name="funni" type="Sprite2D" parent="."]
+z_as_relative = false
 texture_filter = 3
 texture = ExtResource("4_olhno")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_m6b58")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(0, 1)
+
+[node name="not_powewd" type="Sprite2D" parent="Node2D"]
+z_as_relative = false
+texture_filter = 3
+position = Vector2(0, -14)
+texture = ExtResource("4_m6b58")
+
+[node name="powered" type="Sprite2D" parent="Node2D"]
+texture_filter = 3
+position = Vector2(0, -14)
+texture = ExtResource("3_olhno")

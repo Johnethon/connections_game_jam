@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dt3c84dr2ov8x" path="res://traps/bullet.gd" id="1_aqeil"]
 [ext_resource type="Script" uid="uid://cws2hhpj2vvre" path="res://traps/obstacle.gd" id="2_4issv"]
-[ext_resource type="Texture2D" uid="uid://dsvwihhtcxqpw" path="res://sprites/black_circle.png" id="3_7601d"]
+[ext_resource type="Texture2D" uid="uid://dsvwihhtcxqpw" path="res://sprites/temps/black_circle.png" id="3_7601d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aqeil"]
 radius = 5.0

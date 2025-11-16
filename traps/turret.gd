@@ -17,8 +17,8 @@ enum States {
 @export var rotation_speed := 2.0
 
 # SEARCH SWEEP SETTINGS
-@export var search_left_limit := deg_to_rad(-45)
-@export var search_right_limit := deg_to_rad(45)
+@export var search_left_limit := deg_to_rad(-90)
+@export var search_right_limit := deg_to_rad(90)
 @export var search_speed := 1.2
 
 # BULLET SETTINGS
@@ -36,7 +36,7 @@ var search_direction := 1   # 1 = right, -1 = left
 # ---------------------------------
 # READY
 # ---------------------------------
-func _ready() -> void:
+func personal_ready() -> void:
 	if detection_area:
 		detection_area.body_entered.connect(_on_body_entered)
 		detection_area.body_exited.connect(_on_body_exited)

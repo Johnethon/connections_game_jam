@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bc4cqt6bn6o17"]
 
 [ext_resource type="Script" uid="uid://7l3vo5xlakgv" path="res://objects/magnetic_object.gd" id="1_xu8qx"]
-[ext_resource type="Texture2D" uid="uid://b8wj7d4n63cc6" path="res://sprites/grey_circle.png" id="2_a1sl3"]
+[ext_resource type="Texture2D" uid="uid://b8wj7d4n63cc6" path="res://sprites/temps/grey_circle.png" id="2_a1sl3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xu8qx"]
 

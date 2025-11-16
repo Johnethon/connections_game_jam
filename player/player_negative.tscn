@@ -1,25 +1,61 @@
-[gd_scene load_steps=6 format=3 uid="uid://bq7xhvh0tro57"]
+[gd_scene load_steps=10 format=3 uid="uid://bq7xhvh0tro57"]
 
 [ext_resource type="Script" uid="uid://caws2b3rfrn1x" path="res://player/player_negative.gd" id="1_shhc4"]
-[ext_resource type="Texture2D" uid="uid://b5q0o1gnsss2h" path="res://sprites/blue_circle.png" id="2_e53bd"]
+[ext_resource type="Texture2D" uid="uid://cwd6nouy4sr82" path="res://sprites/characters/SpriteBlue1.png" id="2_k7a14"]
+[ext_resource type="Texture2D" uid="uid://wqpk1xrn8h5a" path="res://sprites/characters/SpriteBlue2.png" id="3_5rg5a"]
+[ext_resource type="Texture2D" uid="uid://tmn0j3c5q8wr" path="res://sprites/characters/SpriteBlue3.png" id="4_4qum1"]
+[ext_resource type="Texture2D" uid="uid://2n2er1o652dr" path="res://sprites/characters/SpriteBlue4.png" id="5_a26gg"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_shhc4"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5rg5a"]
+size = Vector2(34, 64)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_swo01"]
 radius = 2000.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_e53bd"]
-radius = 12.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4qum1"]
+size = Vector2(63, 86)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_34mfa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k7a14")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_k7a14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5rg5a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4qum1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_a26gg")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 8.0
+}]
 
 [node name="PlayerNegative" type="CharacterBody2D" groups=["players"]]
+z_as_relative = false
+y_sort_enabled = true
 collision_layer = 7
 collision_mask = 7
 script = ExtResource("1_shhc4")
 positive = false
 
+[node name="Node2D" type="Node2D" parent="."]
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.0009765625)
-shape = SubResource("CircleShape2D_shhc4")
+position = Vector2(0, 34)
+shape = SubResource("RectangleShape2D_5rg5a")
 
 [node name="magnet_range" type="Area2D" parent="."]
 
@@ -27,14 +63,20 @@ shape = SubResource("CircleShape2D_shhc4")
 shape = SubResource("CircleShape2D_swo01")
 debug_color = Color(0, 0.6, 0.69803923, 0)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 3
-scale = Vector2(2.5, 2.5)
-texture = ExtResource("2_e53bd")
-
 [node name="interact_range" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="interact_range"]
-shape = SubResource("CircleShape2D_e53bd")
+position = Vector2(-0.5, 36)
+shape = SubResource("RectangleShape2D_4qum1")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+y_sort_enabled = true
+texture_filter = 3
+sprite_frames = SubResource("SpriteFrames_34mfa")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="wire_holding_spot" type="Node2D" parent="."]
+position = Vector2(-17, 22)

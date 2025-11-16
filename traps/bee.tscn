@@ -1,18 +1,28 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfvvec5a1nvxs"]
+[gd_scene load_steps=6 format=3 uid="uid://cfvvec5a1nvxs"]
 
 [ext_resource type="Script" uid="uid://dvsjc6eji2bx8" path="res://traps/bee.gd" id="1_svs68"]
-[ext_resource type="Texture2D" uid="uid://dsvwihhtcxqpw" path="res://sprites/black_circle.png" id="2_563kq"]
+[ext_resource type="Texture2D" uid="uid://bi2kq352pe774" path="res://sprites/temps/yellow_square.png" id="2_svs68"]
 [ext_resource type="Script" uid="uid://cws2hhpj2vvre" path="res://traps/obstacle.gd" id="3_ey0hq"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_2dkwo"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_svs68"]
+radius = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_563kq"]
 radius = 4.1231055
 
 [node name="Bee" type="CharacterBody2D"]
-scale = Vector2(0.1, 0.1)
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_svs68")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.99999994, 0.99999994)
+shape = SubResource("CircleShape2D_svs68")
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_563kq")
+texture_filter = 3
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_svs68")
 
 [node name="Obstacle2D" type="Node" parent="." node_paths=PackedStringArray("damage_area")]
 script = ExtResource("3_ey0hq")
@@ -22,4 +32,4 @@ metadata/_custom_type_script = "uid://cws2hhpj2vvre"
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_2dkwo")
+shape = SubResource("CircleShape2D_563kq")

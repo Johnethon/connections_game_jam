@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhvabo5lp4egj"]
+[gd_scene load_steps=8 format=3 uid="uid://dhvabo5lp4egj"]
 
 [ext_resource type="Script" uid="uid://bs850mfu7wllk" path="res://objects/power_cable.gd" id="1_m78di"]
-[ext_resource type="Texture2D" uid="uid://bi2kq352pe774" path="res://sprites/yellow_square.png" id="2_bvvpn"]
-[ext_resource type="Texture2D" uid="uid://dsvwihhtcxqpw" path="res://sprites/black_circle.png" id="3_402ci"]
-[ext_resource type="Texture2D" uid="uid://bu6kctftacoaf" path="res://sprites/black_square.png" id="3_rdu7w"]
+[ext_resource type="Texture2D" uid="uid://bi2kq352pe774" path="res://sprites/temps/yellow_square.png" id="2_bvvpn"]
+[ext_resource type="Texture2D" uid="uid://b8wj7d4n63cc6" path="res://sprites/temps/grey_circle.png" id="2_ru7tx"]
+[ext_resource type="Texture2D" uid="uid://dsvwihhtcxqpw" path="res://sprites/temps/black_circle.png" id="3_402ci"]
+[ext_resource type="Texture2D" uid="uid://bu6kctftacoaf" path="res://sprites/temps/black_square.png" id="3_rdu7w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p5bab"]
 radius = 4.0
@@ -11,16 +12,20 @@ radius = 4.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_402ci"]
 radius = 4.1231055
 
-[node name="PowerCable" type="Node2D"]
+[node name="PowerCable" type="Node2D" node_paths=PackedStringArray("power_indicator_on")]
 script = ExtResource("1_m78di")
+power_indicator_on = NodePath("cable_head")
+
+[node name="cable_head_no_power" type="Sprite2D" parent="."]
+texture_filter = 3
+position = Vector2(0, -16)
+texture = ExtResource("2_ru7tx")
 
 [node name="cable_head" type="Sprite2D" parent="."]
 z_index = 1
 texture_filter = 3
 position = Vector2(0, -16)
 texture = ExtResource("2_bvvpn")
-
-[node name="Sprite2D" type="Sprite2D" parent="cable_head"]
 
 [node name="cable_body" type="Sprite2D" parent="."]
 z_index = -1

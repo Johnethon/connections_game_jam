@@ -1,9 +1,12 @@
-[gd_scene load_steps=30 format=3 uid="uid://x55yvehn6kp0"]
+[gd_scene load_steps=33 format=3 uid="uid://x55yvehn6kp0"]
 
 [ext_resource type="Script" uid="uid://lvmbv3ubq5gt" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://c5vw0i55t4eua" path="res://levels/level_base.tscn" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://2464uhy6o5c5" path="res://UI/PauseMenu.tscn" id="2_lquwl"]
 [ext_resource type="PackedScene" uid="uid://b7n8lhbw52ima" path="res://UI/MainMenu.tscn" id="3_1bvp3"]
 [ext_resource type="Texture2D" uid="uid://bp62kvs7im5oy" path="res://sprites/transition_anim.png" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://drefe5ii1ns22" path="res://UI/level_select.tscn" id="4_7mycd"]
+[ext_resource type="PackedScene" uid="uid://b4wll3ltc5vvk" path="res://UI/credits.tscn" id="5_272bh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lquwl"]
 atlas = ExtResource("3_h2yge")
@@ -187,19 +190,31 @@ animations = [{
 }]
 
 [node name="Main" type="Node2D" node_paths=PackedStringArray("cur_menu") groups=["main"]]
+process_mode = 3
+y_sort_enabled = true
 script = ExtResource("1_0xm2m")
-cur_menu = NodePath("MainMenu")
-levels = Array[PackedScene]([ExtResource("1_ig7tw")])
+main_menu = ExtResource("3_1bvp3")
+pause_menu = ExtResource("2_lquwl")
+level_select_menu = ExtResource("4_7mycd")
+credits_menu = ExtResource("5_272bh")
+cur_menu = NodePath("CanvasLayer/MainMenu")
+levels = Array[PackedScene]([ExtResource("1_ig7tw"), ExtResource("1_ig7tw"), ExtResource("1_ig7tw")])
 
-[node name="Camera3D" type="Camera2D" parent="."]
-scale = Vector2(1, 1e-05)
+[node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="transition_anim" type="AnimatedSprite2D" parent="."]
+[node name="level_spot" type="Node2D" parent="."]
+process_mode = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="transition_anim" type="AnimatedSprite2D" parent="CanvasLayer"]
 visible = false
 z_index = 10
+position = Vector2(576, 291)
+scale = Vector2(1.75, 1.75)
 sprite_frames = SubResource("SpriteFrames_0xm2m")
 animation = &"fade_to_black"
 
-[node name="MainMenu" parent="." instance=ExtResource("3_1bvp3")]
+[node name="MainMenu" parent="CanvasLayer" instance=ExtResource("3_1bvp3")]
 
-[connection signal="animation_finished" from="transition_anim" to="." method="_on_transition_anim_animation_finished"]
+[connection signal="animation_finished" from="CanvasLayer/transition_anim" to="." method="_on_transition_anim_animation_finished"]

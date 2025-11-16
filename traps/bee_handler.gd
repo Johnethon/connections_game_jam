@@ -1,11 +1,16 @@
 extends Node2D
 
 @export var move_speed := 110.0
-@export var acceleration := 6.0   # smoothing factor
+
+@export var chase_accel := 3.0
+@export var patrol_accel := 6.0
+
+@onready var acceleration := patrol_accel
 
 @onready var bees = get_children()
-@onready var target : Node2D = $".."
+@export var home_target : Node2D = null
 
+@onready var cur_target : Node2D = home_target
 var fake_global_position : Vector2
 
 var velocity := Vector2.ZERO
@@ -17,11 +22,11 @@ func _process(delta):
 	_follow_target(delta)
 
 func _follow_target(delta):
-	if not target:
+	if not cur_target:
 		return
-
+	
 	# direction toward target
-	var direction := fake_global_position.direction_to(target.global_position)
+	var direction := fake_global_position.direction_to(cur_target.global_position)
 
 	# desired velocity
 	var desired_velocity := direction * move_speed
@@ -35,8 +40,10 @@ func _follow_target(delta):
 # SIGNALS
 func _on_aggro_activator_body_entered(body: Node2D) -> void:
 	if body.is_in_group("players"):
-		target = body
+		acceleration = chase_accel
+		cur_target = body
 
 func _on_aggro_deactivator_body_exited(body: Node2D) -> void:
-	if body == target:
-		target = $".."
+	if body == cur_target:
+		acceleration = patrol_accel
+		cur_target = home_target

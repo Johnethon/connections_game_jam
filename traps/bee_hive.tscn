@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://cs3sfmuseibn"]
 
 [ext_resource type="Script" uid="uid://hpw6p8jt0ssr" path="res://traps/bee_hive.gd" id="1_vj4vt"]
-[ext_resource type="Texture2D" uid="uid://dsvwihhtcxqpw" path="res://sprites/black_circle.png" id="2_4it53"]
+[ext_resource type="Texture2D" uid="uid://dsvwihhtcxqpw" path="res://sprites/temps/black_circle.png" id="2_4it53"]
 [ext_resource type="PackedScene" uid="uid://cfvvec5a1nvxs" path="res://traps/bee.tscn" id="2_twtdy"]
 [ext_resource type="Script" uid="uid://dqdp1mdiw048x" path="res://traps/bee_handler.gd" id="3_4it53"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_twtdy"]
-radius = 4.1231055
+radius = 4.1976185
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4it53"]
 radius = 58.53144
@@ -14,19 +14,35 @@ radius = 58.53144
 [sub_resource type="CircleShape2D" id="CircleShape2D_73345"]
 radius = 176.61963
 
-[node name="BeeHive" type="CharacterBody2D"]
+[node name="BeeHive" type="Node2D"]
 scale = Vector2(10, 10)
 script = ExtResource("1_vj4vt")
 bee = ExtResource("2_twtdy")
+power_source = false
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_4it53")
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+scale = Vector2(0.99999994, 0.99999994)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("CircleShape2D_twtdy")
 
-[node name="BeeHandler" type="Node2D" parent="."]
+[node name="bee_target_axis" type="Node2D" parent="."]
+scale = Vector2(0.9999998, 0.9999998)
+
+[node name="target" type="Node2D" parent="bee_target_axis"]
+position = Vector2(66.3, 0)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_4it53")
+
+[node name="BeeHandler" type="Node2D" parent="." node_paths=PackedStringArray("home_target")]
 script = ExtResource("3_4it53")
+move_speed = 300.0
+home_target = NodePath("../bee_target_axis/target")
 
 [node name="AggroActivator" type="Area2D" parent="."]
 

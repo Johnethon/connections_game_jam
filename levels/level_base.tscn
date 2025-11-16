@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://c5vw0i55t4eua"]
+[gd_scene load_steps=26 format=4 uid="uid://c5vw0i55t4eua"]
 
 [ext_resource type="Script" uid="uid://cdg40v7kh8p5u" path="res://levels/level_base.gd" id="1_gei2l"]
 [ext_resource type="Texture2D" uid="uid://bu6kctftacoaf" path="res://sprites/temps/black_square.png" id="2_kuw7y"]
@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://3ri045m4k1mk" path="res://sprites/tile sets/router_walls_big.png" id="13_kuw7y"]
 [ext_resource type="Texture2D" uid="uid://upy4i26a3ioi" path="res://sprites/temps/red_circle.png" id="14_gei2l"]
 [ext_resource type="Texture2D" uid="uid://c2n5v1wmdmpty" path="res://sprites/tile sets/Chiptile.png" id="14_ls7uu"]
+[ext_resource type="PackedScene" uid="uid://dqu38v4jtyg7s" path="res://objects/power_pole_1.tscn" id="16_k4ml4"]
 [ext_resource type="PackedScene" uid="uid://dcfkdelnxcghm" path="res://Cutscenes/lvl_1_cutscene.tscn" id="16_ls7uu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cnvg6"]
@@ -265,3 +266,7 @@ visible = false
 texture = ExtResource("14_gei2l")
 
 [node name="lvl1Cutscene" parent="." instance=ExtResource("16_ls7uu")]
+
+[node name="PowerPole1" parent="." instance=ExtResource("16_k4ml4")]
+position = Vector2(-310, 184)
+both = true

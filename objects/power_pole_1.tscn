@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqu38v4jtyg7s"]
+[gd_scene load_steps=8 format=3 uid="uid://dqu38v4jtyg7s"]
 
 [ext_resource type="Script" uid="uid://bbsg8omv06al7" path="res://objects/power_pole_1.gd" id="1_52y2m"]
 [ext_resource type="PackedScene" uid="uid://ct434ubci1anv" path="res://objects/power_cable_attach_point.tscn" id="2_ovfef"]
 [ext_resource type="Texture2D" uid="uid://upy4i26a3ioi" path="res://sprites/temps/red_circle.png" id="4_app8q"]
 [ext_resource type="PackedScene" uid="uid://dhvabo5lp4egj" path="res://objects/power_cable.tscn" id="4_ovfef"]
+[ext_resource type="Texture2D" uid="uid://b8wj7d4n63cc6" path="res://sprites/temps/grey_circle.png" id="5_app8q"]
 [ext_resource type="Texture2D" uid="uid://b5q0o1gnsss2h" path="res://sprites/temps/blue_circle.png" id="5_l7xui"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5vuel"]
@@ -11,6 +12,7 @@ radius = 13.038404
 
 [node name="PowerPole1" type="RigidBody2D" node_paths=PackedStringArray("power_cable")]
 y_sort_enabled = true
+texture_filter = 3
 script = ExtResource("1_52y2m")
 power_cable = NodePath("PowerCable")
 
@@ -28,6 +30,11 @@ texture = ExtResource("4_app8q")
 texture_filter = 3
 scale = Vector2(3, 3)
 texture = ExtResource("5_l7xui")
+
+[node name="both" type="Sprite2D" parent="."]
+texture_filter = 3
+scale = Vector2(3, 3)
+texture = ExtResource("5_app8q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5vuel")

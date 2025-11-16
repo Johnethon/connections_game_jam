@@ -100,12 +100,13 @@ func _physics_process(delta: float) -> void:
 			if body is MagneticObject:
 				var dir_to = global_position.direction_to(body.global_position).normalized()
 				var dist_to = global_position.distance_to(body.global_position)
-				var toward_or_away = ( 1 - 2 * int(body.positive == not positive) )
+				var toward_or_away = ( 1 - 2 * int(body.positive == not positive or body.both) )
+				
 				var power = clamp(100/dist_to * 750, 300, 750)
 				#print(power)
 				if not body.player_close:
 					body.apply_central_force( dir_to * toward_or_away * power)
-		
+				
 		var scale_mod = 15 + 5 * (cos(t) + 1) / 2
 		$magnet_aura.scale = Vector2(scale_mod, scale_mod)
 		t += delta * 4

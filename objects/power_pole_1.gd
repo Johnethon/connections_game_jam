@@ -11,3 +11,4 @@ func personal_ready():
 	power_cable.max_spool_scale = max_spool_scale
 	$positive.visible = positive
 	$negative.visible = not positive
+	$both.visible = both

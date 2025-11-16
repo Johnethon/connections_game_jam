@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=4 uid="uid://d0g6e0a1igymq"]
+[gd_scene load_steps=27 format=4 uid="uid://d0g6e0a1igymq"]
 
 [ext_resource type="Script" uid="uid://dix2ax4jxrl6y" path="res://levels/level_2_power_poles.gd" id="1_o5fsi"]
 [ext_resource type="PackedScene" uid="uid://cvu71akxdsd43" path="res://Cutscenes/lvl_5_cutscene.tscn" id="2_5c87j"]
@@ -15,8 +15,6 @@
 [ext_resource type="Texture2D" uid="uid://ciq3l5imeyeq3" path="res://sprites/temps/navy_circle.png" id="14_jhivt"]
 [ext_resource type="Texture2D" uid="uid://b5q0o1gnsss2h" path="res://sprites/temps/blue_circle.png" id="15_fsmk7"]
 [ext_resource type="Texture2D" uid="uid://upy4i26a3ioi" path="res://sprites/temps/red_circle.png" id="16_tk8sx"]
-[ext_resource type="PackedScene" uid="uid://cdu45bpu0olui" path="res://traps/turret.tscn" id="17_o7m6q"]
-[ext_resource type="PackedScene" uid="uid://dqu38v4jtyg7s" path="res://objects/power_pole_1.tscn" id="18_2sv2g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gei2l"]
 texture = ExtResource("7_2wx34")
@@ -325,29 +323,6 @@ texture = ExtResource("14_jhivt")
 [node name="positive_in_exit" type="Sprite2D" parent="positive_exit_indicator"]
 visible = false
 texture = ExtResource("16_tk8sx")
-
-[node name="Turret" parent="." node_paths=PackedStringArray("power_inputs") instance=ExtResource("17_o7m6q")]
-position = Vector2(-325, -154)
-rotation = 2.3561945
-search_left_limit = 0.0
-search_right_limit = 0.0
-power_inputs = [NodePath("../PowerCableAttachPoint3")]
-
-[node name="Turret2" parent="." node_paths=PackedStringArray("power_inputs") instance=ExtResource("17_o7m6q")]
-position = Vector2(332, -154)
-rotation = 0.7853982
-search_left_limit = 0.0
-search_right_limit = 0.0
-power_inputs = [NodePath("../PowerCableAttachPoint3")]
-
-[node name="PowerPole1" parent="." instance=ExtResource("18_2sv2g")]
-position = Vector2(-437, 130)
-max_length = 600
-positive = false
-
-[node name="PowerPole2" parent="." instance=ExtResource("18_2sv2g")]
-position = Vector2(437, 130)
-max_length = 600
 
 [node name="PowerCableAttachPoint3" parent="." instance=ExtResource("11_xc1a2")]
 position = Vector2(0, -258)

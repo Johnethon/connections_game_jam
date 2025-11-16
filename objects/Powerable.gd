@@ -66,6 +66,10 @@ func _process(delta: float):
 				given_power()
 			else:
 				removed_power()
+		
+		if power_indicator_on != null:
+			power_indicator_on.visible = (has_power or power_source)
+
 	else:
 		if prev_power != has_power:
 			if has_power:
@@ -73,8 +77,8 @@ func _process(delta: float):
 			else:
 				given_power()
 	
-	if power_indicator_on != null:
-		power_indicator_on.visible = (has_power or power_source)
+		if power_indicator_on != null:
+			power_indicator_on.visible = not has_power
 
 	personal_process(delta)
 

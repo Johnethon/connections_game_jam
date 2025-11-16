@@ -17,6 +17,8 @@ func personal_ready() -> void:
 	
 	$AggroActivator/CollisionShape2D.shape.radius = min_aggro_radius
 	$AggroDeactivator/CollisionShape2D.shape.radius = max_aggro_radius
+	$aggro_radius.scale = Vector2(min_aggro_radius * 2.0 / 8.0, min_aggro_radius * 2.0 / 8.0)
+	
 	for bee_index in number_of_bees:
 		
 		var this_bee = bee.instantiate()
@@ -30,6 +32,6 @@ func personal_ready() -> void:
 		
 	$bee_target_axis.get_child(0).position.x = min_aggro_radius
 
-func _process(delta:float):
+func personal_process(delta:float):
 	$bee_target_axis.rotation += 5 * delta
 	#$RedCircle2.global_position = $BeeHandler.fake_global_position

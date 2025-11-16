@@ -15,25 +15,29 @@ var fake_global_position : Vector2
 
 var velocity := Vector2.ZERO
 
+var active : bool = true
 func _ready() -> void:
 	fake_global_position = global_position
 
 func _process(delta):
+	
 	_follow_target(delta)
 
 func _follow_target(delta):
 	if not cur_target:
 		return
 	
+	active = get_parent().has_power or get_parent().power_source
+	
 	# direction toward target
 	var direction := fake_global_position.direction_to(cur_target.global_position)
-
+	
 	# desired velocity
 	var desired_velocity := direction * move_speed
 
 	# smooth the movement using lerp (acceleration-damped)
 	velocity = velocity.lerp(desired_velocity, acceleration * delta)
-
+	
 	# apply movement
 	fake_global_position += velocity * delta
 

@@ -1,0 +1,53 @@
+[gd_scene load_steps=15 format=3 uid="uid://dcfkdelnxcghm"]
+
+[ext_resource type="PackedScene" uid="uid://b7721yatqq3c6" path="res://Cutscenes/CutsceneBackEndStuff/cutscene_controller.tscn" id="1_h5ql4"]
+[ext_resource type="Script" uid="uid://da4ulqvqcbn53" path="res://Cutscenes/CutsceneBackEndStuff/text_box_resource.gd" id="2_akqa7"]
+[ext_resource type="Texture2D" uid="uid://djli6inolayfs" path="res://sprites/cutscene_textboxes/lvl1-Frame 10.png" id="3_eoqt5"]
+[ext_resource type="Texture2D" uid="uid://wf8ags4a1cs1" path="res://sprites/cutscene_textboxes/lvl1-Frame 11.png" id="4_5vw17"]
+[ext_resource type="Texture2D" uid="uid://cih150l1xago5" path="res://sprites/cutscene_textboxes/lvl1-Frame 12.png" id="5_r0bkt"]
+[ext_resource type="Texture2D" uid="uid://cb3r852f4kemi" path="res://sprites/cutscene_textboxes/lvl1-Frame 13.png" id="6_6kvbh"]
+[ext_resource type="Texture2D" uid="uid://dijva655dwjkf" path="res://sprites/cutscene_textboxes/lvl1-Frame 14.png" id="7_p44nd"]
+[ext_resource type="PackedScene" uid="uid://btahd6hqlgnl3" path="res://Cutscenes/CutsceneBackEndStuff/cutscene_austra_controller.tscn" id="8_f7vvv"]
+[ext_resource type="PackedScene" uid="uid://cbvx7cm62veq7" path="res://Cutscenes/CutsceneBackEndStuff/cutscene_borealis_controller.tscn" id="9_wpj1u"]
+
+[sub_resource type="Resource" id="Resource_oj38j"]
+script = ExtResource("2_akqa7")
+texture = ExtResource("3_eoqt5")
+Austra_Is_Talking = true
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_j0s0k"]
+script = ExtResource("2_akqa7")
+texture = ExtResource("4_5vw17")
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_6a16l"]
+script = ExtResource("2_akqa7")
+texture = ExtResource("5_r0bkt")
+Austra_Is_Talking = true
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_3rlvk"]
+script = ExtResource("2_akqa7")
+texture = ExtResource("6_6kvbh")
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_76qik"]
+script = ExtResource("2_akqa7")
+texture = ExtResource("7_p44nd")
+Austra_Is_Talking = true
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[node name="lvl1Cutscene" type="CanvasLayer"]
+process_mode = 3
+
+[node name="CutsceneController2" parent="." node_paths=PackedStringArray("AustraController", "BorealisController") instance=ExtResource("1_h5ql4")]
+AustraController = NodePath("CutsceneAustraController")
+BorealisController = NodePath("CutsceneBorealisController")
+textboxes = Array[ExtResource("2_akqa7")]([SubResource("Resource_oj38j"), SubResource("Resource_j0s0k"), SubResource("Resource_6a16l"), SubResource("Resource_3rlvk"), SubResource("Resource_76qik")])
+
+[node name="CutsceneAustraController" parent="CutsceneController2" instance=ExtResource("8_f7vvv")]
+layout_mode = 0
+
+[node name="CutsceneBorealisController" parent="CutsceneController2" instance=ExtResource("9_wpj1u")]
+layout_mode = 0

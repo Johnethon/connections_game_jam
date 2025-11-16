@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://3ysjurqavo4v"]
 
-[ext_resource type="Script" uid="uid://cgpjc7u5suicg" path="res://cutscene_character_controller.gd" id="1_b6gmf"]
+[ext_resource type="Script" uid="uid://cgpjc7u5suicg" path="res://Cutscenes/CutsceneBackEndStuff/cutscene_character_controller.gd" id="1_b6gmf"]
 
 [node name="CutsceneCharacterController" type="Control"]
 layout_mode = 3

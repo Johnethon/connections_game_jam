@@ -1,0 +1,39 @@
+[gd_scene load_steps=11 format=3 uid="uid://cvu71akxdsd43"]
+
+[ext_resource type="PackedScene" uid="uid://b7721yatqq3c6" path="res://Cutscenes/CutsceneBackEndStuff/cutscene_controller.tscn" id="1_20a80"]
+[ext_resource type="Script" uid="uid://da4ulqvqcbn53" path="res://Cutscenes/CutsceneBackEndStuff/text_box_resource.gd" id="2_gsd40"]
+[ext_resource type="Texture2D" uid="uid://f440u73sm6op" path="res://sprites/cutscene_textboxes/lvl 5-Frame 27.png" id="3_nhks8"]
+[ext_resource type="Texture2D" uid="uid://fxfhqwtlpfim" path="res://sprites/cutscene_textboxes/lvl 5-Frame 28.png" id="4_6qb87"]
+[ext_resource type="Texture2D" uid="uid://dhc4j7rb65a3g" path="res://sprites/cutscene_textboxes/lvl 5-Frame 29.png" id="5_t8nhq"]
+[ext_resource type="PackedScene" uid="uid://btahd6hqlgnl3" path="res://Cutscenes/CutsceneBackEndStuff/cutscene_austra_controller.tscn" id="6_1vk6f"]
+[ext_resource type="PackedScene" uid="uid://cbvx7cm62veq7" path="res://Cutscenes/CutsceneBackEndStuff/cutscene_borealis_controller.tscn" id="7_hxys4"]
+
+[sub_resource type="Resource" id="Resource_idve2"]
+script = ExtResource("2_gsd40")
+texture = ExtResource("3_nhks8")
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_uvump"]
+script = ExtResource("2_gsd40")
+texture = ExtResource("4_6qb87")
+Austra_Is_Talking = true
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_whuns"]
+script = ExtResource("2_gsd40")
+texture = ExtResource("5_t8nhq")
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[node name="lvl_5_cutscene" type="CanvasLayer"]
+process_mode = 3
+
+[node name="CutsceneController" parent="." node_paths=PackedStringArray("AustraController", "BorealisController") instance=ExtResource("1_20a80")]
+AustraController = NodePath("CutsceneAustraController")
+BorealisController = NodePath("CutsceneBorealisController")
+textboxes = Array[ExtResource("2_gsd40")]([SubResource("Resource_idve2"), SubResource("Resource_uvump"), SubResource("Resource_whuns")])
+
+[node name="CutsceneAustraController" parent="CutsceneController" instance=ExtResource("6_1vk6f")]
+layout_mode = 0
+
+[node name="CutsceneBorealisController" parent="CutsceneController" instance=ExtResource("7_hxys4")]
+layout_mode = 0

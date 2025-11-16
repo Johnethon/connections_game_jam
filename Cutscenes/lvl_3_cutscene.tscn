@@ -1,0 +1,46 @@
+[gd_scene load_steps=13 format=3 uid="uid://douhi6v8j6r8n"]
+
+[ext_resource type="PackedScene" uid="uid://b7721yatqq3c6" path="res://Cutscenes/CutsceneBackEndStuff/cutscene_controller.tscn" id="1_gmedu"]
+[ext_resource type="Script" uid="uid://da4ulqvqcbn53" path="res://Cutscenes/CutsceneBackEndStuff/text_box_resource.gd" id="2_37bro"]
+[ext_resource type="Texture2D" uid="uid://bbwnreh1rdowp" path="res://sprites/cutscene_textboxes/lvl 3-Frame 19.png" id="3_88yed"]
+[ext_resource type="Texture2D" uid="uid://dssdgjhmf82ff" path="res://sprites/cutscene_textboxes/lvl 3-Frame 20.png" id="4_xoym6"]
+[ext_resource type="Texture2D" uid="uid://d04ln37gtc8er" path="res://sprites/cutscene_textboxes/lvl 3-Frame 21.png" id="5_k3rc3"]
+[ext_resource type="Texture2D" uid="uid://ctr1k0aakuj8q" path="res://sprites/cutscene_textboxes/lvl 3-Frame 22.png" id="6_1ujru"]
+[ext_resource type="PackedScene" uid="uid://btahd6hqlgnl3" path="res://Cutscenes/CutsceneBackEndStuff/cutscene_austra_controller.tscn" id="7_psy4u"]
+[ext_resource type="PackedScene" uid="uid://cbvx7cm62veq7" path="res://Cutscenes/CutsceneBackEndStuff/cutscene_borealis_controller.tscn" id="8_5tfkn"]
+
+[sub_resource type="Resource" id="Resource_xlwve"]
+script = ExtResource("2_37bro")
+texture = ExtResource("3_88yed")
+Austra_Is_Talking = true
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_cejtq"]
+script = ExtResource("2_37bro")
+texture = ExtResource("4_xoym6")
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_bvhu8"]
+script = ExtResource("2_37bro")
+texture = ExtResource("5_k3rc3")
+Austra_Is_Talking = true
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_hkgds"]
+script = ExtResource("2_37bro")
+texture = ExtResource("6_1ujru")
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[node name="lvl_3_cutscene" type="CanvasLayer"]
+process_mode = 3
+
+[node name="CutsceneController" parent="." node_paths=PackedStringArray("AustraController", "BorealisController") instance=ExtResource("1_gmedu")]
+AustraController = NodePath("CutsceneAustraController")
+BorealisController = NodePath("CutsceneBorealisController")
+textboxes = Array[ExtResource("2_37bro")]([SubResource("Resource_xlwve"), SubResource("Resource_cejtq"), SubResource("Resource_bvhu8"), SubResource("Resource_hkgds")])
+
+[node name="CutsceneAustraController" parent="CutsceneController" instance=ExtResource("7_psy4u")]
+layout_mode = 0
+
+[node name="CutsceneBorealisController" parent="CutsceneController" instance=ExtResource("8_5tfkn")]
+layout_mode = 0

@@ -17,3 +17,10 @@ mouth_open_eyes_open = ExtResource("3_bg6fc")
 mouth_shut_eyes_shut = ExtResource("4_etnnq")
 mouth_open_eyes_shut = ExtResource("5_cqtbb")
 metadata/_custom_type_script = "uid://cgpjc7u5suicg"
+
+[node name="BlinkTimer" type="Timer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

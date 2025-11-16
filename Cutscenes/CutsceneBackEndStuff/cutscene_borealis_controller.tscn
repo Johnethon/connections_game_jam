@@ -9,8 +9,6 @@
 [node name="CutsceneBorealisController" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 script = ExtResource("1_3nvow")
 mouth_shut_eyes_open = ExtResource("2_t5hx0")
 mouth_open_eyes_open = ExtResource("3_bg6fc")
@@ -21,6 +19,9 @@ metadata/_custom_type_script = "uid://cgpjc7u5suicg"
 [node name="BlinkTimer" type="Timer" parent="."]
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+offset_left = 480.00003
+offset_top = 270.0
+offset_right = 2400.0
+offset_bottom = 1350.0
+scale = Vector2(0.75, 0.75)

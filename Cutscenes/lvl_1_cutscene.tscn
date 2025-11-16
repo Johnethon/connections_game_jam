@@ -39,7 +39,6 @@ Austra_Is_Talking = true
 metadata/_custom_type_script = "uid://da4ulqvqcbn53"
 
 [node name="lvl1Cutscene" type="CanvasLayer"]
-process_mode = 3
 
 [node name="CutsceneController2" parent="." node_paths=PackedStringArray("AustraController", "BorealisController") instance=ExtResource("1_h5ql4")]
 AustraController = NodePath("CutsceneAustraController")
@@ -47,7 +46,7 @@ BorealisController = NodePath("CutsceneBorealisController")
 textboxes = Array[ExtResource("2_akqa7")]([SubResource("Resource_oj38j"), SubResource("Resource_j0s0k"), SubResource("Resource_6a16l"), SubResource("Resource_3rlvk"), SubResource("Resource_76qik")])
 
 [node name="CutsceneAustraController" parent="CutsceneController2" instance=ExtResource("8_f7vvv")]
-layout_mode = 0
+layout_mode = 1
 
 [node name="CutsceneBorealisController" parent="CutsceneController2" instance=ExtResource("9_wpj1u")]
-layout_mode = 0
+layout_mode = 1

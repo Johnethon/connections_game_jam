@@ -1,30 +1,28 @@
-[gd_scene load_steps=22 format=3 uid="uid://71v3b5vfemao"]
+[gd_scene load_steps=21 format=3 uid="uid://bdby400qvbyaj"]
 
-[ext_resource type="Texture2D" uid="uid://4jyrimrn8rad" path="res://sprites/assetsGameJamFall2025/bottomLeftCorner.png" id="1_j1a1x"]
-[ext_resource type="Script" uid="uid://dhjo70jnet1nl" path="res://levels/introlevel.gd" id="1_ob0d1"]
-[ext_resource type="Texture2D" uid="uid://sn87psf7kr4u" path="res://sprites/assetsGameJamFall2025/checkerTile.png" id="2_fhdan"]
-[ext_resource type="Texture2D" uid="uid://bth0ighcwsjw1" path="res://sprites/assetsGameJamFall2025/dresser.png" id="3_sxf0a"]
-[ext_resource type="Texture2D" uid="uid://se1uebadfwo3" path="res://sprites/assetsGameJamFall2025/middleWall.png" id="6_odxi4"]
-[ext_resource type="Texture2D" uid="uid://bd5c36vavnay6" path="res://sprites/assetsGameJamFall2025/rightWallFlat.png" id="7_yjk4n"]
-[ext_resource type="Texture2D" uid="uid://bwbh5ipa3wjn8" path="res://sprites/assetsGameJamFall2025/leftWall.png" id="8_oipij"]
-[ext_resource type="Texture2D" uid="uid://tehd1sv5ribi" path="res://sprites/assetsGameJamFall2025/bottomWall.png" id="9_fhdan"]
-[ext_resource type="Texture2D" uid="uid://dttp6qvvktcpl" path="res://sprites/assetsGameJamFall2025/topLeftCorner.png" id="9_oq854"]
-[ext_resource type="Texture2D" uid="uid://ujec7ithrmyp" path="res://sprites/assetsGameJamFall2025/topRightCorner.png" id="10_sxf0a"]
-[ext_resource type="Texture2D" uid="uid://duf335wf5330b" path="res://sprites/assetsGameJamFall2025/bottomRightCorner.png" id="11_sxf0a"]
-[ext_resource type="Texture2D" uid="uid://bydfh0ocqh5mr" path="res://sprites/assetsGameJamFall2025/couchAsset.png" id="12_o6sql"]
-[ext_resource type="Texture2D" uid="uid://d2uu62m4sgyqf" path="res://sprites/assetsGameJamFall2025/real_right_door_wall.png" id="13_fkn6u"]
-[ext_resource type="Texture2D" uid="uid://rrctmuy8qns5" path="res://sprites/temps/navy_square.png" id="15_oq854"]
-[ext_resource type="Texture2D" uid="uid://o85fro5jiidu" path="res://sprites/assetsGameJamFall2025/woodTile.png" id="15_yjk4n"]
-[ext_resource type="Texture2D" uid="uid://7ob7i0d5v7xt" path="res://sprites/assetsGameJamFall2025/squareRug.png" id="16_ob0d1"]
-[ext_resource type="Texture2D" uid="uid://w3vhtpagy4cm" path="res://sprites/assetsGameJamFall2025/sidetableAsset.png" id="17_cp62d"]
-[ext_resource type="Texture2D" uid="uid://chjvts1j6ynfy" path="res://sprites/assetsGameJamFall2025/potted_plant.png" id="18_ow10w"]
-[ext_resource type="AudioStream" uid="uid://b1nn3f71bg867" path="res://Sounds/Music/slowerCutScene.mp3" id="21_6qvx5"]
-[ext_resource type="Texture2D" uid="uid://qarulfpgdxix" path="res://sprites/tv_router_table_sadd.png" id="21_xkn8y"]
-[ext_resource type="PackedScene" uid="uid://pqbcocw8lhnv" path="res://Cutscenes/LivingRoomCutscene.tscn" id="22_har3p"]
+[ext_resource type="Script" uid="uid://nerggnu1fbuk" path="res://levels/victory_level.gd" id="1_bxsoa"]
+[ext_resource type="Texture2D" uid="uid://se1uebadfwo3" path="res://sprites/assetsGameJamFall2025/middleWall.png" id="2_qvm4i"]
+[ext_resource type="Texture2D" uid="uid://bd5c36vavnay6" path="res://sprites/assetsGameJamFall2025/rightWallFlat.png" id="3_vkgcb"]
+[ext_resource type="Texture2D" uid="uid://bwbh5ipa3wjn8" path="res://sprites/assetsGameJamFall2025/leftWall.png" id="4_eqg1d"]
+[ext_resource type="Texture2D" uid="uid://tehd1sv5ribi" path="res://sprites/assetsGameJamFall2025/bottomWall.png" id="5_2s1gd"]
+[ext_resource type="Texture2D" uid="uid://4jyrimrn8rad" path="res://sprites/assetsGameJamFall2025/bottomLeftCorner.png" id="6_t1gad"]
+[ext_resource type="Texture2D" uid="uid://dttp6qvvktcpl" path="res://sprites/assetsGameJamFall2025/topLeftCorner.png" id="7_hj4gn"]
+[ext_resource type="Texture2D" uid="uid://ujec7ithrmyp" path="res://sprites/assetsGameJamFall2025/topRightCorner.png" id="8_xhqj2"]
+[ext_resource type="Texture2D" uid="uid://duf335wf5330b" path="res://sprites/assetsGameJamFall2025/bottomRightCorner.png" id="9_w2pun"]
+[ext_resource type="Texture2D" uid="uid://sn87psf7kr4u" path="res://sprites/assetsGameJamFall2025/checkerTile.png" id="10_htql3"]
+[ext_resource type="Texture2D" uid="uid://o85fro5jiidu" path="res://sprites/assetsGameJamFall2025/woodTile.png" id="11_a7qrq"]
+[ext_resource type="Texture2D" uid="uid://bth0ighcwsjw1" path="res://sprites/assetsGameJamFall2025/dresser.png" id="12_n2d1o"]
+[ext_resource type="Texture2D" uid="uid://bydfh0ocqh5mr" path="res://sprites/assetsGameJamFall2025/couchAsset.png" id="13_jll86"]
+[ext_resource type="Texture2D" uid="uid://d2uu62m4sgyqf" path="res://sprites/assetsGameJamFall2025/real_right_door_wall.png" id="14_n5u4y"]
+[ext_resource type="Texture2D" uid="uid://rrctmuy8qns5" path="res://sprites/temps/navy_square.png" id="15_kk84l"]
+[ext_resource type="Texture2D" uid="uid://7ob7i0d5v7xt" path="res://sprites/assetsGameJamFall2025/squareRug.png" id="16_cduag"]
+[ext_resource type="Texture2D" uid="uid://w3vhtpagy4cm" path="res://sprites/assetsGameJamFall2025/sidetableAsset.png" id="17_t2g54"]
+[ext_resource type="Texture2D" uid="uid://chjvts1j6ynfy" path="res://sprites/assetsGameJamFall2025/potted_plant.png" id="18_nx2ik"]
+[ext_resource type="Texture2D" uid="uid://qarulfpgdxix" path="res://sprites/tv_router_table_sadd.png" id="19_ewb5d"]
+[ext_resource type="AudioStream" uid="uid://b1nn3f71bg867" path="res://Sounds/Music/slowerCutScene.mp3" id="21_vnscc"]
 
-[node name="Introlevel" type="Node2D" node_paths=PackedStringArray("cutscene_layer")]
-script = ExtResource("1_ob0d1")
-cutscene_layer = NodePath("LivingroomCutscene")
+[node name="Introlevel" type="Node2D"]
+script = ExtResource("1_bxsoa")
 
 [node name="back_ground" type="Node2D" parent="."]
 texture_filter = 3
@@ -37,121 +35,121 @@ scale = Vector2(3.333, 3.333)
 z_index = -1
 texture_filter = 3
 position = Vector2(0, -252)
-texture = ExtResource("6_odxi4")
+texture = ExtResource("2_qvm4i")
 
 [node name="MiddleWall5" type="Sprite2D" parent="back_ground/border_walls"]
 z_index = -1
 texture_filter = 3
 position = Vector2(128, -252)
-texture = ExtResource("6_odxi4")
+texture = ExtResource("2_qvm4i")
 
 [node name="MiddleWall6" type="Sprite2D" parent="back_ground/border_walls"]
 z_index = -1
 texture_filter = 3
 position = Vector2(256, -252)
-texture = ExtResource("6_odxi4")
+texture = ExtResource("2_qvm4i")
 
 [node name="MiddleWall7" type="Sprite2D" parent="back_ground/border_walls"]
 z_index = -1
 texture_filter = 3
 position = Vector2(384, -252)
-texture = ExtResource("6_odxi4")
+texture = ExtResource("2_qvm4i")
 
 [node name="RightWallFlat" type="Sprite2D" parent="back_ground/border_walls"]
 z_index = -1
 texture_filter = 3
 position = Vector2(512, -252)
-texture = ExtResource("7_yjk4n")
+texture = ExtResource("3_vkgcb")
 
 [node name="LeftWall3" type="Sprite2D" parent="back_ground/border_walls"]
 z_index = -1
 texture_filter = 3
 position = Vector2(-50, -157)
-texture = ExtResource("8_oipij")
+texture = ExtResource("4_eqg1d")
 
 [node name="LeftWall5" type="Sprite2D" parent="back_ground/border_walls"]
 z_index = -1
 texture_filter = 3
 position = Vector2(626, 4)
 rotation = 3.1415925
-texture = ExtResource("8_oipij")
+texture = ExtResource("4_eqg1d")
 
 [node name="BottomWall7" type="Sprite2D" parent="back_ground/border_walls"]
 z_index = -1
 texture_filter = 3
 position = Vector2(0, -380)
 rotation = -3.1415925
-texture = ExtResource("9_fhdan")
+texture = ExtResource("5_2s1gd")
 
 [node name="BottomWall8" type="Sprite2D" parent="back_ground/border_walls"]
 z_index = -1
 texture_filter = 3
 position = Vector2(128, -380)
 rotation = -3.1415925
-texture = ExtResource("9_fhdan")
+texture = ExtResource("5_2s1gd")
 
 [node name="BottomWall9" type="Sprite2D" parent="back_ground/border_walls"]
 z_index = -1
 texture_filter = 3
 position = Vector2(256, -380)
 rotation = -3.1415925
-texture = ExtResource("9_fhdan")
+texture = ExtResource("5_2s1gd")
 
 [node name="BottomWall10" type="Sprite2D" parent="back_ground/border_walls"]
 z_index = -1
 texture_filter = 3
 position = Vector2(384, -380)
 rotation = -3.1415925
-texture = ExtResource("9_fhdan")
+texture = ExtResource("5_2s1gd")
 
 [node name="BottomWall16" type="Sprite2D" parent="back_ground/border_walls"]
 z_index = -1
 texture_filter = 3
 position = Vector2(145, -63.999992)
 rotation = -3.1415925
-texture = ExtResource("9_fhdan")
+texture = ExtResource("5_2s1gd")
 
 [node name="BottomWall17" type="Sprite2D" parent="back_ground/border_walls"]
 z_index = -1
 texture_filter = 3
 position = Vector2(273, -63.999992)
 rotation = -3.1415925
-texture = ExtResource("9_fhdan")
+texture = ExtResource("5_2s1gd")
 
 [node name="BottomWall18" type="Sprite2D" parent="back_ground/border_walls"]
 z_index = -1
 texture_filter = 3
 position = Vector2(401, -63.999992)
 rotation = -3.1415925
-texture = ExtResource("9_fhdan")
+texture = ExtResource("5_2s1gd")
 
 [node name="BottomWall11" type="Sprite2D" parent="back_ground/border_walls"]
 texture_filter = 3
 position = Vector2(512, -380)
 rotation = -3.1415925
-texture = ExtResource("9_fhdan")
+texture = ExtResource("5_2s1gd")
 
 [node name="BottomLeftCorner" type="Sprite2D" parent="back_ground/border_walls"]
 z_index = -1
 texture_filter = 3
 position = Vector2(64, -64)
-texture = ExtResource("1_j1a1x")
+texture = ExtResource("6_t1gad")
 
 [node name="TopLeftCorner" type="Sprite2D" parent="back_ground/border_walls"]
 z_index = -1
 texture_filter = 3
 position = Vector2(64, -252)
-texture = ExtResource("9_oq854")
+texture = ExtResource("7_hj4gn")
 
 [node name="TopRightCorner" type="Sprite2D" parent="back_ground/border_walls"]
 texture_filter = 3
 position = Vector2(512, -252)
-texture = ExtResource("10_sxf0a")
+texture = ExtResource("8_xhqj2")
 
 [node name="BottomRightCorner" type="Sprite2D" parent="back_ground/border_walls"]
 texture_filter = 3
 position = Vector2(512, -64)
-texture = ExtResource("11_sxf0a")
+texture = ExtResource("9_w2pun")
 
 [node name="tile_clump" type="Node2D" parent="back_ground"]
 
@@ -159,37 +157,37 @@ texture = ExtResource("11_sxf0a")
 z_index = -2
 texture_filter = 3
 position = Vector2(416, -92)
-texture = ExtResource("2_fhdan")
+texture = ExtResource("10_htql3")
 
 [node name="CheckerTile5" type="Sprite2D" parent="back_ground/tile_clump"]
 z_index = -2
 texture_filter = 3
 position = Vector2(416, -156)
-texture = ExtResource("2_fhdan")
+texture = ExtResource("10_htql3")
 
 [node name="CheckerTile" type="Sprite2D" parent="back_ground/tile_clump"]
 z_index = -2
 texture_filter = 3
 position = Vector2(480, -92)
-texture = ExtResource("2_fhdan")
+texture = ExtResource("10_htql3")
 
 [node name="CheckerTile3" type="Sprite2D" parent="back_ground/tile_clump"]
 z_index = -2
 texture_filter = 3
 position = Vector2(480, -156)
-texture = ExtResource("2_fhdan")
+texture = ExtResource("10_htql3")
 
 [node name="CheckerTile4" type="Sprite2D" parent="back_ground/tile_clump"]
 z_index = -2
 texture_filter = 3
 position = Vector2(544, -156)
-texture = ExtResource("2_fhdan")
+texture = ExtResource("10_htql3")
 
 [node name="CheckerTile2" type="Sprite2D" parent="back_ground/tile_clump"]
 z_index = -2
 texture_filter = 3
 position = Vector2(544, -92)
-texture = ExtResource("2_fhdan")
+texture = ExtResource("10_htql3")
 
 [node name="wooden_flooring_clumb" type="Node2D" parent="back_ground"]
 
@@ -197,181 +195,179 @@ texture = ExtResource("2_fhdan")
 z_index = -2
 texture_filter = 3
 position = Vector2(352, -92)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="WoodTile2" type="Sprite2D" parent="back_ground/wooden_flooring_clumb"]
 z_index = -2
 texture_filter = 3
 position = Vector2(352, -156)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="WoodTile3" type="Sprite2D" parent="back_ground/wooden_flooring_clumb"]
 z_index = -2
 texture_filter = 3
 position = Vector2(288, -92)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="WoodTile4" type="Sprite2D" parent="back_ground/wooden_flooring_clumb"]
 z_index = -2
 texture_filter = 3
 position = Vector2(288, -156)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="WoodTile5" type="Sprite2D" parent="back_ground/wooden_flooring_clumb"]
 z_index = -2
 texture_filter = 3
 position = Vector2(224, -92)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="WoodTile6" type="Sprite2D" parent="back_ground/wooden_flooring_clumb"]
 z_index = -2
 texture_filter = 3
 position = Vector2(224, -156)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="WoodTile7" type="Sprite2D" parent="back_ground/wooden_flooring_clumb"]
 z_index = -2
 texture_filter = 3
 position = Vector2(160, -92)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="WoodTile8" type="Sprite2D" parent="back_ground/wooden_flooring_clumb"]
 z_index = -2
 texture_filter = 3
 position = Vector2(160, -156)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="WoodTile9" type="Sprite2D" parent="back_ground/wooden_flooring_clumb"]
 z_index = -2
 texture_filter = 3
 position = Vector2(96, -92)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="WoodTile10" type="Sprite2D" parent="back_ground/wooden_flooring_clumb"]
 z_index = -2
 texture_filter = 3
 position = Vector2(96, -156)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="WoodTile11" type="Sprite2D" parent="back_ground/wooden_flooring_clumb"]
 z_index = -2
 texture_filter = 3
 position = Vector2(32, -92)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="WoodTile12" type="Sprite2D" parent="back_ground/wooden_flooring_clumb"]
 z_index = -2
 texture_filter = 3
 position = Vector2(32, -156)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="WoodTile13" type="Sprite2D" parent="back_ground/wooden_flooring_clumb"]
 z_index = -2
 texture_filter = 3
 position = Vector2(352, -28)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="WoodTile14" type="Sprite2D" parent="back_ground/wooden_flooring_clumb"]
 z_index = -2
 texture_filter = 3
 position = Vector2(288, -28)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="WoodTile15" type="Sprite2D" parent="back_ground/wooden_flooring_clumb"]
 z_index = -2
 texture_filter = 3
 position = Vector2(224, -28)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="WoodTile16" type="Sprite2D" parent="back_ground/wooden_flooring_clumb"]
 z_index = -2
 texture_filter = 3
 position = Vector2(160, -28)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="WoodTile17" type="Sprite2D" parent="back_ground/wooden_flooring_clumb"]
 z_index = -2
 texture_filter = 3
 position = Vector2(96, -28)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="WoodTile18" type="Sprite2D" parent="back_ground/wooden_flooring_clumb"]
 z_index = -2
 texture_filter = 3
 position = Vector2(32, -28)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="WoodTile19" type="Sprite2D" parent="back_ground/wooden_flooring_clumb"]
 z_index = -2
 texture_filter = 3
 position = Vector2(544, -28)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="WoodTile20" type="Sprite2D" parent="back_ground/wooden_flooring_clumb"]
 z_index = -2
 texture_filter = 3
 position = Vector2(480, -28)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="WoodTile21" type="Sprite2D" parent="back_ground/wooden_flooring_clumb"]
 z_index = -2
 texture_filter = 3
 position = Vector2(416, -28)
-texture = ExtResource("15_yjk4n")
+texture = ExtResource("11_a7qrq")
 
 [node name="Dresser" type="Sprite2D" parent="back_ground"]
 z_index = -1
 texture_filter = 3
 position = Vector2(432, -188)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("3_sxf0a")
+texture = ExtResource("12_n2d1o")
 
 [node name="CouchAsset" type="Sprite2D" parent="back_ground"]
 texture_filter = 3
 position = Vector2(200, -133.31656)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("12_o6sql")
+texture = ExtResource("13_jll86")
 
 [node name="RealRightDoorWall" type="Sprite2D" parent="back_ground"]
 texture_filter = 3
 position = Vector2(512, -124)
-texture = ExtResource("13_fkn6u")
+texture = ExtResource("14_n5u4y")
 
 [node name="NavySquare" type="Sprite2D" parent="back_ground"]
 position = Vector2(572, -132)
 scale = Vector2(1, 6)
-texture = ExtResource("15_oq854")
+texture = ExtResource("15_kk84l")
 
 [node name="SquareRug" type="Sprite2D" parent="back_ground"]
 texture_filter = 3
 position = Vector2(526, -132)
 rotation = 1.5707964
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("16_ob0d1")
+texture = ExtResource("16_cduag")
 
 [node name="SidetableAsset" type="Sprite2D" parent="back_ground"]
 texture_filter = 3
 position = Vector2(144.5, -123.81655)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("17_cp62d")
+texture = ExtResource("17_t2g54")
 
 [node name="PottedPlant" type="Sprite2D" parent="back_ground"]
 position = Vector2(42.00421, -187.8188)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("18_ow10w")
+texture = ExtResource("18_nx2ik")
 
 [node name="TvRouterTableHappi" type="Sprite2D" parent="back_ground"]
 position = Vector2(201.32014, -199.82)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("21_xkn8y")
+texture = ExtResource("19_ewb5d")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
-[node name="LivingroomCutscene" parent="." instance=ExtResource("22_har3p")]
-
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 process_mode = 3
-stream = ExtResource("21_6qvx5")
+stream = ExtResource("21_vnscc")
 autoplay = true
 bus = &"Music"
 parameters/looping = true

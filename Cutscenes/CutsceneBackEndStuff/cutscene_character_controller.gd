@@ -13,7 +13,8 @@ var is_blinking: bool = false
 @onready var blink_duration: float = randf_range(0.2,0.4)
 
 func _ready() -> void:
-	$BlinkTimer.timeout.connect(_on_blink_timer_timeout)
+	if not $BlinkTimer.is_connected("timeout", _on_blink_timer_timeout):
+		$BlinkTimer.timeout.connect(_on_blink_timer_timeout)
 	$BlinkTimer.start(randf_range(3,4))
 
 func _process(delta: float) -> void:

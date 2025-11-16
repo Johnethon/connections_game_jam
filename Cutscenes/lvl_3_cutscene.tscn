@@ -32,7 +32,6 @@ texture = ExtResource("6_1ujru")
 metadata/_custom_type_script = "uid://da4ulqvqcbn53"
 
 [node name="lvl_3_cutscene" type="CanvasLayer"]
-process_mode = 3
 
 [node name="CutsceneController" parent="." node_paths=PackedStringArray("AustraController", "BorealisController") instance=ExtResource("1_gmedu")]
 AustraController = NodePath("CutsceneAustraController")

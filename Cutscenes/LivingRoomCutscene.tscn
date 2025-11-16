@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://pqbcocw8lhnv"]
+[gd_scene load_steps=31 format=3 uid="uid://pqbcocw8lhnv"]
 
 [ext_resource type="PackedScene" uid="uid://b7721yatqq3c6" path="res://Cutscenes/CutsceneBackEndStuff/cutscene_controller.tscn" id="1_jwsid"]
 [ext_resource type="Script" uid="uid://da4ulqvqcbn53" path="res://Cutscenes/CutsceneBackEndStuff/text_box_resource.gd" id="2_airgl"]
@@ -11,7 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://clty8twdlv0v8" path="res://sprites/cutscene_textboxes/Frame 7.png" id="9_qq0dr"]
 [ext_resource type="Texture2D" uid="uid://dm6284lrbmd1n" path="res://sprites/cutscene_textboxes/Frame 8.png" id="10_dg5a0"]
 [ext_resource type="Texture2D" uid="uid://u46wh5hnvpvu" path="res://sprites/cutscene_textboxes/Frame 9.png" id="11_66eyg"]
-[ext_resource type="PackedScene" uid="uid://3ysjurqavo4v" path="res://Cutscenes/CutsceneBackEndStuff/cutscene_character_controller.tscn" id="12_23th7"]
+[ext_resource type="PackedScene" uid="uid://btahd6hqlgnl3" path="res://Cutscenes/CutsceneBackEndStuff/cutscene_austra_controller.tscn" id="12_5mfrx"]
+[ext_resource type="PackedScene" uid="uid://cbvx7cm62veq7" path="res://Cutscenes/CutsceneBackEndStuff/cutscene_borealis_controller.tscn" id="13_ft4wh"]
 [ext_resource type="Texture2D" uid="uid://d1t6t7b631q3b" path="res://sprites/characters/Austra. Silent. Livingroom.png" id="13_ktjic"]
 [ext_resource type="Texture2D" uid="uid://d1nemmqqtqafv" path="res://sprites/characters/Austra.open.livingroom.png" id="14_rbh3k"]
 [ext_resource type="Texture2D" uid="uid://nnaqns18ka3g" path="res://sprites/characters/Austra.blink.livingroom.png" id="15_3ijqp"]
@@ -71,21 +72,20 @@ texture = ExtResource("11_66eyg")
 metadata/_custom_type_script = "uid://da4ulqvqcbn53"
 
 [node name="LivingroomCutscene" type="CanvasLayer"]
-process_mode = 3
 
 [node name="CutsceneController" parent="." node_paths=PackedStringArray("AustraController", "BorealisController") instance=ExtResource("1_jwsid")]
-AustraController = NodePath("CutsceneCharacterController")
-BorealisController = NodePath("CutsceneCharacterController2")
+AustraController = NodePath("CutsceneAustraController")
+BorealisController = NodePath("CutsceneBorealisController")
 textboxes = Array[ExtResource("2_airgl")]([SubResource("Resource_ur0ns"), SubResource("Resource_npaaq"), SubResource("Resource_dqy1b"), SubResource("Resource_jjv3g"), SubResource("Resource_0w3e8"), SubResource("Resource_th85i"), SubResource("Resource_mt15a"), SubResource("Resource_7vrg2"), SubResource("Resource_tbgxb")])
 
-[node name="CutsceneCharacterController" parent="CutsceneController" instance=ExtResource("12_23th7")]
-layout_mode = 1
+[node name="CutsceneAustraController" parent="CutsceneController" instance=ExtResource("12_5mfrx")]
+layout_mode = 0
 mouth_shut_eyes_open = ExtResource("13_ktjic")
 mouth_open_eyes_open = ExtResource("14_rbh3k")
 mouth_shut_eyes_shut = ExtResource("15_3ijqp")
 mouth_open_eyes_shut = ExtResource("16_w86f0")
 
-[node name="CutsceneCharacterController2" parent="CutsceneController" instance=ExtResource("12_23th7")]
+[node name="CutsceneBorealisController" parent="CutsceneController" instance=ExtResource("13_ft4wh")]
 layout_mode = 1
 mouth_shut_eyes_open = ExtResource("17_11pjf")
 mouth_open_eyes_open = ExtResource("18_wsvur")

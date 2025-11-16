@@ -9,8 +9,6 @@
 [node name="CutsceneAustraController" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 script = ExtResource("1_rtjt8")
 mouth_shut_eyes_open = ExtResource("2_w4fqd")
 mouth_open_eyes_open = ExtResource("3_y6tts")
@@ -22,6 +20,8 @@ metadata/_custom_type_script = "uid://cgpjc7u5suicg"
 one_shot = true
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+offset_top = 270.0
+offset_right = 1920.0
+offset_bottom = 1350.0
+scale = Vector2(0.75, 0.75)

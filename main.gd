@@ -71,7 +71,6 @@ func play_level_transition():
 	
 	cur_level_node.spawn_in_players()
 	
-
 func pause_game():
 	if cur_menu != null:
 		cur_menu.queue_free()
@@ -104,6 +103,10 @@ func go_to_main_menu():
 		
 	cur_menu = main_menu.instantiate()
 	$CanvasLayer.add_child(cur_menu)
+	
+func level_cutscene_finished():
+	if cur_level_node != null:
+		cur_level_node.cutscene_over()
 
 func _physics_process(delta: float) -> void:
 	#print(camera.get_viewport_rect())

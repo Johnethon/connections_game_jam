@@ -26,7 +26,10 @@ var positive_player : Player = null
 
 @onready var main = get_tree().get_first_node_in_group("main")
 
+@export var cutscene_layer : CanvasLayer = null
+
 func spawn_in_players():
+	
 	negative_exit_beam.scale.y = 0
 	negative_exit_beam.global_position = negative_entrance_port.global_position + Vector2(0, 32)
 	
@@ -57,14 +60,13 @@ func spawn_in_players():
 	tween.tween_property(negative_exit_beam, "scale", Vector2(1, 0), 1.0)
 	tween.set_parallel()
 	tween.tween_property(positive_exit_beam, "scale", Vector2(1,0), 1.0)
-	tween.set_parallel(false)
-	tween.tween_interval(1.0)
 	
 	await tween.finished
 	
-	if has_cutscene:
+	if cutscene_layer:
 		play_cutscene()
 	else:
+		print("do")
 		main.in_cutscene = false
 
 func make_players_leave():
@@ -94,8 +96,6 @@ func make_players_leave():
 	tween.tween_property(negative_exit_beam, "scale", Vector2(1, 0), 1.0)
 	tween.set_parallel()
 	tween.tween_property(positive_exit_beam, "scale", Vector2(1,0), 1.0)
-	tween.set_parallel(false)
-	tween.tween_interval(1.0)
 	
 	await tween.finished
 	
@@ -142,6 +142,10 @@ func positive_spot_exited(body : Node2D):
 func level_end():
 	make_players_leave()
 
-@export var has_cutscene : bool = false
+#@export var has_cutscene : bool = false
 func play_cutscene():
-	pass
+	if cutscene_layer:
+		cutscene_layer.get_child(0).appear()
+	
+func cutscene_over():
+	main.in_cutscene = false

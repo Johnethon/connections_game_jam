@@ -90,6 +90,7 @@ func interaction_code():
 				held_object.attached = false
 				held_object.node_i_am_attached_to = null
 				held_object = null
+
 var t = 0
 func _physics_process(delta: float) -> void:
 	

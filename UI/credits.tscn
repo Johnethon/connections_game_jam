@@ -106,7 +106,7 @@ color = Color(0.18194696, 0.059947006, 0.6344302, 0.30588236)
 [node name="Label4" type="Label" parent="VBoxContainer"]
 texture_filter = 3
 layout_mode = 2
-text = "Deuce - Programming"
+text = "Deuce - Programming / Music"
 label_settings = SubResource("LabelSettings_kk2ga")
 horizontal_alignment = 1
 vertical_alignment = 1

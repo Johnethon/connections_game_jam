@@ -166,6 +166,7 @@ positive_exit_beam = NodePath("positive_teleport_gradient")
 negative_in_port_indicator = NodePath("negative_exit_indicator")
 positive_in_port_indicator = NodePath("positive_exit_indicator")
 cutscene_layer = NodePath("lvl_4_cutscene")
+need_to_beat_for_ending = true
 
 [node name="lvl_4_cutscene" parent="." instance=ExtResource("2_6ar00")]
 

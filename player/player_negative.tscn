@@ -81,8 +81,9 @@ shape = SubResource("RectangleShape2D_4qum1")
 y_sort_enabled = true
 texture_filter = 3
 sprite_frames = SubResource("SpriteFrames_34mfa")
-animation = &"idle"
+animation = &"walk"
 autoplay = "idle"
+frame_progress = 0.50775325
 
 [node name="wire_holding_spot" type="Node2D" parent="."]
 position = Vector2(-17, 22)

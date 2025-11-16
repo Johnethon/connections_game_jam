@@ -1,0 +1,99 @@
+[gd_scene load_steps=28 format=3 uid="uid://pqbcocw8lhnv"]
+
+[ext_resource type="PackedScene" uid="uid://b7721yatqq3c6" path="res://cutscene_controller.tscn" id="1_6t2ad"]
+[ext_resource type="Script" uid="uid://da4ulqvqcbn53" path="res://text_box_resource.gd" id="2_tbgxb"]
+[ext_resource type="Texture2D" uid="uid://yahgnwxfgoog" path="res://sprites/cutscene_textboxes/Frame 2.png" id="3_ur0ns"]
+[ext_resource type="Texture2D" uid="uid://chj31dmlajviv" path="res://sprites/cutscene_textboxes/Frame 3.png" id="4_6c56t"]
+[ext_resource type="Texture2D" uid="uid://c4tp5g8271lfp" path="res://sprites/cutscene_textboxes/Frame 4.png" id="5_spijx"]
+[ext_resource type="Texture2D" uid="uid://bpl2e7kmiwx77" path="res://sprites/cutscene_textboxes/Frame 5.png" id="6_stekc"]
+[ext_resource type="Texture2D" uid="uid://c4jffqvoa6hll" path="res://sprites/cutscene_textboxes/Frame 6.png" id="7_nvdy6"]
+[ext_resource type="Texture2D" uid="uid://clty8twdlv0v8" path="res://sprites/cutscene_textboxes/Frame 7.png" id="8_6tdht"]
+[ext_resource type="Texture2D" uid="uid://dm6284lrbmd1n" path="res://sprites/cutscene_textboxes/Frame 8.png" id="9_wqeni"]
+[ext_resource type="Texture2D" uid="uid://u46wh5hnvpvu" path="res://sprites/cutscene_textboxes/Frame 9.png" id="10_2oscc"]
+[ext_resource type="PackedScene" uid="uid://3ysjurqavo4v" path="res://cutscene_character_controller.tscn" id="11_cvmyh"]
+[ext_resource type="Texture2D" uid="uid://d1t6t7b631q3b" path="res://sprites/characters/Austra. Silent. Livingroom.png" id="12_jvd1y"]
+[ext_resource type="Texture2D" uid="uid://d1nemmqqtqafv" path="res://sprites/characters/Austra.open.livingroom.png" id="13_croby"]
+[ext_resource type="Texture2D" uid="uid://nnaqns18ka3g" path="res://sprites/characters/Austra.blink.livingroom.png" id="14_7agan"]
+[ext_resource type="Texture2D" uid="uid://dwnkqhxsmpe6r" path="res://sprites/characters/Austra.open.blink.livingroom.png" id="15_wnjtr"]
+[ext_resource type="Texture2D" uid="uid://diwsf3l3kicdw" path="res://sprites/characters/Borealis.silent.livingroom.png" id="16_hetui"]
+[ext_resource type="Texture2D" uid="uid://cm13dj7npat6n" path="res://sprites/characters/Borealis.open.livingroom.png" id="17_bqtc1"]
+[ext_resource type="Texture2D" uid="uid://hujwmusg6xwq" path="res://sprites/characters/Borealis.blink.livingroom.png" id="18_11p4j"]
+[ext_resource type="Texture2D" uid="uid://gicssdj52brd" path="res://sprites/characters/Borealis.open.blink.livingroom.png" id="19_qv73u"]
+
+[sub_resource type="Resource" id="Resource_npaaq"]
+script = ExtResource("2_tbgxb")
+texture = ExtResource("3_ur0ns")
+Person1Talking = true
+Duration = 3.0
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_dqy1b"]
+script = ExtResource("2_tbgxb")
+texture = ExtResource("4_6c56t")
+Person2Talking = true
+Duration = 3.0
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_jjv3g"]
+script = ExtResource("2_tbgxb")
+texture = ExtResource("5_spijx")
+Person1Talking = true
+Duration = 3.0
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_0w3e8"]
+script = ExtResource("2_tbgxb")
+texture = ExtResource("6_stekc")
+Person2Talking = true
+Duration = 3.0
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_th85i"]
+script = ExtResource("2_tbgxb")
+texture = ExtResource("7_nvdy6")
+Person1Talking = true
+Duration = 3.0
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_mt15a"]
+script = ExtResource("2_tbgxb")
+texture = ExtResource("8_6tdht")
+Person2Talking = true
+Duration = 3.0
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_7vrg2"]
+script = ExtResource("2_tbgxb")
+texture = ExtResource("9_wqeni")
+Person1Talking = true
+Duration = 3.0
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_tbgxb"]
+script = ExtResource("2_tbgxb")
+texture = ExtResource("10_2oscc")
+Person2Talking = true
+Duration = 3.0
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[node name="LivingroomCutscene" type="CanvasLayer"]
+process_mode = 3
+
+[node name="CutsceneController" parent="." node_paths=PackedStringArray("character1", "character2") instance=ExtResource("1_6t2ad")]
+character1 = NodePath("CutsceneCharacterController")
+character2 = NodePath("CutsceneCharacterController2")
+textboxes = Array[ExtResource("2_tbgxb")]([SubResource("Resource_npaaq"), SubResource("Resource_dqy1b"), SubResource("Resource_jjv3g"), SubResource("Resource_0w3e8"), SubResource("Resource_th85i"), SubResource("Resource_mt15a"), SubResource("Resource_7vrg2"), SubResource("Resource_tbgxb")])
+
+[node name="CutsceneCharacterController" parent="CutsceneController" instance=ExtResource("11_cvmyh")]
+layout_mode = 1
+mouth_shut_eyes_open = ExtResource("12_jvd1y")
+mouth_open_eyes_open = ExtResource("13_croby")
+mouth_shut_eyes_shut = ExtResource("14_7agan")
+mouth_open_eyes_shut = ExtResource("15_wnjtr")
+
+[node name="CutsceneCharacterController2" parent="CutsceneController" instance=ExtResource("11_cvmyh")]
+layout_mode = 1
+mouth_shut_eyes_open = ExtResource("16_hetui")
+mouth_open_eyes_open = ExtResource("17_bqtc1")
+mouth_shut_eyes_shut = ExtResource("18_11p4j")
+mouth_open_eyes_shut = ExtResource("19_qv73u")

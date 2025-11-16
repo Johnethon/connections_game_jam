@@ -133,13 +133,15 @@ func _process(delta: float) -> void:
 	#var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if input_dir:
 		last_move_dir = input_dir
-		sprite.play("walk")
-	else:
-		sprite.play("idle")
 	#print(sprite.scale.x )
 	velocity.x = move_toward(velocity.x, input_dir.x * move_speed, move_speed * delta * 5)
 	velocity.y = move_toward(velocity.y, input_dir.y * move_speed, move_speed * delta * 5)
-
+	
+	if velocity.length() > 1:
+		sprite.play("walk")
+	else:
+		sprite.play("idle")
+	
 	move_and_slide()
 
 func die() -> void:

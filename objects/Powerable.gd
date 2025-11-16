@@ -39,6 +39,8 @@ func _ready():
 		new_cable.get_child(0).scale.x = dist_to / 8 #px size of player sprite
 		
 		#print("do")
+	if reverse or power_source:
+		given_power()
 	
 	personal_ready()
 

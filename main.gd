@@ -19,6 +19,8 @@ var cur_level_index = 0
 
 var in_cutscene : bool = false
 
+var need_to_beat_for_ending : bool = false
+
 var resets_in_a_row = 0
 func reset_cur_level( instant:bool = false):
 	
@@ -73,7 +75,6 @@ func play_level_transition():
 	await transition_sprite.animation_finished
 	
 	transition_sprite.visible = false
-	
 	
 	cur_level_node.spawn_in_players()
 	

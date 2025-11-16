@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://x55yvehn6kp0"]
+[gd_scene load_steps=42 format=3 uid="uid://x55yvehn6kp0"]
 
 [ext_resource type="Script" uid="uid://lvmbv3ubq5gt" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://c5vw0i55t4eua" path="res://levels/level_base.tscn" id="1_ig7tw"]
@@ -10,9 +10,10 @@
 [ext_resource type="PackedScene" uid="uid://nbrgbgmtcmgq" path="res://UI/you_win.tscn" id="6_dg77c"]
 [ext_resource type="PackedScene" uid="uid://71v3b5vfemao" path="res://levels/introlevel.tscn" id="6_kek77"]
 [ext_resource type="PackedScene" uid="uid://cvg4x5xajvf31" path="res://levels/level_2_power_poles.tscn" id="7_5vw27"]
-[ext_resource type="PackedScene" uid="uid://b3h5xmhq6s5cq" path="res://levels/level_3_electrified_floors.tscn" id="9_4c57u"]
 [ext_resource type="AudioStream" uid="uid://b1nn3f71bg867" path="res://Sounds/Music/slowerCutScene.mp3" id="10_4c57u"]
 [ext_resource type="PackedScene" uid="uid://dh46wlf2c4n84" path="res://levels/level_4_turrets.tscn" id="10_efxa6"]
+[ext_resource type="PackedScene" uid="uid://7u2e07cfhbfd" path="res://levels/level_3_electrified_floors_easy.tscn" id="10_vivmo"]
+[ext_resource type="PackedScene" uid="uid://c8wfigqt1t4sd" path="res://levels/level_6_hives.tscn" id="12_2cqfq"]
 [ext_resource type="PackedScene" uid="uid://bdby400qvbyaj" path="res://levels/victory_level.tscn" id="12_ycdy4"]
 [ext_resource type="AudioStream" uid="uid://cigcdki3bk4pd" path="res://Sounds/Music/promises.mp3" id="14_w48qg"]
 
@@ -207,7 +208,7 @@ level_select_menu = ExtResource("4_7mycd")
 credits_menu = ExtResource("5_272bh")
 win_menu = ExtResource("6_dg77c")
 cur_menu = NodePath("CanvasLayer/MainMenu")
-levels = Array[PackedScene]([ExtResource("6_kek77"), ExtResource("1_ig7tw"), ExtResource("7_5vw27"), ExtResource("9_4c57u"), ExtResource("10_efxa6"), ExtResource("12_ycdy4")])
+levels = Array[PackedScene]([ExtResource("6_kek77"), ExtResource("1_ig7tw"), ExtResource("7_5vw27"), ExtResource("10_vivmo"), ExtResource("10_efxa6"), ExtResource("12_2cqfq"), ExtResource("12_ycdy4")])
 
 [node name="Camera2D" type="Camera2D" parent="."]
 

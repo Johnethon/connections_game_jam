@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://b3h5xmhq6s5cq"]
+[gd_scene load_steps=29 format=4 uid="uid://b3h5xmhq6s5cq"]
 
 [ext_resource type="Script" uid="uid://dix2ax4jxrl6y" path="res://levels/level_2_power_poles.gd" id="1_sqb5e"]
 [ext_resource type="Texture2D" uid="uid://bu6kctftacoaf" path="res://sprites/temps/black_square.png" id="2_jm4bj"]
@@ -197,13 +197,13 @@ texture = ExtResource("2_jm4bj")
 [node name="PowerCable" parent="." node_paths=PackedStringArray("node_i_am_attached_to") instance=ExtResource("3_pgx1u")]
 position = Vector2(-672, 508)
 node_i_am_attached_to = NodePath("../PowerCableAttachPoint")
-max_length = 100
+max_length = 200
 max_spool_scale = 4.0
 
 [node name="PowerCable2" parent="." node_paths=PackedStringArray("node_i_am_attached_to") instance=ExtResource("3_pgx1u")]
 position = Vector2(672, 508)
 node_i_am_attached_to = NodePath("../PowerCableAttachPoint2")
-max_length = 100
+max_length = 200
 max_spool_scale = 4.0
 
 [node name="Door" parent="." node_paths=PackedStringArray("power_inputs") instance=ExtResource("4_c4ct6")]
@@ -226,7 +226,7 @@ tile_set = SubResource("TileSet_gei2l")
 z_index = 1
 texture_filter = 3
 position = Vector2(0, -548)
-tile_map_data = PackedByteArray("AAADAAoAAgABAAAAAAAGAAQAAgABAAAAAAAIAAQAAgABAAAAAAAFAAQAAgAAAAAAAAAJAAQAAgAFAAAAAAD5/wQAAgAEAAAAAAD3/wQAAgAEAAAAAAD6/wQAAgAFAAAAAAD2/wQAAgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAGAAQAAgABAAAAAAAIAAQAAgABAAAAAAAFAAQAAgAAAAAAAAAJAAQAAgAFAAAAAAD5/wQAAgAEAAAAAAD3/wQAAgAEAAAAAAD6/wQAAgAFAAAAAAD2/wQAAgAAAAAAAAA=")
 tile_set = SubResource("TileSet_pgx1u")
 
 [node name="floor" type="TileMapLayer" parent="."]
@@ -333,468 +333,468 @@ position = Vector2(2, 257)
 
 [node name="ElectrifiedFloor" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-928, 59)
-Negative = true
 power_inputs = [NodePath("../../PowerCableAttachPoint2")]
+reverse = true
 
 [node name="ElectrifiedFloor2" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-864, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint2")]
+power_inputs = [NodePath("../ElectrifiedFloor")]
+reverse = true
 
 [node name="ElectrifiedFloor3" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-800, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint2")]
+power_inputs = [NodePath("../ElectrifiedFloor2")]
+reverse = true
 
 [node name="ElectrifiedFloor4" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-736, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint2")]
+power_inputs = [NodePath("../ElectrifiedFloor3")]
+reverse = true
 
 [node name="ElectrifiedFloor5" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-672, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint2")]
+power_inputs = [NodePath("../ElectrifiedFloor4")]
+reverse = true
 
 [node name="ElectrifiedFloor6" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-608, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint2")]
+power_inputs = [NodePath("../ElectrifiedFloor5")]
+reverse = true
 
 [node name="ElectrifiedFloor7" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-544, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint2")]
+power_inputs = [NodePath("../ElectrifiedFloor6")]
+reverse = true
 
 [node name="ElectrifiedFloor8" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-480, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint2")]
+power_inputs = [NodePath("../ElectrifiedFloor7")]
+reverse = true
 
 [node name="ElectrifiedFloor9" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-416, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint2")]
+power_inputs = [NodePath("../ElectrifiedFloor8")]
+reverse = true
 
 [node name="ElectrifiedFloor10" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-352, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint2")]
+power_inputs = [NodePath("../ElectrifiedFloor9")]
+reverse = true
 
 [node name="ElectrifiedFloor11" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-288, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint2")]
+power_inputs = [NodePath("../ElectrifiedFloor10")]
+reverse = true
 
 [node name="ElectrifiedFloor12" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-224, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint2")]
+power_inputs = [NodePath("../ElectrifiedFloor11")]
+reverse = true
 
 [node name="ElectrifiedFloor13" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-160, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint2")]
+power_inputs = [NodePath("../ElectrifiedFloor11")]
+reverse = true
 
 [node name="ElectrifiedFloor14" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-96, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint2")]
+power_inputs = [NodePath("../ElectrifiedFloor12")]
+reverse = true
 
 [node name="ElectrifiedFloor15" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-32, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint2")]
+power_inputs = [NodePath("../ElectrifiedFloor14")]
+reverse = true
 
 [node name="negative_side_electric_floor2" type="Node2D" parent="."]
 position = Vector2(-4, 62)
 
 [node name="ElectrifiedFloor" parent="negative_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-928, 59)
-Negative = true
 power_inputs = [NodePath("../../PowerCableAttachPoint8")]
+reverse = true
 
 [node name="ElectrifiedFloor2" parent="negative_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-864, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint8")]
+power_inputs = [NodePath("../ElectrifiedFloor")]
+reverse = true
 
 [node name="ElectrifiedFloor3" parent="negative_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-800, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint8")]
+power_inputs = [NodePath("../ElectrifiedFloor2")]
+reverse = true
 
 [node name="ElectrifiedFloor4" parent="negative_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-736, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint8")]
+power_inputs = [NodePath("../ElectrifiedFloor3")]
+reverse = true
 
 [node name="ElectrifiedFloor5" parent="negative_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-672, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint8")]
+power_inputs = [NodePath("../ElectrifiedFloor4")]
+reverse = true
 
 [node name="ElectrifiedFloor6" parent="negative_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-608, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint8")]
+power_inputs = [NodePath("../ElectrifiedFloor5")]
+reverse = true
 
 [node name="ElectrifiedFloor7" parent="negative_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-544, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint8")]
+power_inputs = [NodePath("../ElectrifiedFloor6")]
+reverse = true
 
 [node name="ElectrifiedFloor8" parent="negative_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-480, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint8")]
+power_inputs = [NodePath("../ElectrifiedFloor7")]
+reverse = true
 
 [node name="ElectrifiedFloor9" parent="negative_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-416, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint8")]
+power_inputs = [NodePath("../ElectrifiedFloor8")]
+reverse = true
 
 [node name="ElectrifiedFloor10" parent="negative_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-352, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint8")]
+power_inputs = [NodePath("../ElectrifiedFloor9")]
+reverse = true
 
 [node name="ElectrifiedFloor11" parent="negative_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-288, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint8")]
+power_inputs = [NodePath("../ElectrifiedFloor10")]
+reverse = true
 
 [node name="ElectrifiedFloor12" parent="negative_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-224, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint8")]
+power_inputs = [NodePath("../ElectrifiedFloor11")]
+reverse = true
 
 [node name="ElectrifiedFloor13" parent="negative_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-160, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint8")]
+power_inputs = [NodePath("../ElectrifiedFloor12")]
+reverse = true
 
 [node name="ElectrifiedFloor14" parent="negative_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-96, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint8")]
+power_inputs = [NodePath("../ElectrifiedFloor13")]
+reverse = true
 
 [node name="ElectrifiedFloor15" parent="negative_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-32, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint8")]
+power_inputs = [NodePath("../ElectrifiedFloor14")]
+reverse = true
 
 [node name="negative_side_electric_floor3" type="Node2D" parent="."]
 position = Vector2(-5, -128)
 
 [node name="ElectrifiedFloor" parent="negative_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-928, 59)
-Negative = true
 power_inputs = [NodePath("../../PowerCableAttachPoint4")]
+reverse = true
 
 [node name="ElectrifiedFloor2" parent="negative_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-864, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint4")]
+power_inputs = [NodePath("../ElectrifiedFloor")]
+reverse = true
 
 [node name="ElectrifiedFloor3" parent="negative_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-800, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint4")]
+power_inputs = [NodePath("../ElectrifiedFloor2")]
+reverse = true
 
 [node name="ElectrifiedFloor4" parent="negative_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-736, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint4")]
+power_inputs = [NodePath("../ElectrifiedFloor3")]
+reverse = true
 
 [node name="ElectrifiedFloor5" parent="negative_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-672, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint4")]
+power_inputs = [NodePath("../ElectrifiedFloor4")]
+reverse = true
 
 [node name="ElectrifiedFloor6" parent="negative_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-608, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint4")]
+power_inputs = [NodePath("../ElectrifiedFloor5")]
+reverse = true
 
 [node name="ElectrifiedFloor7" parent="negative_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-544, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint4")]
+power_inputs = [NodePath("../ElectrifiedFloor6")]
+reverse = true
 
 [node name="ElectrifiedFloor8" parent="negative_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-480, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint4")]
+power_inputs = [NodePath("../ElectrifiedFloor7")]
+reverse = true
 
 [node name="ElectrifiedFloor9" parent="negative_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-416, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint4")]
+power_inputs = [NodePath("../ElectrifiedFloor8")]
+reverse = true
 
 [node name="ElectrifiedFloor10" parent="negative_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-352, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint4")]
+power_inputs = [NodePath("../ElectrifiedFloor9")]
+reverse = true
 
 [node name="ElectrifiedFloor11" parent="negative_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-288, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint4")]
+power_inputs = [NodePath("../ElectrifiedFloor10")]
+reverse = true
 
 [node name="ElectrifiedFloor12" parent="negative_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-224, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint4")]
+power_inputs = [NodePath("../ElectrifiedFloor11")]
+reverse = true
 
 [node name="ElectrifiedFloor13" parent="negative_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-160, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint4")]
+power_inputs = [NodePath("../ElectrifiedFloor12")]
+reverse = true
 
 [node name="ElectrifiedFloor14" parent="negative_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-96, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint4")]
+power_inputs = [NodePath("../ElectrifiedFloor13")]
+reverse = true
 
 [node name="ElectrifiedFloor15" parent="negative_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(-32, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint4")]
+power_inputs = [NodePath("../ElectrifiedFloor14")]
+reverse = true
 
 [node name="positive_side_electric_floor" type="Node2D" parent="."]
 position = Vector2(5, -125)
 
 [node name="ElectrifiedFloor16" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(32, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint6")]
+power_inputs = [NodePath("../ElectrifiedFloor17")]
+reverse = true
 
 [node name="ElectrifiedFloor17" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(96, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint6")]
+power_inputs = [NodePath("../ElectrifiedFloor18")]
+reverse = true
 
 [node name="ElectrifiedFloor18" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(160, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint6")]
+power_inputs = [NodePath("../ElectrifiedFloor19")]
+reverse = true
 
 [node name="ElectrifiedFloor19" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(224, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint6")]
+power_inputs = [NodePath("../ElectrifiedFloor20")]
+reverse = true
 
 [node name="ElectrifiedFloor20" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(288, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint6")]
+power_inputs = [NodePath("../ElectrifiedFloor21")]
+reverse = true
 
 [node name="ElectrifiedFloor21" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(352, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint6")]
+power_inputs = [NodePath("../ElectrifiedFloor22")]
+reverse = true
 
 [node name="ElectrifiedFloor22" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(416, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint6")]
+power_inputs = [NodePath("../ElectrifiedFloor23")]
+reverse = true
 
 [node name="ElectrifiedFloor23" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(480, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint6")]
+power_inputs = [NodePath("../ElectrifiedFloor24")]
+reverse = true
 
 [node name="ElectrifiedFloor24" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(544, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint6")]
+power_inputs = [NodePath("../ElectrifiedFloor25")]
+reverse = true
 
 [node name="ElectrifiedFloor25" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(608, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint6")]
+power_inputs = [NodePath("../ElectrifiedFloor26")]
+reverse = true
 
 [node name="ElectrifiedFloor26" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(672, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint6")]
+power_inputs = [NodePath("../ElectrifiedFloor27")]
+reverse = true
 
 [node name="ElectrifiedFloor27" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(736, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint6")]
+power_inputs = [NodePath("../ElectrifiedFloor28")]
+reverse = true
 
 [node name="ElectrifiedFloor28" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(800, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint6")]
+power_inputs = [NodePath("../ElectrifiedFloor29")]
+reverse = true
 
 [node name="ElectrifiedFloor29" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(864, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint6")]
+power_inputs = [NodePath("../ElectrifiedFloor30")]
+reverse = true
 
 [node name="ElectrifiedFloor30" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(928, 59)
-Negative = true
 power_inputs = [NodePath("../../PowerCableAttachPoint6")]
+reverse = true
 
 [node name="positive_side_electric_floor2" type="Node2D" parent="."]
 position = Vector2(0, 61)
 
 [node name="ElectrifiedFloor16" parent="positive_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(32, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint")]
+power_inputs = [NodePath("../ElectrifiedFloor17")]
+reverse = true
 
 [node name="ElectrifiedFloor17" parent="positive_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(96, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint")]
+power_inputs = [NodePath("../ElectrifiedFloor18")]
+reverse = true
 
 [node name="ElectrifiedFloor18" parent="positive_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(160, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint")]
+power_inputs = [NodePath("../ElectrifiedFloor19")]
+reverse = true
 
 [node name="ElectrifiedFloor19" parent="positive_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(224, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint")]
+power_inputs = [NodePath("../ElectrifiedFloor20")]
+reverse = true
 
 [node name="ElectrifiedFloor20" parent="positive_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(288, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint")]
+power_inputs = [NodePath("../ElectrifiedFloor21")]
+reverse = true
 
 [node name="ElectrifiedFloor21" parent="positive_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(352, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint")]
+power_inputs = [NodePath("../ElectrifiedFloor22")]
+reverse = true
 
 [node name="ElectrifiedFloor22" parent="positive_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(416, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint")]
+power_inputs = [NodePath("../ElectrifiedFloor23")]
+reverse = true
 
 [node name="ElectrifiedFloor23" parent="positive_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(480, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint")]
+power_inputs = [NodePath("../ElectrifiedFloor24")]
+reverse = true
 
 [node name="ElectrifiedFloor24" parent="positive_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(544, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint")]
+power_inputs = [NodePath("../ElectrifiedFloor25")]
+reverse = true
 
 [node name="ElectrifiedFloor25" parent="positive_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(608, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint")]
+power_inputs = [NodePath("../ElectrifiedFloor26")]
+reverse = true
 
 [node name="ElectrifiedFloor26" parent="positive_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(672, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint")]
+power_inputs = [NodePath("../ElectrifiedFloor27")]
+reverse = true
 
 [node name="ElectrifiedFloor27" parent="positive_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(736, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint")]
+power_inputs = [NodePath("../ElectrifiedFloor28")]
+reverse = true
 
 [node name="ElectrifiedFloor28" parent="positive_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(800, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint")]
+power_inputs = [NodePath("../ElectrifiedFloor29")]
+reverse = true
 
 [node name="ElectrifiedFloor29" parent="positive_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(864, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint")]
+power_inputs = [NodePath("../ElectrifiedFloor30")]
+reverse = true
 
 [node name="ElectrifiedFloor30" parent="positive_side_electric_floor2" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(928, 59)
-Negative = true
 power_inputs = [NodePath("../../PowerCableAttachPoint")]
+reverse = true
 
 [node name="positive_side_electric_floor3" type="Node2D" parent="."]
 position = Vector2(0, 257)
 
 [node name="ElectrifiedFloor16" parent="positive_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(32, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint5")]
+power_inputs = [NodePath("../ElectrifiedFloor17")]
+reverse = true
 
 [node name="ElectrifiedFloor17" parent="positive_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(96, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint5")]
+power_inputs = [NodePath("../ElectrifiedFloor18")]
+reverse = true
 
 [node name="ElectrifiedFloor18" parent="positive_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(160, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint5")]
+power_inputs = [NodePath("../ElectrifiedFloor19")]
+reverse = true
 
 [node name="ElectrifiedFloor19" parent="positive_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(224, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint5")]
+power_inputs = [NodePath("../ElectrifiedFloor20")]
+reverse = true
 
 [node name="ElectrifiedFloor20" parent="positive_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(288, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint5")]
+power_inputs = [NodePath("../ElectrifiedFloor21")]
+reverse = true
 
 [node name="ElectrifiedFloor21" parent="positive_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(352, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint5")]
+power_inputs = [NodePath("../ElectrifiedFloor22")]
+reverse = true
 
 [node name="ElectrifiedFloor22" parent="positive_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(416, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint5")]
+power_inputs = [NodePath("../ElectrifiedFloor23")]
+reverse = true
 
 [node name="ElectrifiedFloor23" parent="positive_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(480, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint5")]
+power_inputs = [NodePath("../ElectrifiedFloor24")]
+reverse = true
 
 [node name="ElectrifiedFloor24" parent="positive_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(544, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint5")]
+power_inputs = [NodePath("../ElectrifiedFloor25")]
+reverse = true
 
 [node name="ElectrifiedFloor25" parent="positive_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(608, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint5")]
+power_inputs = [NodePath("../ElectrifiedFloor26")]
+reverse = true
 
 [node name="ElectrifiedFloor26" parent="positive_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(672, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint5")]
+power_inputs = [NodePath("../ElectrifiedFloor27")]
+reverse = true
 
 [node name="ElectrifiedFloor27" parent="positive_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(736, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint5")]
+power_inputs = [NodePath("../ElectrifiedFloor28")]
+reverse = true
 
 [node name="ElectrifiedFloor28" parent="positive_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(800, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint5")]
+power_inputs = [NodePath("../ElectrifiedFloor29")]
+reverse = true
 
 [node name="ElectrifiedFloor29" parent="positive_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(864, 59)
-Negative = true
-power_inputs = [NodePath("../../PowerCableAttachPoint5")]
+power_inputs = [NodePath("../ElectrifiedFloor30")]
+reverse = true
 
 [node name="ElectrifiedFloor30" parent="positive_side_electric_floor3" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
 position = Vector2(928, 59)
-Negative = true
 power_inputs = [NodePath("../../PowerCableAttachPoint5")]
+reverse = true
 
 [node name="PowerCableAttachPoint" parent="." instance=ExtResource("10_7ppae")]
 position = Vector2(-925, 191)
@@ -813,54 +813,54 @@ position = Vector2(927, -8)
 
 [node name="PowerPole1" parent="." instance=ExtResource("17_pgx1u")]
 position = Vector2(-477, 393)
-max_length = 50
+max_length = 100
 positive = false
 
 [node name="PowerPole2" parent="." instance=ExtResource("17_pgx1u")]
 position = Vector2(-377, 388)
-max_length = 50
+max_length = 100
 
 [node name="PowerPole3" parent="." instance=ExtResource("17_pgx1u")]
 position = Vector2(-593, 388)
-max_length = 50
+max_length = 100
 
 [node name="PowerPole4" parent="." instance=ExtResource("17_pgx1u")]
 position = Vector2(-717, 386)
-max_length = 50
+max_length = 100
 positive = false
 
 [node name="PowerPole5" parent="." instance=ExtResource("17_pgx1u")]
 position = Vector2(-838, 388)
-max_length = 50
+max_length = 100
 
 [node name="PowerPole6" parent="." instance=ExtResource("17_pgx1u")]
 position = Vector2(-266, 396)
-max_length = 50
+max_length = 100
 positive = false
 
 [node name="PowerPole8" parent="." instance=ExtResource("17_pgx1u")]
 position = Vector2(261, 395)
-max_length = 50
+max_length = 100
 
 [node name="PowerPole9" parent="." instance=ExtResource("17_pgx1u")]
 position = Vector2(383, 403)
-max_length = 50
+max_length = 100
 positive = false
 
 [node name="PowerPole10" parent="." instance=ExtResource("17_pgx1u")]
 position = Vector2(478, 397)
-max_length = 50
+max_length = 100
 
 [node name="PowerPole11" parent="." instance=ExtResource("17_pgx1u")]
 position = Vector2(588, 394)
-max_length = 50
+max_length = 100
 positive = false
 
 [node name="PowerPole12" parent="." instance=ExtResource("17_pgx1u")]
 position = Vector2(688, 396)
-max_length = 50
+max_length = 100
 
 [node name="PowerPole13" parent="." instance=ExtResource("17_pgx1u")]
 position = Vector2(786, 396)
-max_length = 50
+max_length = 100
 positive = false

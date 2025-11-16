@@ -28,6 +28,8 @@ var positive_player : Player = null
 
 @export var cutscene_layer : CanvasLayer = null
 
+@export var need_to_beat_for_ending = false
+
 func spawn_in_players():
 	
 	negative_exit_beam.scale.y = 0
@@ -99,7 +101,7 @@ func make_players_leave():
 	
 	await tween.finished
 	
-	
+	main.need_to_beat_for_ending = need_to_beat_for_ending
 	
 	main.next_level()
 

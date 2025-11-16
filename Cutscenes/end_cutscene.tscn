@@ -1,0 +1,59 @@
+[gd_scene load_steps=17 format=3 uid="uid://chkfp0umukn2m"]
+
+[ext_resource type="PackedScene" uid="uid://b7721yatqq3c6" path="res://Cutscenes/CutsceneBackEndStuff/cutscene_controller.tscn" id="1_x3p6h"]
+[ext_resource type="Script" uid="uid://da4ulqvqcbn53" path="res://Cutscenes/CutsceneBackEndStuff/text_box_resource.gd" id="2_fqaqw"]
+[ext_resource type="Texture2D" uid="uid://bgmse4rf51scd" path="res://sprites/cutscene_textboxes/end-Frame 30.png" id="3_bkomq"]
+[ext_resource type="Texture2D" uid="uid://btj23np2jtvnk" path="res://sprites/cutscene_textboxes/end-Frame 31.png" id="4_eiap1"]
+[ext_resource type="Texture2D" uid="uid://b8deflpcx577q" path="res://sprites/cutscene_textboxes/end-Frame 32.png" id="5_ksstj"]
+[ext_resource type="Texture2D" uid="uid://b1req0vr28x3m" path="res://sprites/cutscene_textboxes/end-Frame 33.png" id="6_8qiji"]
+[ext_resource type="PackedScene" uid="uid://btahd6hqlgnl3" path="res://Cutscenes/CutsceneBackEndStuff/cutscene_austra_controller.tscn" id="6_ksstj"]
+[ext_resource type="PackedScene" uid="uid://cbvx7cm62veq7" path="res://Cutscenes/CutsceneBackEndStuff/cutscene_borealis_controller.tscn" id="7_8qiji"]
+[ext_resource type="Texture2D" uid="uid://dee1cpsokqto5" path="res://sprites/cutscene_textboxes/end-Frame 34.png" id="7_xgni7"]
+[ext_resource type="Texture2D" uid="uid://cwimw8xi387rl" path="res://sprites/cutscene_textboxes/end-Frame 35.png" id="8_pjfi2"]
+
+[sub_resource type="Resource" id="Resource_1eeb1"]
+script = ExtResource("2_fqaqw")
+texture = ExtResource("3_bkomq")
+Austra_Is_Talking = true
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_igiv7"]
+script = ExtResource("2_fqaqw")
+texture = ExtResource("4_eiap1")
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_r5no1"]
+script = ExtResource("2_fqaqw")
+texture = ExtResource("5_ksstj")
+Austra_Is_Talking = true
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_busb7"]
+script = ExtResource("2_fqaqw")
+texture = ExtResource("6_8qiji")
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_l3h4b"]
+script = ExtResource("2_fqaqw")
+texture = ExtResource("7_xgni7")
+Austra_Is_Talking = true
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[sub_resource type="Resource" id="Resource_y3qsi"]
+script = ExtResource("2_fqaqw")
+texture = ExtResource("8_pjfi2")
+metadata/_custom_type_script = "uid://da4ulqvqcbn53"
+
+[node name="end_cutscene" type="CanvasLayer"]
+process_mode = 3
+
+[node name="CutsceneController" parent="." node_paths=PackedStringArray("AustraController", "BorealisController") instance=ExtResource("1_x3p6h")]
+AustraController = NodePath("CutsceneAustraController")
+BorealisController = NodePath("CutsceneBorealisController")
+textboxes = Array[ExtResource("2_fqaqw")]([SubResource("Resource_1eeb1"), SubResource("Resource_igiv7"), SubResource("Resource_r5no1"), SubResource("Resource_busb7"), SubResource("Resource_l3h4b"), SubResource("Resource_y3qsi")])
+
+[node name="CutsceneAustraController" parent="CutsceneController" instance=ExtResource("6_ksstj")]
+layout_mode = 0
+
+[node name="CutsceneBorealisController" parent="CutsceneController" instance=ExtResource("7_8qiji")]
+layout_mode = 0

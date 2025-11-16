@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://71v3b5vfemao"]
+[gd_scene load_steps=21 format=3 uid="uid://71v3b5vfemao"]
 
 [ext_resource type="Texture2D" uid="uid://4jyrimrn8rad" path="res://sprites/assetsGameJamFall2025/bottomLeftCorner.png" id="1_j1a1x"]
 [ext_resource type="Script" uid="uid://dhjo70jnet1nl" path="res://levels/introlevel.gd" id="1_ob0d1"]
@@ -18,7 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://7ob7i0d5v7xt" path="res://sprites/assetsGameJamFall2025/squareRug.png" id="16_ob0d1"]
 [ext_resource type="Texture2D" uid="uid://w3vhtpagy4cm" path="res://sprites/assetsGameJamFall2025/sidetableAsset.png" id="17_cp62d"]
 [ext_resource type="Texture2D" uid="uid://chjvts1j6ynfy" path="res://sprites/assetsGameJamFall2025/potted_plant.png" id="18_ow10w"]
-[ext_resource type="AudioStream" uid="uid://b1nn3f71bg867" path="res://Sounds/Music/slowerCutScene.mp3" id="21_6qvx5"]
 [ext_resource type="Texture2D" uid="uid://qarulfpgdxix" path="res://sprites/tv_router_table_sadd.png" id="21_xkn8y"]
 [ext_resource type="PackedScene" uid="uid://pqbcocw8lhnv" path="res://Cutscenes/LivingRoomCutscene.tscn" id="22_har3p"]
 
@@ -368,10 +367,3 @@ texture = ExtResource("21_xkn8y")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="LivingroomCutscene" parent="." instance=ExtResource("22_har3p")]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-process_mode = 3
-stream = ExtResource("21_6qvx5")
-autoplay = true
-bus = &"Music"
-parameters/looping = true

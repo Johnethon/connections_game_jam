@@ -5,6 +5,7 @@ class_name Main
 @export var pause_menu : PackedScene = null
 @export var level_select_menu : PackedScene = null
 @export var credits_menu : PackedScene = null
+@export var win_menu : PackedScene = null
 
 @export var cur_menu : Control = null
 
@@ -38,8 +39,13 @@ func next_level():
 	start_at_level(cur_level_index)
 
 func start_at_level(index_to_start_at):
+	if index_to_start_at == len(levels):
+		go_to_win_menu()
+		return
+	
 	cur_level_scene = levels[index_to_start_at]
 	cur_level_index = index_to_start_at
+	
 	play_level_transition()
 
 @onready var transition_sprite : AnimatedSprite2D = $CanvasLayer/transition_anim
@@ -95,7 +101,20 @@ func go_to_credits():
 		
 	cur_menu = credits_menu.instantiate()
 	$CanvasLayer.add_child(cur_menu)
+
+func go_to_win_menu():
 	
+	if cur_level_node:
+		cur_level_node.queue_free()
+	
+	if cur_menu != null:
+		cur_menu.queue_free()
+		cur_menu = null
+	
+	cur_menu = win_menu.instantiate()
+	$CanvasLayer.add_child(cur_menu)
+	
+
 func go_to_main_menu():
 	if cur_menu != null:
 		cur_menu.queue_free()
@@ -109,5 +128,22 @@ func level_cutscene_finished():
 		cur_level_node.cutscene_over()
 
 func _physics_process(delta: float) -> void:
-	#print(camera.get_viewport_rect())
+	
 	transition_sprite.position = camera.get_viewport_rect().size/2
+	if not is_instance_valid(cur_level_node):
+		cur_level_node = null
+	if not cur_level_node is level or cur_level_node == null:
+		if $music/level_music.playing:
+			$music/level_music.stop()
+		
+		if not $music/menu_cutscene_music.playing:
+			$music/menu_cutscene_music.play()
+		
+	else:
+		if $music/menu_cutscene_music.playing:
+			$music/menu_cutscene_music.stop()
+			
+		if not $music/level_music.playing:
+			$music/level_music.play()
+		
+		

@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dsvwihhtcxqpw" path="res://sprites/temps/black_circle.png" id="3_7601d"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_aqeil"]
-radius = 5.0
+radius = 16.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jb1xh"]
 radius = 4.0
@@ -29,6 +29,8 @@ shape = SubResource("CircleShape2D_aqeil")
 shape = SubResource("CircleShape2D_jb1xh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 3
+scale = Vector2(2, 2)
 texture = ExtResource("3_7601d")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

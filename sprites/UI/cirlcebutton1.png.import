@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by2n6uvt0vb0b"
-path="res://.godot/imported/lvl 3-Frame 20.png-00ee8115f82843376e1d9f0c128b43e7.ctex"
+uid="uid://dxov5uo16fg7r"
+path="res://.godot/imported/cirlcebutton1.png-e2e17a194ca10369e8032e3c7c9b6af7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/lvl 3-Frame 20.png"
-dest_files=["res://.godot/imported/lvl 3-Frame 20.png-00ee8115f82843376e1d9f0c128b43e7.ctex"]
+source_file="res://sprites/UI/cirlcebutton1.png"
+dest_files=["res://.godot/imported/cirlcebutton1.png-e2e17a194ca10369e8032e3c7c9b6af7.ctex"]
 
 [params]
 

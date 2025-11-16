@@ -1,24 +1,25 @@
-[gd_scene load_steps=26 format=4 uid="uid://b3h5xmhq6s5cq"]
+[gd_scene load_steps=27 format=4 uid="uid://d0g6e0a1igymq"]
 
-[ext_resource type="Script" uid="uid://dix2ax4jxrl6y" path="res://levels/level_2_power_poles.gd" id="1_sqb5e"]
-[ext_resource type="Texture2D" uid="uid://bu6kctftacoaf" path="res://sprites/temps/black_square.png" id="2_jm4bj"]
-[ext_resource type="PackedScene" uid="uid://dhvabo5lp4egj" path="res://objects/power_cable.tscn" id="3_pgx1u"]
-[ext_resource type="PackedScene" uid="uid://66upyitbgrt7" path="res://objects/door.tscn" id="4_c4ct6"]
-[ext_resource type="Texture2D" uid="uid://8xwdm4ie103l" path="res://sprites/tile sets/Trapdoor.png" id="5_2ocwr"]
-[ext_resource type="Texture2D" uid="uid://3ri045m4k1mk" path="res://sprites/tile sets/router_walls_big.png" id="6_i8u1k"]
-[ext_resource type="Texture2D" uid="uid://dghxtxhn5pg6o" path="res://sprites/tile sets/metalTile2.png" id="7_4qbwa"]
-[ext_resource type="Texture2D" uid="uid://cjilhgcksysh4" path="res://sprites/tile sets/metalTile.png" id="8_x18b6"]
-[ext_resource type="Texture2D" uid="uid://c2n5v1wmdmpty" path="res://sprites/tile sets/Chiptile.png" id="9_bjk2b"]
-[ext_resource type="PackedScene" uid="uid://ct434ubci1anv" path="res://objects/power_cable_attach_point.tscn" id="10_7ppae"]
-[ext_resource type="Texture2D" uid="uid://dymg8q8lga2cw" path="res://sprites/wall_top_half.png" id="11_ab48y"]
-[ext_resource type="Texture2D" uid="uid://ciq3l5imeyeq3" path="res://sprites/temps/navy_circle.png" id="12_33cpb"]
-[ext_resource type="Texture2D" uid="uid://b5q0o1gnsss2h" path="res://sprites/temps/blue_circle.png" id="13_xyp53"]
-[ext_resource type="Texture2D" uid="uid://upy4i26a3ioi" path="res://sprites/temps/red_circle.png" id="14_l8hiq"]
-[ext_resource type="PackedScene" uid="uid://douhi6v8j6r8n" path="res://Cutscenes/lvl_3_cutscene.tscn" id="15_sqb5e"]
-[ext_resource type="PackedScene" uid="uid://261sonfhxht5" path="res://objects/electrified_floor.tscn" id="16_jm4bj"]
+[ext_resource type="Script" uid="uid://dix2ax4jxrl6y" path="res://levels/level_2_power_poles.gd" id="1_o5fsi"]
+[ext_resource type="PackedScene" uid="uid://cvu71akxdsd43" path="res://Cutscenes/lvl_5_cutscene.tscn" id="2_5c87j"]
+[ext_resource type="Texture2D" uid="uid://bu6kctftacoaf" path="res://sprites/temps/black_square.png" id="4_4gkl1"]
+[ext_resource type="PackedScene" uid="uid://dhvabo5lp4egj" path="res://objects/power_cable.tscn" id="5_50gax"]
+[ext_resource type="PackedScene" uid="uid://66upyitbgrt7" path="res://objects/door.tscn" id="6_unn41"]
+[ext_resource type="Texture2D" uid="uid://3ri045m4k1mk" path="res://sprites/tile sets/router_walls_big.png" id="7_2wx34"]
+[ext_resource type="Texture2D" uid="uid://dghxtxhn5pg6o" path="res://sprites/tile sets/metalTile2.png" id="8_tytku"]
+[ext_resource type="Texture2D" uid="uid://cjilhgcksysh4" path="res://sprites/tile sets/metalTile.png" id="9_a81dh"]
+[ext_resource type="Texture2D" uid="uid://c2n5v1wmdmpty" path="res://sprites/tile sets/Chiptile.png" id="10_phvl1"]
+[ext_resource type="PackedScene" uid="uid://ct434ubci1anv" path="res://objects/power_cable_attach_point.tscn" id="11_xc1a2"]
+[ext_resource type="Texture2D" uid="uid://dymg8q8lga2cw" path="res://sprites/wall_top_half.png" id="12_p4ig8"]
+[ext_resource type="Texture2D" uid="uid://8xwdm4ie103l" path="res://sprites/tile sets/Trapdoor.png" id="13_ulhf8"]
+[ext_resource type="Texture2D" uid="uid://ciq3l5imeyeq3" path="res://sprites/temps/navy_circle.png" id="14_jhivt"]
+[ext_resource type="Texture2D" uid="uid://b5q0o1gnsss2h" path="res://sprites/temps/blue_circle.png" id="15_fsmk7"]
+[ext_resource type="Texture2D" uid="uid://upy4i26a3ioi" path="res://sprites/temps/red_circle.png" id="16_tk8sx"]
+[ext_resource type="PackedScene" uid="uid://cdu45bpu0olui" path="res://traps/turret.tscn" id="17_o7m6q"]
+[ext_resource type="PackedScene" uid="uid://dqu38v4jtyg7s" path="res://objects/power_pole_1.tscn" id="18_2sv2g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gei2l"]
-texture = ExtResource("6_i8u1k")
+texture = ExtResource("7_2wx34")
 texture_region_size = Vector2i(64, 64)
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-32, -32, 32, -32, 32, 32, -32, 32)
@@ -74,17 +75,17 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_gei2l")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ls7uu"]
-texture = ExtResource("7_4qbwa")
+texture = ExtResource("8_tytku")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_k4ml4"]
-texture = ExtResource("8_x18b6")
+texture = ExtResource("9_a81dh")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_utrdv"]
-texture = ExtResource("9_bjk2b")
+texture = ExtResource("10_phvl1")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
@@ -103,9 +104,9 @@ colors = PackedColorArray(0.16078432, 1, 0.7137255, 1, 0.23137255, 1, 0.02352941
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_gei2l"]
 gradient = SubResource("Gradient_ng644")
 
-[node name="Level_3" type="Node2D" node_paths=PackedStringArray("negative_leave_port", "positive_leave_port", "negative_entrance_port", "positive_entrance_port", "negative_exit_beam", "positive_exit_beam", "negative_in_port_indicator", "positive_in_port_indicator", "cutscene_layer")]
+[node name="Level_5" type="Node2D" node_paths=PackedStringArray("negative_leave_port", "positive_leave_port", "negative_entrance_port", "positive_entrance_port", "negative_exit_beam", "positive_exit_beam", "negative_in_port_indicator", "positive_in_port_indicator", "cutscene_layer")]
 y_sort_enabled = true
-script = ExtResource("1_sqb5e")
+script = ExtResource("1_o5fsi")
 negative_leave_port = NodePath("negative_exit_zone")
 positive_leave_port = NodePath("positive_exit_zone")
 negative_entrance_port = NodePath("negative_entrance_pad")
@@ -114,53 +115,51 @@ negative_exit_beam = NodePath("negative_teleport_gradient")
 positive_exit_beam = NodePath("positive_teleport_gradient")
 negative_in_port_indicator = NodePath("negative_exit_indicator")
 positive_in_port_indicator = NodePath("positive_exit_indicator")
-cutscene_layer = NodePath("lvl_3_cutscene")
+cutscene_layer = NodePath("lvl_5_cutscene")
 
-[node name="lvl_3_cutscene" parent="." instance=ExtResource("15_sqb5e")]
+[node name="lvl_5_cutscene" parent="." instance=ExtResource("2_5c87j")]
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 z_index = 5
 position = Vector2(1459, 29)
 scale = Vector2(124.59483, -808.0496)
-texture = ExtResource("2_jm4bj")
+texture = ExtResource("4_4gkl1")
 
 [node name="Sprite2D5" type="Sprite2D" parent="."]
 z_index = 5
 position = Vector2(-1458, -6.999999)
 scale = Vector2(124.59483, -808.0496)
-texture = ExtResource("2_jm4bj")
+texture = ExtResource("4_4gkl1")
 
 [node name="Sprite2D3" type="Sprite2D" parent="."]
 z_index = 5
 position = Vector2(-1.9999999, -954)
 scale = Vector2(-1099.9254, 102.512276)
-texture = ExtResource("2_jm4bj")
+texture = ExtResource("4_4gkl1")
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
 z_index = 5
 position = Vector2(0, 950.00006)
 scale = Vector2(-1099.9254, 102.512276)
-texture = ExtResource("2_jm4bj")
+texture = ExtResource("4_4gkl1")
 
-[node name="PowerCable" parent="." node_paths=PackedStringArray("node_i_am_attached_to") instance=ExtResource("3_pgx1u")]
-position = Vector2(-672, 508)
-node_i_am_attached_to = NodePath("../PowerCableAttachPoint")
+[node name="PowerCable" parent="." instance=ExtResource("5_50gax")]
+position = Vector2(-557, 508)
 max_length = 1000
 max_spool_scale = 4.0
 
-[node name="PowerCable2" parent="." node_paths=PackedStringArray("node_i_am_attached_to") instance=ExtResource("3_pgx1u")]
+[node name="PowerCable2" parent="." instance=ExtResource("5_50gax")]
 position = Vector2(672, 508)
-node_i_am_attached_to = NodePath("../PowerCableAttachPoint2")
 max_length = 1000
 max_spool_scale = 4.0
 
-[node name="Door" parent="." node_paths=PackedStringArray("power_inputs") instance=ExtResource("4_c4ct6")]
+[node name="Door" parent="." node_paths=PackedStringArray("power_inputs") instance=ExtResource("6_unn41")]
 position = Vector2(-480, -214)
-power_inputs = [NodePath("../PowerCableAttachPoint3")]
+power_inputs = [NodePath("../PowerCableAttachPoint")]
 
-[node name="Door2" parent="." node_paths=PackedStringArray("power_inputs") instance=ExtResource("4_c4ct6")]
+[node name="Door2" parent="." node_paths=PackedStringArray("power_inputs") instance=ExtResource("6_unn41")]
 position = Vector2(480, -214)
-power_inputs = [NodePath("../PowerCableAttachPoint4")]
+power_inputs = [NodePath("../PowerCableAttachPoint2")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -177,35 +176,35 @@ position = Vector2(0, -549)
 tile_map_data = PackedByteArray("AADx/wEAAAAAAAAAAADx/wIAAAAAAAAAAADx/wMAAAAAAAAAAADx/wQAAAAAAAAAAADx/wUAAAAAAAAAAADx/wYAAAAAAAAAAADx/wcAAAAAAAAAAADx/wgAAAAAAAAAAADx/wkAAAAAAAAAAADx/woAAAAAAAAAAADx/wsAAAAAAAAAAADx/wwAAAAAAAAAAADx/w0AAAAAAAAAAADx/w4AAAAAAAAAAADx/w8AAAAAAAAAAADx/xAAAAAAAAAAAADy/wEAAAAAAAAAAADy/wIAAAAAAAAAAADy/wMAAAAAAAAAAADy/wQAAAAAAAAAAADy/wUAAAAAAAAAAADy/wYAAAAAAAAAAADy/wcAAAAAAAAAAADy/wgAAAAAAAAAAADy/wkAAAAAAAAAAADy/woAAAAAAAAAAADy/wsAAAAAAAAAAADy/wwAAAAAAAAAAADy/w0AAAAAAAAAAADy/w4AAAAAAAAAAADy/w8AAAAAAAAAAADy/xAAAAAAAAAAAADz/wEAAAAAAAAAAADz/wIAAAAAAAAAAADz/wMAAAAAAAAAAADz/wQAAAAAAAAAAADz/wUAAAAAAAAAAADz/wYAAAAAAAAAAADz/wcAAAAAAAAAAADz/wgAAAAAAAAAAADz/wkAAAAAAAAAAADz/woAAAAAAAAAAADz/wsAAAAAAAAAAADz/wwAAAAAAAAAAADz/w0AAAAAAAAAAADz/w4AAAAAAAAAAADz/w8AAAAAAAAAAADz/xAAAAAAAAAAAAD0/wEAAAAAAAAAAAD0/wIAAAAAAAAAAAD0/wMAAAAAAAAAAAD0/wQAAAAAAAAAAAD0/wUAAAAAAAAAAAD0/wYAAAAAAAAAAAD0/wcAAAAAAAAAAAD0/wgAAAAAAAAAAAD0/wkAAAAAAAAAAAD0/woAAAAAAAAAAAD0/wsAAAAAAAAAAAD0/wwAAAAAAAAAAAD0/w0AAAAAAAAAAAD0/w4AAAAAAAAAAAD0/w8AAAAAAAAAAAD0/xAAAAAAAAAAAAD1/wEAAAAAAAAAAAD1/wIAAAAAAAAAAAD1/wMAAAAAAAAAAAD1/wQAAAAAAAAAAAD1/wUAAAAAAAAAAAD1/wYAAAAAAAAAAAD1/wcAAAAAAAAAAAD1/wgAAAAAAAAAAAD1/wkAAAAAAAAAAAD1/woAAAAAAAAAAAD1/wsAAAAAAAAAAAD1/wwAAAAAAAAAAAD1/w0AAAAAAAAAAAD1/w4AAAAAAAAAAAD1/w8AAAAAAAAAAAD1/xAAAAAAAAAAAAD2/wEAAAAAAAAAAAD2/wIAAAAAAAAAAAD2/wMAAAAAAAAAAAD2/wQAAAAAAAAAAAD2/wUAAAAAAAAAAAD2/wYAAAAAAAAAAAD2/wcAAAAAAAAAAAD2/wgAAAAAAAAAAAD2/wkAAAAAAAAAAAD2/woAAAAAAAAAAAD2/wsAAAAAAAAAAAD2/wwAAAAAAAAAAAD2/w0AAAAAAAAAAAD2/w4AAAAAAAAAAAD2/w8AAAAAAAAAAAD2/xAAAAAAAAAAAAD3/wEAAAAAAAAAAAD3/wIAAAAAAAAAAAD3/wMAAAAAAAAAAAD3/wQAAAAAAAAAAAD3/wUAAAAAAAAAAAD3/wYAAAAAAAAAAAD3/wcAAAAAAAAAAAD3/wgAAAAAAAAAAAD3/wkAAAAAAAAAAAD3/woAAAAAAAAAAAD3/wsAAAAAAAAAAAD3/wwAAAAAAAAAAAD3/w0AAAAAAAAAAAD3/w4AAAAAAAAAAAD3/w8AAAAAAAAAAAD3/xAAAAAAAAAAAAD4/wEAAAAAAAAAAAD4/wIAAAAAAAAAAAD4/wMAAAAAAAAAAAD4/wQAAAAAAAAAAAD4/wUAAAAAAAAAAAD4/wYAAAAAAAAAAAD4/wcAAAAAAAAAAAD4/wgAAAAAAAAAAAD4/wkAAAAAAAAAAAD4/woAAAAAAAAAAAD4/wsAAAAAAAAAAAD4/wwAAAAAAAAAAAD4/w0AAAAAAAAAAAD4/w4AAAAAAAAAAAD4/w8AAAAAAAAAAAD4/xAAAAAAAAAAAAD5/wEAAAAAAAAAAAD5/wIAAAAAAAAAAAD5/wMAAAAAAAAAAAD5/wQAAAAAAAAAAAD5/wUAAAAAAAAAAAD5/wYAAAAAAAAAAAD5/wcAAAAAAAAAAAD5/wgAAAAAAAAAAAD5/wkAAAAAAAAAAAD5/woAAAAAAAAAAAD5/wsAAAAAAAAAAAD5/wwAAAAAAAAAAAD5/w0AAAAAAAAAAAD5/w4AAAAAAAAAAAD5/w8AAAAAAAAAAAD5/xAAAAAAAAAAAAD6/wEAAAAAAAAAAAD6/wIAAAAAAAAAAAD6/wMAAAAAAAAAAAD6/wQAAAAAAAAAAAD6/wUAAAAAAAAAAAD6/wYAAAAAAAAAAAD6/wcAAAAAAAAAAAD6/wgAAAAAAAAAAAD6/wkAAAAAAAAAAAD6/woAAAAAAAAAAAD6/wsAAAAAAAAAAAD6/wwAAAAAAAAAAAD6/w0AAAAAAAAAAAD6/w4AAAAAAAAAAAD6/w8AAAAAAAAAAAD6/xAAAAAAAAAAAAD7/wEAAAAAAAAAAAD7/wIAAAAAAAAAAAD7/wMAAAAAAAAAAAD7/wQAAAAAAAAAAAD7/wUAAAAAAAAAAAD7/wYAAAAAAAAAAAD7/wcAAAAAAAAAAAD7/wgAAAAAAAAAAAD7/wkAAAAAAAAAAAD7/woAAAAAAAAAAAD7/wsAAAAAAAAAAAD7/wwAAAAAAAAAAAD7/w0AAAAAAAAAAAD7/w4AAAAAAAAAAAD7/w8AAAAAAAAAAAD7/xAAAAAAAAAAAAD8/wEAAAAAAAAAAAD8/wIAAAAAAAAAAAD8/wMAAAAAAAAAAAD8/wQAAAAAAAAAAAD8/wUAAAAAAAAAAAD8/wYAAAAAAAAAAAD8/wcAAAAAAAAAAAD8/wgAAAAAAAAAAAD8/wkAAAAAAAAAAAD8/woAAAAAAAAAAAD8/wsAAAAAAAAAAAD8/wwAAAAAAAAAAAD8/w0AAAAAAAAAAAD8/w4AAAAAAAAAAAD8/w8AAAAAAAAAAAD8/xAAAAAAAAAAAAD9/wEAAAAAAAAAAAD9/wIAAAAAAAAAAAD9/wMAAAAAAAAAAAD9/wQAAAAAAAAAAAD9/wUAAAAAAAAAAAD9/wYAAAAAAAAAAAD9/wcAAAAAAAAAAAD9/wgAAAAAAAAAAAD9/wkAAAAAAAAAAAD9/woAAAAAAAAAAAD9/wsAAAAAAAAAAAD9/wwAAAAAAAAAAAD9/w0AAAAAAAAAAAD9/w4AAAAAAAAAAAD9/w8AAAAAAAAAAAD9/xAAAAAAAAAAAAD+/wEAAAAAAAAAAAD+/wIAAAAAAAAAAAD+/wMAAAAAAAAAAAD+/wQAAAAAAAAAAAD+/wUAAAAAAAAAAAD+/wYAAAAAAAAAAAD+/wcAAAAAAAAAAAD+/wgAAAAAAAAAAAD+/wkAAAAAAAAAAAD+/woAAAAAAAAAAAD+/wsAAAAAAAAAAAD+/wwAAAAAAAAAAAD+/w0AAAAAAAAAAAD+/w4AAAAAAAAAAAD+/w8AAAAAAAAAAAD+/xAAAAAAAAAAAAD//wEAAAAAAAAAAAD//wIAAAAAAAAAAAD//wMAAAAAAAAAAAD//wQAAAAAAAAAAAD//wUAAAAAAAAAAAD//wYAAAAAAAAAAAD//wcAAAAAAAAAAAD//wgAAAAAAAAAAAD//wkAAAAAAAAAAAD//woAAAAAAAAAAAD//wsAAAAAAAAAAAD//wwAAAAAAAAAAAD//w0AAAAAAAAAAAD//w4AAAAAAAAAAAD//w8AAAAAAAAAAAD//xAAAAAAAAAAAAADAAgAAAAAAAAAAAADAAkAAAAAAAAAAAADAAoAAAAAAAAAAAADAAsAAAAAAAAAAAADAAwAAAAAAAAAAAADAA0AAAAAAAAAAAADAA4AAAAAAAAAAAADAA8AAAAAAAAAAAADABAAAAAAAAAAAAAEAAgAAAAAAAAAAAAEAAkAAAAAAAAAAAAEAAoAAAAAAAAAAAAEAAsAAAAAAAAAAAAEAAwAAAAAAAAAAAAEAA0AAAAAAAAAAAAEAA4AAAAAAAAAAAAEAA8AAAAAAAAAAAAEABAAAAAAAAAAAAAFAAgAAAAAAAAAAAAFAAkAAAAAAAAAAAAFAAoAAAAAAAAAAAAFAAsAAAAAAAAAAAAFAAwAAAAAAAAAAAAFAA0AAAAAAAAAAAAFAA4AAAAAAAAAAAAFAA8AAAAAAAAAAAAFABAAAAAAAAAAAAAGAAgAAAAAAAAAAAAGAAkAAAAAAAAAAAAGAAoAAAAAAAAAAAAGAAsAAAAAAAAAAAAGAAwAAAAAAAAAAAAGAA0AAAAAAAAAAAAGAA4AAAAAAAAAAAAGAA8AAAAAAAAAAAAGABAAAAAAAAAAAAAHAAgAAAAAAAAAAAAHAAkAAAAAAAAAAAAHAAoAAAAAAAAAAAAHAAsAAAAAAAAAAAAHAAwAAAAAAAAAAAAHAA0AAAAAAAAAAAAHAA4AAAAAAAAAAAAHAA8AAAAAAAAAAAAHABAAAAAAAAAAAAAIAAgAAAAAAAAAAAAIAAkAAAAAAAAAAAAIAAoAAAAAAAAAAAAIAAsAAAAAAAAAAAAIAAwAAAAAAAAAAAAIAA0AAAAAAAAAAAAIAA4AAAAAAAAAAAAIAA8AAAAAAAAAAAAIABAAAAAAAAAAAAAJAAgAAAAAAAAAAAAJAAkAAAAAAAAAAAAJAAoAAAAAAAAAAAAJAAsAAAAAAAAAAAAJAAwAAAAAAAAAAAAJAA0AAAAAAAAAAAAJAA4AAAAAAAAAAAAJAA8AAAAAAAAAAAAJABAAAAAAAAAAAAAKAAgAAAAAAAAAAAAKAAkAAAAAAAAAAAAKAAoAAAAAAAAAAAAKAAsAAAAAAAAAAAAKAAwAAAAAAAAAAAAKAA0AAAAAAAAAAAAKAA4AAAAAAAAAAAAKAA8AAAAAAAAAAAAKABAAAAAAAAAAAAALAAgAAAAAAAAAAAALAAkAAAAAAAAAAAALAAoAAAAAAAAAAAALAAsAAAAAAAAAAAALAAwAAAAAAAAAAAALAA0AAAAAAAAAAAALAA4AAAAAAAAAAAALAA8AAAAAAAAAAAALABAAAAAAAAAAAAAMAAgAAAAAAAAAAAAMAAkAAAAAAAAAAAAMAAoAAAAAAAAAAAAMAAsAAAAAAAAAAAAMAAwAAAAAAAAAAAAMAA0AAAAAAAAAAAAMAA4AAAAAAAAAAAAMAA8AAAAAAAAAAAAMABAAAAAAAAAAAAANAAgAAAAAAAAAAAANAAkAAAAAAAAAAAANAAoAAAAAAAAAAAANAAsAAAAAAAAAAAANAAwAAAAAAAAAAAANAA0AAAAAAAAAAAANAA4AAAAAAAAAAAANAA8AAAAAAAAAAAANABAAAAAAAAAAAAAOAAgAAAAAAAAAAAAOAAkAAAAAAAAAAAAOAAoAAAAAAAAAAAAOAAsAAAAAAAAAAAAOAAwAAAAAAAAAAAAOAA0AAAAAAAAAAAAOAA4AAAAAAAAAAAAOAA8AAAAAAAAAAAAOABAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA8AAAAAAAAAAAAAABAAAAAAAAAAAAABAAgAAAAAAAAAAAABAAkAAAAAAAAAAAABAAoAAAAAAAAAAAABAAsAAAAAAAAAAAABAAwAAAAAAAAAAAABAA0AAAAAAAAAAAABAA4AAAAAAAAAAAABAA8AAAAAAAAAAAABABAAAAAAAAAAAAACAAgAAAAAAAAAAAACAAkAAAAAAAAAAAACAAoAAAAAAAAAAAACAAsAAAAAAAAAAAACAAwAAAAAAAAAAAACAA0AAAAAAAAAAAACAA4AAAAAAAAAAAACAA8AAAAAAAAAAAACABAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAAcAAAAAAAAAAAABAAIAAAAAAAAAAAABAAMAAAAAAAAAAAABAAQAAAAAAAAAAAABAAUAAAAAAAAAAAABAAYAAAAAAAAAAAABAAcAAAAAAAAAAAACAAIAAAAAAAAAAAACAAMAAAAAAAAAAAACAAQAAAAAAAAAAAACAAUAAAAAAAAAAAACAAYAAAAAAAAAAAACAAcAAAAAAAAAAAADAAIAAAAAAAAAAAADAAMAAAAAAAAAAAADAAQAAAAAAAAAAAADAAUAAAAAAAAAAAADAAYAAAAAAAAAAAADAAcAAAAAAAAAAAAEAAIAAAAAAAAAAAAEAAMAAAAAAAAAAAAEAAQAAAAAAAAAAAAEAAUAAAAAAAAAAAAEAAYAAAAAAAAAAAAEAAcAAAAAAAAAAAAFAAIAAAAAAAAAAAAFAAMAAAAAAAAAAAAFAAQAAAAAAAAAAAAFAAUAAAAAAAAAAAAFAAYAAAAAAAAAAAAFAAcAAAAAAAAAAAAGAAIAAAAAAAAAAAAGAAMAAAAAAAAAAAAGAAQAAAAAAAAAAAAGAAUAAAAAAAAAAAAGAAYAAAAAAAAAAAAGAAcAAAAAAAAAAAAHAAIAAAAAAAAAAAAHAAMAAAAAAAAAAAAHAAQAAAAAAAAAAAAHAAUAAAAAAAAAAAAHAAYAAAAAAAAAAAAHAAcAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAMAAAAAAAAAAAAIAAQAAAAAAAAAAAAIAAUAAAAAAAAAAAAIAAYAAAAAAAAAAAAIAAcAAAAAAAAAAAAJAAIAAAAAAAAAAAAJAAMAAAAAAAAAAAAJAAQAAAAAAAAAAAAJAAUAAAAAAAAAAAAJAAYAAAAAAAAAAAAJAAcAAAAAAAAAAAAKAAIAAAAAAAAAAAAKAAMAAAAAAAAAAAAKAAQAAAAAAAAAAAAKAAUAAAAAAAAAAAAKAAYAAAAAAAAAAAAKAAcAAAAAAAAAAAALAAIAAAAAAAAAAAALAAMAAAAAAAAAAAALAAQAAAAAAAAAAAALAAUAAAAAAAAAAAALAAYAAAAAAAAAAAALAAcAAAAAAAAAAAAMAAIAAAAAAAAAAAAMAAMAAAAAAAAAAAAMAAQAAAAAAAAAAAAMAAUAAAAAAAAAAAAMAAYAAAAAAAAAAAAMAAcAAAAAAAAAAAANAAIAAAAAAAAAAAANAAMAAAAAAAAAAAANAAQAAAAAAAAAAAANAAUAAAAAAAAAAAANAAYAAAAAAAAAAAANAAcAAAAAAAAAAAAOAAIAAAAAAAAAAAAOAAMAAAAAAAAAAAAOAAQAAAAAAAAAAAAOAAUAAAAAAAAAAAAOAAYAAAAAAAAAAAAOAAcAAAAAAAAAAAA=")
 tile_set = SubResource("TileSet_twsyw")
 
-[node name="PowerCableAttachPoint3" parent="." instance=ExtResource("10_7ppae")]
+[node name="PowerCableAttachPoint" parent="." instance=ExtResource("11_xc1a2")]
 position = Vector2(-543, -153)
 
-[node name="PowerCableAttachPoint4" parent="." instance=ExtResource("10_7ppae")]
+[node name="PowerCableAttachPoint2" parent="." instance=ExtResource("11_xc1a2")]
 position = Vector2(543, -153)
 
 [node name="WallTopHalf" type="Sprite2D" parent="."]
 z_index = 1
 texture_filter = 3
 position = Vector2(-481, -275.5)
-texture = ExtResource("11_ab48y")
+texture = ExtResource("12_p4ig8")
 
 [node name="WallTopHalf2" type="Sprite2D" parent="."]
 z_index = 1
 texture_filter = 3
 position = Vector2(480, -275.5)
-texture = ExtResource("11_ab48y")
+texture = ExtResource("12_p4ig8")
 
 [node name="negative_entrance_pad" type="Sprite2D" parent="."]
 z_index = -1
 texture_filter = 1
 position = Vector2(-160, 379)
-texture = ExtResource("5_2ocwr")
+texture = ExtResource("13_ulhf8")
 
 [node name="positive_entrance_pad" type="Sprite2D" parent="."]
 z_index = -1
 texture_filter = 1
 position = Vector2(160, 379)
-texture = ExtResource("5_2ocwr")
+texture = ExtResource("13_ulhf8")
 
 [node name="negative_exit_zone" type="Area2D" parent="."]
 position = Vector2(-480, -378)
@@ -217,7 +216,7 @@ shape = SubResource("RectangleShape2D_cnvg6")
 [node name="Sprite2D" type="Sprite2D" parent="negative_exit_zone"]
 z_index = -1
 texture_filter = 1
-texture = ExtResource("5_2ocwr")
+texture = ExtResource("13_ulhf8")
 
 [node name="positive_exit_zone" type="Area2D" parent="."]
 position = Vector2(480, -377)
@@ -229,7 +228,7 @@ shape = SubResource("RectangleShape2D_cnvg6")
 [node name="Sprite2D" type="Sprite2D" parent="positive_exit_zone"]
 z_index = -1
 texture_filter = 1
-texture = ExtResource("5_2ocwr")
+texture = ExtResource("13_ulhf8")
 
 [node name="negative_teleport_gradient" type="Node2D" parent="."]
 position = Vector2(1198, 511)
@@ -253,148 +252,45 @@ texture = SubResource("GradientTexture2D_gei2l")
 texture_filter = 1
 position = Vector2(-480, -497)
 scale = Vector2(5, 5)
-texture = ExtResource("12_33cpb")
+texture = ExtResource("14_jhivt")
 
 [node name="negaitve_in_exit" type="Sprite2D" parent="negative_exit_indicator"]
 visible = false
-texture = ExtResource("13_xyp53")
+texture = ExtResource("15_fsmk7")
 
 [node name="positive_exit_indicator" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(481.99994, -497)
 scale = Vector2(5, 5)
-texture = ExtResource("12_33cpb")
+texture = ExtResource("14_jhivt")
 
 [node name="positive_in_exit" type="Sprite2D" parent="positive_exit_indicator"]
 visible = false
-texture = ExtResource("14_l8hiq")
+texture = ExtResource("16_tk8sx")
 
-[node name="negative_side_electric_floor" type="Node2D" parent="."]
+[node name="Turret" parent="." node_paths=PackedStringArray("power_inputs") instance=ExtResource("17_o7m6q")]
+position = Vector2(-325, -154)
+rotation = 2.3561945
+search_left_limit = 0.0
+search_right_limit = 0.0
+power_inputs = [NodePath("../PowerCableAttachPoint3")]
 
-[node name="ElectrifiedFloor" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(-928, 59)
-power_inputs = [NodePath("../../PowerCableAttachPoint")]
+[node name="Turret2" parent="." node_paths=PackedStringArray("power_inputs") instance=ExtResource("17_o7m6q")]
+position = Vector2(332, -154)
+rotation = 0.7853982
+search_left_limit = 0.0
+search_right_limit = 0.0
+power_inputs = [NodePath("../PowerCableAttachPoint3")]
 
-[node name="ElectrifiedFloor2" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(-864, 59)
-power_inputs = [NodePath("../ElectrifiedFloor")]
+[node name="PowerPole1" parent="." instance=ExtResource("18_2sv2g")]
+position = Vector2(-437, 130)
+max_length = 600
+positive = false
 
-[node name="ElectrifiedFloor3" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(-800, 59)
-power_inputs = [NodePath("../ElectrifiedFloor2")]
+[node name="PowerPole2" parent="." instance=ExtResource("18_2sv2g")]
+position = Vector2(437, 130)
+max_length = 600
 
-[node name="ElectrifiedFloor4" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(-736, 59)
-power_inputs = [NodePath("../ElectrifiedFloor3")]
-
-[node name="ElectrifiedFloor5" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(-672, 59)
-power_inputs = [NodePath("../ElectrifiedFloor4")]
-
-[node name="ElectrifiedFloor6" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(-608, 59)
-power_inputs = [NodePath("../ElectrifiedFloor5")]
-
-[node name="ElectrifiedFloor7" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(-544, 59)
-power_inputs = [NodePath("../ElectrifiedFloor6")]
-
-[node name="ElectrifiedFloor8" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(-480, 59)
-power_inputs = [NodePath("../ElectrifiedFloor7")]
-
-[node name="ElectrifiedFloor9" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(-416, 59)
-power_inputs = [NodePath("../ElectrifiedFloor8")]
-
-[node name="ElectrifiedFloor10" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(-352, 59)
-power_inputs = [NodePath("../ElectrifiedFloor9")]
-
-[node name="ElectrifiedFloor11" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(-288, 59)
-power_inputs = [NodePath("../ElectrifiedFloor10")]
-
-[node name="ElectrifiedFloor12" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(-224, 59)
-power_inputs = [NodePath("../ElectrifiedFloor11")]
-
-[node name="ElectrifiedFloor13" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(-160, 59)
-power_inputs = [NodePath("../ElectrifiedFloor12")]
-
-[node name="ElectrifiedFloor14" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(-96, 59)
-power_inputs = [NodePath("../ElectrifiedFloor13")]
-
-[node name="ElectrifiedFloor15" parent="negative_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(-32, 59)
-power_inputs = [NodePath("../ElectrifiedFloor14")]
-
-[node name="positive_side_electric_floor" type="Node2D" parent="."]
-
-[node name="ElectrifiedFloor16" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(32, 59)
-power_inputs = [NodePath("../ElectrifiedFloor17")]
-
-[node name="ElectrifiedFloor17" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(96, 59)
-power_inputs = [NodePath("../ElectrifiedFloor18")]
-
-[node name="ElectrifiedFloor18" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(160, 59)
-power_inputs = [NodePath("../ElectrifiedFloor19")]
-
-[node name="ElectrifiedFloor19" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(224, 59)
-power_inputs = [NodePath("../ElectrifiedFloor20")]
-
-[node name="ElectrifiedFloor20" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(288, 59)
-power_inputs = [NodePath("../ElectrifiedFloor21")]
-
-[node name="ElectrifiedFloor21" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(352, 59)
-power_inputs = [NodePath("../ElectrifiedFloor22")]
-
-[node name="ElectrifiedFloor22" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(416, 59)
-power_inputs = [NodePath("../ElectrifiedFloor23")]
-
-[node name="ElectrifiedFloor23" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(480, 59)
-power_inputs = [NodePath("../ElectrifiedFloor24")]
-
-[node name="ElectrifiedFloor24" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(544, 59)
-power_inputs = [NodePath("../ElectrifiedFloor25")]
-
-[node name="ElectrifiedFloor25" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(608, 59)
-power_inputs = [NodePath("../ElectrifiedFloor26")]
-
-[node name="ElectrifiedFloor26" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(672, 59)
-power_inputs = [NodePath("../ElectrifiedFloor27")]
-
-[node name="ElectrifiedFloor27" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(736, 59)
-power_inputs = [NodePath("../ElectrifiedFloor28")]
-
-[node name="ElectrifiedFloor28" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(800, 59)
-power_inputs = [NodePath("../ElectrifiedFloor29")]
-
-[node name="ElectrifiedFloor29" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(864, 59)
-power_inputs = [NodePath("../ElectrifiedFloor30")]
-
-[node name="ElectrifiedFloor30" parent="positive_side_electric_floor" node_paths=PackedStringArray("power_inputs") instance=ExtResource("16_jm4bj")]
-position = Vector2(928, 59)
-power_inputs = [NodePath("../../PowerCableAttachPoint2")]
-
-[node name="PowerCableAttachPoint" parent="." instance=ExtResource("10_7ppae")]
-position = Vector2(-865, 185)
-
-[node name="PowerCableAttachPoint2" parent="." instance=ExtResource("10_7ppae")]
-position = Vector2(865, 185)
+[node name="PowerCableAttachPoint3" parent="." instance=ExtResource("11_xc1a2")]
+position = Vector2(0, -258)
+power_source = true

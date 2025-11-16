@@ -56,7 +56,7 @@ func _process(delta: float):
 			break
 	
 	for cable in ground_cables_and_their_inputs:
-		cable.get_child(0).get_child(0).visible = ground_cables_and_their_inputs[cable].has_power
+		cable.get_child(0).get_child(0).visible = ground_cables_and_their_inputs[cable].has_power or ground_cables_and_their_inputs[cable].power_source
 	
 	if prev_power != has_power:
 		if has_power:

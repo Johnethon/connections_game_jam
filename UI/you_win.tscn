@@ -1,0 +1,73 @@
+[gd_scene load_steps=6 format=3 uid="uid://nbrgbgmtcmgq"]
+
+[ext_resource type="Texture2D" uid="uid://c0mammr1iydvn" path="res://sprites/UI/Inclusive-Pride-Flag.png" id="1_xi54x"]
+[ext_resource type="Script" uid="uid://bj3nl7yqhfs52" path="res://UI/you_win.gd" id="1_ys3lu"]
+[ext_resource type="FontFile" uid="uid://bk20f3p5gtfq5" path="res://UI/Connect3-Regular.ttf" id="2_6lx4n"]
+[ext_resource type="PackedScene" uid="uid://h5eus6itfd0f" path="res://UI/menu_button.tscn" id="3_6lx4n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ys3lu"]
+font = ExtResource("2_6lx4n")
+font_size = 72
+
+[node name="YouWin" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ys3lu")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+self_modulate = Color(0.9340804, 0.9340805, 0.93408036, 1)
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_xi54x")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1334.0
+offset_top = 228.0
+offset_right = 1575.0
+offset_bottom = 325.0
+text = "you win :)"
+label_settings = SubResource("LabelSettings_ys3lu")
+
+[node name="quit" parent="Label" instance=ExtResource("3_6lx4n")]
+layout_mode = 1
+anchors_preset = 7
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -83.5
+offset_top = 439.0
+offset_right = -12.5
+offset_bottom = 482.0
+grow_vertical = 0
+scale = Vector2(2, 2)
+text = "Quit
+"
+
+[node name="main menu" parent="Label" instance=ExtResource("3_6lx4n")]
+layout_mode = 1
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = -25.0
+offset_top = 365.0
+offset_right = 112.0
+offset_bottom = 408.0
+grow_horizontal = 1
+grow_vertical = 1
+scale = Vector2(2, 2)
+text = "Main Menu
+"
+
+[connection signal="pressed" from="Label/quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Label/main menu" to="." method="_on_main_menu_pressed"]

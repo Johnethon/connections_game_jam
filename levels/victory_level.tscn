@@ -18,11 +18,14 @@
 [ext_resource type="Texture2D" uid="uid://7ob7i0d5v7xt" path="res://sprites/assetsGameJamFall2025/squareRug.png" id="16_cduag"]
 [ext_resource type="Texture2D" uid="uid://w3vhtpagy4cm" path="res://sprites/assetsGameJamFall2025/sidetableAsset.png" id="17_t2g54"]
 [ext_resource type="Texture2D" uid="uid://chjvts1j6ynfy" path="res://sprites/assetsGameJamFall2025/potted_plant.png" id="18_nx2ik"]
-[ext_resource type="Texture2D" uid="uid://qarulfpgdxix" path="res://sprites/tv_router_table_sadd.png" id="19_ewb5d"]
-[ext_resource type="AudioStream" uid="uid://b1nn3f71bg867" path="res://Sounds/Music/slowerCutScene.mp3" id="21_vnscc"]
+[ext_resource type="Texture2D" uid="uid://bilfybiwpcmip" path="res://sprites/tv_router_table_happi.png" id="19_bxsoa"]
+[ext_resource type="PackedScene" uid="uid://chkfp0umukn2m" path="res://Cutscenes/end_cutscene.tscn" id="21_gw5yg"]
 
-[node name="Introlevel" type="Node2D"]
+[node name="victory_level" type="Node2D" node_paths=PackedStringArray("cutscene_layer")]
 script = ExtResource("1_bxsoa")
+cutscene_layer = NodePath("end_cutscene")
+
+[node name="end_cutscene" parent="." instance=ExtResource("21_gw5yg")]
 
 [node name="back_ground" type="Node2D" parent="."]
 texture_filter = 3
@@ -361,13 +364,6 @@ texture = ExtResource("18_nx2ik")
 [node name="TvRouterTableHappi" type="Sprite2D" parent="back_ground"]
 position = Vector2(201.32014, -199.82)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("19_ewb5d")
+texture = ExtResource("19_bxsoa")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-process_mode = 3
-stream = ExtResource("21_vnscc")
-autoplay = true
-bus = &"Music"
-parameters/looping = true

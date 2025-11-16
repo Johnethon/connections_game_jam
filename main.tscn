@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://x55yvehn6kp0"]
+[gd_scene load_steps=41 format=3 uid="uid://x55yvehn6kp0"]
 
 [ext_resource type="Script" uid="uid://lvmbv3ubq5gt" path="res://main.gd" id="1_0xm2m"]
 [ext_resource type="PackedScene" uid="uid://c5vw0i55t4eua" path="res://levels/level_base.tscn" id="1_ig7tw"]
@@ -7,8 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://bp62kvs7im5oy" path="res://sprites/transition_anim.png" id="3_h2yge"]
 [ext_resource type="PackedScene" uid="uid://drefe5ii1ns22" path="res://UI/level_select.tscn" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://b4wll3ltc5vvk" path="res://UI/credits.tscn" id="5_272bh"]
+[ext_resource type="PackedScene" uid="uid://nbrgbgmtcmgq" path="res://UI/you_win.tscn" id="6_dg77c"]
 [ext_resource type="PackedScene" uid="uid://71v3b5vfemao" path="res://levels/introlevel.tscn" id="6_kek77"]
 [ext_resource type="PackedScene" uid="uid://cvg4x5xajvf31" path="res://levels/level_2_power_poles.tscn" id="7_5vw27"]
+[ext_resource type="PackedScene" uid="uid://b3h5xmhq6s5cq" path="res://levels/level_3_electrified_floors.tscn" id="9_4c57u"]
+[ext_resource type="AudioStream" uid="uid://b1nn3f71bg867" path="res://Sounds/Music/slowerCutScene.mp3" id="10_4c57u"]
+[ext_resource type="PackedScene" uid="uid://dh46wlf2c4n84" path="res://levels/level_4_turrets.tscn" id="10_efxa6"]
+[ext_resource type="PackedScene" uid="uid://bdby400qvbyaj" path="res://levels/victory_level.tscn" id="12_ycdy4"]
+[ext_resource type="AudioStream" uid="uid://cigcdki3bk4pd" path="res://Sounds/Music/promises.mp3" id="14_w48qg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lquwl"]
 atlas = ExtResource("3_h2yge")
@@ -199,8 +205,9 @@ main_menu = ExtResource("3_1bvp3")
 pause_menu = ExtResource("2_lquwl")
 level_select_menu = ExtResource("4_7mycd")
 credits_menu = ExtResource("5_272bh")
+win_menu = ExtResource("6_dg77c")
 cur_menu = NodePath("CanvasLayer/MainMenu")
-levels = Array[PackedScene]([ExtResource("6_kek77"), ExtResource("1_ig7tw"), ExtResource("7_5vw27")])
+levels = Array[PackedScene]([ExtResource("6_kek77"), ExtResource("1_ig7tw"), ExtResource("7_5vw27"), ExtResource("9_4c57u"), ExtResource("10_efxa6"), ExtResource("12_ycdy4")])
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -222,5 +229,21 @@ animation = &"fade_to_black"
 [node name="Label" type="Label" parent="CanvasLayer"]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="music" type="Node2D" parent="."]
+
+[node name="level_music" type="AudioStreamPlayer" parent="music"]
+stream = ExtResource("14_w48qg")
+volume_db = -12.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="menu_cutscene_music" type="AudioStreamPlayer" parent="music"]
+process_mode = 3
+stream = ExtResource("10_4c57u")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
 
 [connection signal="animation_finished" from="CanvasLayer/transition_anim" to="." method="_on_transition_anim_animation_finished"]

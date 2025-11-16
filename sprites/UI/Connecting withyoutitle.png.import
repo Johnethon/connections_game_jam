@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0mammr1iydvn"
-path="res://.godot/imported/Inclusive-Pride-Flag.png-3e017531dd28d8ca710b7f6e80cf0199.ctex"
+uid="uid://c6aqa3isk6h5q"
+path="res://.godot/imported/Connecting withyoutitle.png-174d0847826b9807cf84b791c74b769f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Inclusive-Pride-Flag.png"
-dest_files=["res://.godot/imported/Inclusive-Pride-Flag.png-3e017531dd28d8ca710b7f6e80cf0199.ctex"]
+source_file="res://sprites/UI/Connecting withyoutitle.png"
+dest_files=["res://.godot/imported/Connecting withyoutitle.png-174d0847826b9807cf84b791c74b769f.ctex"]
 
 [params]
 

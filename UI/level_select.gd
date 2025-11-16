@@ -1,6 +1,6 @@
 extends Control
 
-@export var number_of_levels_per_line : int = 7
+@export var number_of_levels_per_line : int = 5
 
 @onready var main = get_tree().get_first_node_in_group("main")
 @onready var button_scene = preload("res://UI/menu_button.tscn")
@@ -16,7 +16,12 @@ func _ready():
 		
 		var new_button = button_scene.instantiate()
 		cur_row_container.add_child(new_button)
-		new_button.text = str(i + 1)
+		if i == 0:
+			new_button.text = "Intro"
+		elif i == len(main.levels) - 1:
+			new_button.text = "End"
+		else:
+			new_button.text = str(i)
 		new_button.pressed.connect(main.start_at_level.bind(i))
 
 func _on_button_pressed() -> void:

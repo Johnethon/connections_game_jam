@@ -1,14 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://drefe5ii1ns22"]
+[gd_scene load_steps=6 format=3 uid="uid://drefe5ii1ns22"]
 
 [ext_resource type="Script" uid="uid://w0jjac5fk6lc" path="res://UI/level_select.gd" id="1_qgm14"]
-[ext_resource type="FontFile" uid="uid://bk20f3p5gtfq5" path="res://UI/Connect3-Regular.ttf" id="1_r4dbv"]
 [ext_resource type="Texture2D" uid="uid://se1uebadfwo3" path="res://sprites/assetsGameJamFall2025/middleWall.png" id="2_uafa6"]
 [ext_resource type="PackedScene" uid="uid://h5eus6itfd0f" path="res://UI/menu_button.tscn" id="3_q0b5w"]
 [ext_resource type="Texture2D" uid="uid://dvb3j7bcd3f2s" path="res://sprites/tv_router_table.png" id="4_miaug"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_gjday"]
-font = ExtResource("1_r4dbv")
-font_size = 64
+[ext_resource type="Texture2D" uid="uid://cat1l7y2lhd3n" path="res://sprites/UI/pnglvlselect2.png" id="4_uafa6"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -55,19 +51,18 @@ scale = Vector2(11, 11)
 pivot_offset = Vector2(64, 64)
 texture = ExtResource("4_miaug")
 
-[node name="Label" type="Label" parent="."]
-texture_filter = 3
+[node name="TextureRect3" type="TextureRect" parent="."]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -468.0
-offset_top = 234.0
-offset_right = -129.0
-offset_bottom = 321.0
-grow_horizontal = 2
-text = "Level Select :)"
-label_settings = SubResource("LabelSettings_gjday")
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 364.0
+offset_top = -332.0
+offset_right = 1644.0
+offset_bottom = -12.0
+grow_vertical = 2
+scale = Vector2(0.4852242, 0.4852242)
+texture = ExtResource("4_uafa6")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -82,6 +77,7 @@ offset_right = 257.0
 offset_bottom = -130.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.5, 1.5)
 
 [node name="Button" parent="." instance=ExtResource("3_q0b5w")]
 layout_mode = 1
@@ -93,6 +89,7 @@ offset_top = 496.0
 offset_right = -262.0
 offset_bottom = 539.0
 grow_vertical = 1
+scale = Vector2(1.5, 1.5)
 text = "Back
 "
 

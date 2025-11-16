@@ -23,7 +23,7 @@ enum States {
 
 # BULLET SETTINGS
 @export var bullet_scene: PackedScene
-@export var bullet_speed := 500.0
+@export var bullet_speed := 1000.0
 @export var muzzle: Node2D
 
 # ---------------------------------
@@ -37,6 +37,7 @@ var search_direction := 1   # 1 = right, -1 = left
 # READY
 # ---------------------------------
 func personal_ready() -> void:
+	
 	if detection_area:
 		detection_area.body_entered.connect(_on_body_entered)
 		detection_area.body_exited.connect(_on_body_exited)
@@ -44,8 +45,10 @@ func personal_ready() -> void:
 # ---------------------------------
 # PROCESS LOOP
 # ---------------------------------
-func _process(delta: float) -> void:
+func personal_process(delta: float) -> void:
 	super(delta)
+	$barrel_pivot/barrel.position = $barrel_pivot/barrel.position.lerp(Vector2(10, 0), delta * 2)
+	
 	match current_state:
 		States.IDLE:
 			_state_idle(delta)
@@ -80,13 +83,13 @@ func _state_searching(delta):
 		return
 
 	# Back-and-forth scanning
-	rotation += search_speed * search_direction * delta
+	$barrel_pivot.rotation += search_speed * search_direction * delta
 
-	if rotation > search_right_limit:
-		rotation = search_right_limit
+	if $barrel_pivot.rotation > search_right_limit:
+		$barrel_pivot.rotation = search_right_limit
 		search_direction = -1
-	elif rotation < search_left_limit:
-		rotation = search_left_limit
+	elif $barrel_pivot.rotation < search_left_limit:
+		$barrel_pivot.rotation = search_left_limit
 		search_direction = 1
 
 func _state_aiming(delta):
@@ -95,9 +98,9 @@ func _state_aiming(delta):
 		return
 
 	# Rotate smoothly toward player
-	var desired_angle := global_position.direction_to(target.global_position).angle()
-	rotation = lerp_angle(rotation, desired_angle, rotation_speed * delta)
-
+	var desired_angle := global_position.direction_to(target.global_position).angle() - rotation
+	$barrel_pivot.rotation = lerp_angle($barrel_pivot.rotation, desired_angle, rotation_speed * delta * 3)
+	
 	# Fire if lined up
 	_fire_if_on_target(desired_angle)
 
@@ -118,11 +121,11 @@ func _on_body_exited(body: Node):
 # FIRING SYSTEM
 # ---------------------------------
 var fire_cooldown := 0.0
-@export var fire_rate := 0.5  # seconds between shots
+@export var fire_rate := 0.25  # seconds between shots
 
 func _fire_if_on_target(desired_angle):
 	# Must be aimed within a cone
-	if abs(wrapf(desired_angle - rotation, -PI, PI)) < deg_to_rad(5):
+	if abs(wrapf(desired_angle - $barrel_pivot.rotation, -PI, PI)) < deg_to_rad(10):
 		if fire_cooldown <= 0:
 			_fire_bullet()
 			fire_cooldown = fire_rate
@@ -138,7 +141,9 @@ func _fire_bullet():
 	if muzzle == null:
 		push_warning("Turret has no muzzle node assigned.")
 		return
-
+		
+	$barrel_pivot/barrel.position
+	
 	var bullet := bullet_scene.instantiate()
 	get_tree().current_scene.add_child(bullet)
 
@@ -146,7 +151,7 @@ func _fire_bullet():
 	bullet.global_position = muzzle.global_position
 
 	# Turret forward direction (assumes sprite faces RIGHT)
-	var direction: Vector2 = Vector2.RIGHT.rotated(rotation)
+	var direction: Vector2 = Vector2.RIGHT.rotated(rotation).rotated($barrel_pivot.rotation)
 
 	# Apply velocity for CharacterBody2D bullet
 	if bullet is CharacterBody2D:

@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfvvec5a1nvxs"]
+[gd_scene load_steps=7 format=3 uid="uid://cfvvec5a1nvxs"]
 
 [ext_resource type="Script" uid="uid://dvsjc6eji2bx8" path="res://traps/bee.gd" id="1_svs68"]
+[ext_resource type="Texture2D" uid="uid://b8wj7d4n63cc6" path="res://sprites/temps/grey_circle.png" id="2_563kq"]
 [ext_resource type="Texture2D" uid="uid://bi2kq352pe774" path="res://sprites/temps/yellow_square.png" id="2_svs68"]
 [ext_resource type="Script" uid="uid://cws2hhpj2vvre" path="res://traps/obstacle.gd" id="3_ey0hq"]
 
@@ -19,9 +20,16 @@ script = ExtResource("1_svs68")
 scale = Vector2(0.99999994, 0.99999994)
 shape = SubResource("CircleShape2D_svs68")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="on_body2" type="Sprite2D" parent="."]
+z_index = 1
 texture_filter = 3
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_563kq")
+
+[node name="on_body" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 3
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_svs68")
 
 [node name="Obstacle2D" type="Node" parent="." node_paths=PackedStringArray("damage_area")]

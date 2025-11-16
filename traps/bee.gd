@@ -5,10 +5,10 @@ class_name Bee
 @export var turn_speed: float = 5.0
 
 # Distances in pixels
-@export var separation_distance: float = 8.0
-@export var alignment_distance: float = 32.0
-@export var cohesion_distance: float = 32.0
-@export var parent_attraction_distance: float = 64.0  # how far they are attracted to parent
+@export var separation_distance: float = 16.0
+@export var alignment_distance: float = 64.0
+@export var cohesion_distance: float = 64.0
+@export var parent_attraction_distance: float = 128.0  # how far they are attracted to parent
 
 @export var separation_weight: float = 1.5
 @export var alignment_weight: float = 1.0
@@ -41,21 +41,21 @@ func _physics_process(delta: float) -> void:
 
 		var offset: Vector2 = other.global_position - global_position
 		var dist: float = offset.length()
-
+		
 		# Separation
 		if dist < separation_distance and dist > 0:
 			separation -= offset.normalized() * ((separation_distance - dist) / separation_distance)
-
+		
 		# Alignment
 		if dist < alignment_distance:
 			alignment += other.velocity.normalized()
 			num_neighbors_alignment += 1
-
+		
 		# Cohesion
 		if dist < cohesion_distance:
 			cohesion += other.global_position
 			num_neighbors_cohesion += 1
-
+		
 	# Average alignment
 	if num_neighbors_alignment > 0:
 		alignment /= num_neighbors_alignment
@@ -82,7 +82,11 @@ func _physics_process(delta: float) -> void:
 	# Rotate smoothly
 	if move_dir.length() > 0:
 		rotation = lerp_angle(rotation, move_dir.angle(), turn_speed * delta)
-
+	
+	if not get_parent().active:
+		move_dir = Vector2.ZERO
+	$on_body.visible = get_parent().active
+	
 	# Apply movement
 	velocity = move_dir * speed
 	move_and_slide()

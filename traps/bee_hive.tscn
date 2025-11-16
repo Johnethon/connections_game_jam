@@ -1,12 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://cs3sfmuseibn"]
+[gd_scene load_steps=11 format=3 uid="uid://cs3sfmuseibn"]
 
 [ext_resource type="Script" uid="uid://hpw6p8jt0ssr" path="res://traps/bee_hive.gd" id="1_vj4vt"]
 [ext_resource type="Texture2D" uid="uid://dsvwihhtcxqpw" path="res://sprites/temps/black_circle.png" id="2_4it53"]
 [ext_resource type="PackedScene" uid="uid://cfvvec5a1nvxs" path="res://traps/bee.tscn" id="2_twtdy"]
 [ext_resource type="Script" uid="uid://dqdp1mdiw048x" path="res://traps/bee_handler.gd" id="3_4it53"]
+[ext_resource type="Texture2D" uid="uid://upy4i26a3ioi" path="res://sprites/temps/red_circle.png" id="4_73345"]
+[ext_resource type="Texture2D" uid="uid://ciq3l5imeyeq3" path="res://sprites/temps/navy_circle.png" id="4_rjqgs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rjqgs"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_twtdy"]
-radius = 4.1976185
+radius = 12.0415945
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4it53"]
 radius = 58.53144
@@ -14,11 +18,28 @@ radius = 58.53144
 [sub_resource type="CircleShape2D" id="CircleShape2D_73345"]
 radius = 176.61963
 
-[node name="BeeHive" type="Node2D"]
-scale = Vector2(10, 10)
+[node name="BeeHive" type="Node2D" node_paths=PackedStringArray("power_indicator_on")]
+texture_filter = 3
 script = ExtResource("1_vj4vt")
 bee = ExtResource("2_twtdy")
-power_source = false
+min_aggro_radius = 200
+bee_speed = 300
+can_have_power_cable_attached = true
+can_take_new_inputs = true
+power_indicator_on = NodePath("powered")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_rjqgs")
+
+[node name="aggro_radius" type="Sprite2D" parent="."]
+self_modulate = Color(1, 1, 1, 0.24705882)
+z_index = -1
+scale = Vector2(40.41056, 40.41056)
+texture = ExtResource("4_73345")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 scale = Vector2(0.99999994, 0.99999994)
@@ -32,12 +53,18 @@ scale = Vector2(0.9999998, 0.9999998)
 [node name="target" type="Node2D" parent="bee_target_axis"]
 position = Vector2(66.3, 0)
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-scale = Vector2(0.99999994, 0.99999994)
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(3, 3)
 texture = ExtResource("2_4it53")
+
+[node name="unnpowered" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_rjqgs")
+
+[node name="powered" type="Sprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("4_73345")
 
 [node name="BeeHandler" type="Node2D" parent="." node_paths=PackedStringArray("home_target")]
 script = ExtResource("3_4it53")
